@@ -1,0 +1,4 @@
+map_name: north_africa
+games:
+- {game_name: North Africa, file_name: north_africa.xml}
+
