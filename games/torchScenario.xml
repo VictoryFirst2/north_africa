@@ -1096,97 +1096,120 @@
                   In the Rommel Game, the Americans do not appear until turn 7,
                   so something will need to be done about this.
                   Maybe there's a way to do this with scripts. -->
-      <territoryOwner territory="Cyprus" owner="Neutral"/>
-      <territoryOwner territory="Casablanca" owner="Vichy-French"/>
-      <territoryOwner territory="Oran" owner="Vichy-French"/>
-      <territoryOwner territory="Tunis" owner="Vichy-French"/>
-      <territoryOwner territory="Kasserine Pass" owner="Vichy-French"/>
-      <territoryOwner territory="Mareth" owner="Vichy-French"/>
+      <territoryOwner territory="Cyprus" owner="Americans"/>
+      <territoryOwner territory="Casablanca" owner="Germans"/>
+      <territoryOwner territory="Oran" owner="Germans"/>
+      <territoryOwner territory="Tunis" owner="Germans"/>
+      <territoryOwner territory="Kasserine Pass" owner="Germans"/>
+      <territoryOwner territory="Mareth" owner="Italians"/>
       <territoryOwner territory="Tripoli" owner="Italians"/>
       <territoryOwner territory="El Agheila" owner="Italians"/>
-      <territoryOwner territory="Benghazi" owner="British"/>
-      <territoryOwner territory="Tobruk" owner="British"/>
+      <territoryOwner territory="Benghazi" owner="Italians"/>
+      <territoryOwner territory="Tobruk" owner="Germans"/>
       <territoryOwner territory="Cairo" owner="British"/>
     </ownerInitialize>
     <unitInitialize>
       <!-- Germans -->
-      <unitPlacement unitType="mech" territory="Tripoli" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="fighter" territory="Tripoli" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="G-bomber" territory="Tripoli" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="G-bomber" territory="Sicily" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="mech" territory="El Agheila" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="artillery" territory="El Agheila" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="G-anti-Tank" territory="El Agheila" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="armour" territory="El Agheila" quantity="2" owner="Germans"/>
-      <unitPlacement unitType="scout" territory="Zella" quantity="1" owner="Germans"/>
       <unitPlacement unitType="F-infantry" territory="Casablanca" quantity="2" owner="Vichy-French"/>
       <unitPlacement unitType="F-infantry" territory="Oran" quantity="2" owner="Vichy-French"/>
       <unitPlacement unitType="F-armour" territory="Oran" quantity="1" owner="Vichy-French"/>
       <unitPlacement unitType="F-infantry" territory="Algiers" quantity="2" owner="Vichy-French"/>
-      <unitPlacement unitType="supply" territory="Tunis" quantity="3" owner="Germans"/>
+      
+      <unitPlacement unitType="infantry" territory="Tunis" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="mech" territory="Tunis" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="artillery" territory="Tunis" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="G-anti-Tank" territory="Tunis" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="armour" territory="Tunis" quantity="2" owner="Germans"/>
+      <unitPlacement unitType="G-bomber" territory="Tunis" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="5-supply" territory="Tunis" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="infantry" territory="Mareth" quantity="2" owner="Germans"/>
+      <unitPlacement unitType="G-anti-Tank" territory="Tobruk" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="infantry" territory="Mersa Matruh" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="mech" territory="Mersa Matruh" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="G-anti-Tank" territory="Mersa Matruh" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="infantry" territory="Tunis Convoy" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="artillery" territory="Tunis Convoy" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="scout" territory="Tunis Convoy" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="fighter" territory="Tunis Convoy" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="supply" territory="Tunis Convoy" quantity="2" owner="Germans"/>
+      <unitPlacement unitType="navalmine" territory="Tunis Convoy" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="navalmine" territory="Malta Convoy" quantity="2" owner="Germans"/>
+      
       <!-- Italians -->
-      <unitPlacement unitType="I-infantry" territory="Tripoli" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="truck" territory="Tripoli" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="supply" territory="Tripoli" quantity="3" owner="Italians"/>
-      <unitPlacement unitType="aaGun" territory="Sicily" quantity="1" owner="Italians"/>
+      <!-- Random Note:  Axis cannot build in Tunis or Benghazi Convoy during Turn 7 specifically.
+                         Germany's turn is also skipped -->
+      <unitPlacement unitType="I-infantry" territory="Tripoli" quantity="3" owner="Italians"/>
+      <unitPlacement unitType="artillery" territory="Tripoli" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="supply" territory="Tripoli" quantity="4" owner="Italians"/>
+      <unitPlacement unitType="I-infantry" territory="Mareth" quantity="5" owner="Italians"/>
+      <unitPlacement unitType="supply" territory="Mareth" quantity="2" owner="Italians"/>
+      <!-- TODO:  Need to figure out how to implement mines.
+      			  Per the setup chart, this is *supposed* to be:
+      			  "1 Mine on Tripoli Border, 1 Mine of Nalut Border" -->
+      <unitPlacement unitType="landmine" territory="Mareth" quantity="2" owner="Italians"/>
+      <unitPlacement unitType="scout" territory="Ghadames" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="bomber" territory="Sardinia" quantity="1" owner="Italians"/>
       <unitPlacement unitType="fighter" territory="Sicily" quantity="1" owner="Italians"/>
       <unitPlacement unitType="bomber" territory="Sicily" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="I-infantry" territory="Sirte" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="I-infantry" territory="El Agheila" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="artillery" territory="El Agheila" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="fighter" territory="El Agheila" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="5-supply" territory="El Agheila" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="scout" territory="Zella" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="I-infantry" territory="Benghazi" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="supply" territory="Benghazi" quantity="4" owner="Italians"/>
+      <unitPlacement unitType="I-infantry" territory="Tobruk" quantity="1" owner="Italians"/>
+      <!-- TODO:  Truck needs to be a "Captured UK Truck" -->
+      <unitPlacement unitType="truck" territory="Tobruk" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="supply" territory="Tobruk" quantity="3" owner="Italians"/>
+      <unitPlacement unitType="I-infantry" territory="Bir Hacheim" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="I-infantry" territory="Mersa Matruh" quantity="2" owner="Italians"/>
+      <unitPlacement unitType="I-armour" territory="Mersa Matruh" quantity="2" owner="Italians"/>
+      <!-- TODO:  Need to figure out how to implement mines.
+      			  Per the setup chart, this is *supposed* to be:
+      			  "1 Mine on Cairo Border" -->
+      <unitPlacement unitType="landmine" territory="Mersa Matruh" quantity="1" owner="Italians"/>
       <unitPlacement unitType="navalmine" territory="Sea Zone 10" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="destroyer" territory="Tripoli Convoy" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="submarine" territory="Tripoli Convoy" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="navalmine" territory="Tripoli Convoy" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="destroyer" territory="Sea Zone 16" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="submarine" territory="Sea Zone 16" quantity="1" owner="Italians"/>
       <!-- British -->
-      <!-- TODO:  UK gets 2 free armour (*NOT* UK Armour, the same tier of Tank as USA/G)
-                  in the "Atlantic Ocean Convoy" on turn 6.-->
-      <unitPlacement unitType="infantry" territory="Cairo" quantity="1" owner="British"/>
-      <unitPlacement unitType="UK-anti-Tank" territory="Cairo" quantity="1" owner="British"/>
-      <unitPlacement unitType="aaGun" territory="Cairo" quantity="1" owner="British"/>
+      <unitPlacement unitType="infantry" territory="Cairo" quantity="4" owner="British"/>
+      <unitPlacement unitType="artillery" territory="Cairo" quantity="2" owner="British"/>
+      <unitPlacement unitType="UK-armour" territory="Cairo" quantity="3" owner="British"/>
+      <unitPlacement unitType="truck" territory="Cairo" quantity="2" owner="British"/>
       <unitPlacement unitType="fighter" territory="Cairo" quantity="1" owner="British"/>
-      <unitPlacement unitType="5-supply" territory="Cairo" quantity="1" owner="British"/>
+      <unitPlacement unitType="bomber" territory="Cairo" quantity="1" owner="British"/>
+      <unitPlacement unitType="5-supply" territory="Cairo" quantity="3" owner="British"/>
+      <unitPlacement unitType="supply" territory="Cairo" quantity="3" owner="British"/>
       <!-- TODO:  Land Mines are placed for specific borders of territories, rather than the whole territory.
                   This may be difficult to implement. -->
-      <unitPlacement unitType="landmine" territory="Cairo" quantity="3" owner="British"/>
-      <unitPlacement unitType="UK-scout" territory="Mersa Matruh" quantity="2" owner="British"/>
-      <unitPlacement unitType="infantry" territory="Tobruk" quantity="1" owner="British"/>
-      <unitPlacement unitType="aaGun" territory="Tobruk" quantity="1" owner="British"/>
-      <unitPlacement unitType="UK-armour" territory="Tobruk" quantity="1" owner="British"/>
-      <unitPlacement unitType="5-supply" territory="Tobruk" quantity="3" owner="British"/>
-      <unitPlacement unitType="supply" territory="Tobruk" quantity="3" owner="British"/>
-      <unitPlacement unitType="landmine" territory="Tobruk" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="Bir Hacheim" quantity="1" owner="British"/>
-      <unitPlacement unitType="infantry" territory="Benghazi" quantity="1" owner="British"/>
-      <unitPlacement unitType="truck" territory="Benghazi" quantity="2" owner="British"/>
-      <unitPlacement unitType="supply" territory="Benghazi" quantity="3" owner="British"/>
-      <unitPlacement unitType="infantry" territory="Mersa Brega" quantity="1" owner="British"/>
-      <unitPlacement unitType="artillery" territory="Mersa Brega" quantity="1" owner="British"/>
-      <unitPlacement unitType="UK-armour" territory="Mersa Brega" quantity="1" owner="British"/>
-      <unitPlacement unitType="truck" territory="Mersa Brega" quantity="1" owner="British"/>
-      <unitPlacement unitType="5-supply" territory="Mersa Brega" quantity="1" owner="British"/>
-      <unitPlacement unitType="UK-scout" territory="Desert Zone J" quantity="1" owner="British"/>
+      <unitPlacement unitType="landmine" territory="Cairo" quantity="2" owner="British"/>
+      <unitPlacement unitType="UK-scout" territory="Siwa" quantity="1" owner="British"/>
       <unitPlacement unitType="fighter" territory="Malta" quantity="1" owner="British"/>
-      <unitPlacement unitType="supply" territory="Malta" quantity="2" owner="British"/>
+      <unitPlacement unitType="bomber" territory="Malta" quantity="1" owner="British"/>
+      <unitPlacement unitType="supply" territory="Malta" quantity="3" owner="British"/>
       <unitPlacement unitType="navalmine" territory="Sea Zone 3" quantity="1" owner="British"/>
-      <unitPlacement unitType="submarine" territory="Malta Convoy" quantity="1" owner="British"/>
-      <unitPlacement unitType="destroyer" territory="Sea Zone 31" quantity="1" owner="British"/>
+      <unitPlacement unitType="navalmine" territory="Benghazi Convoy" quantity="2" owner="British"/>
+      <unitPlacement unitType="submarine" territory="Sea Zone 31" quantity="1" owner="British"/>
       <unitPlacement unitType="battleship" territory="Sea Zone 31" quantity="1" owner="British"/>
       
+      <!-- NOTE:  This is not a typo.  See related note in the Rommel Scenario. -->
+      <unitPlacement unitType="armour" territory="Suez Canal Convoy" quantity="2" owner="British"/>
       
       <!-- TODO:  UK Gets 12 bid for each of:
-      				-Suez Canal Convoy
       				-Indian Ocean Convoy
       				-Atlantic Ocean Convoy
       				
       				It should be possible to mimic whatever was done for AAE (1999)'s "initial bid" -->
       
       <!-- Americans -->
-      <!-- America doesn't join the game until turn 7, so they start with nothing. -->
       <!-- TODO:  USA cannot buy air on turn 7.
                   USA can only deploy to Casablanca Convoy on turn 7. -->
+      <unitPlacement unitType="infantry" territory="Casablanca" quantity="5" owner="Americans"/>
+      <unitPlacement unitType="supply" territory="Casablanca" quantity="4" owner="Americans"/>
+      <unitPlacement unitType="infantry" territory="Oran" quantity="5" owner="Americans"/>
+      <unitPlacement unitType="supply" territory="Oran" quantity="4" owner="Americans"/>
+      <unitPlacement unitType="infantry" territory="Algiers" quantity="3" owner="Americans"/>
+      <!-- TODO:  The UK INF fight with the Americans on A7. -->
+      <unitPlacement unitType="infantry" territory="Algiers" quantity="3" owner="British"/>
+      <unitPlacement unitType="supply" territory="Algiers" quantity="5" owner="Americans"/>
+      
     </unitInitialize>
     <resourceInitialize>
       <!-- Players receive IPC at the start of the turn, so this can be 0 across the board. -->
