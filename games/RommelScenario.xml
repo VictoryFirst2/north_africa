@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="World War II Classic" version="2.0"/>
+  <info name="Rommel Scenario" version="0.11"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.6.1"/>
   <diceSides value="10"/>
@@ -334,6 +334,7 @@
     <!-- Adding Vichy/Free French here in case they are needed -->
     <player name="Vichy-French" optional="false"/>
     <!--player name="Free-French" optional="false"/-->
+	<player name="Neutral" optional="true" canBeDisabled="true"/>
     <!-- alliances -->
     <alliance player="Germans" alliance="Axis"/>
     <alliance player="Italians" alliance="Axis"/>
@@ -347,26 +348,22 @@
     <unit name="I-infantry"/>
     <unit name="F-infantry"/>
     <unit name="artillery"/>
-    <!-- unit name="G-artillery"/ Forget if 88s were ART or AT in this game.  Need unit reference chart.-->
     <unit name="mech"/>
-    <unit name="UK-scout"/>
-    <unit name="scout"/>
-    <!-- NOTE:  US and German Armor are identical. -->
-    <unit name="armour"/>
-    <unit name="UK-armour"/>
-    <!-- TODO:  There is an optional rule for a Super German Tank.
-                Ignoring it for now but may add later. -->
-    <!-- unit name="G-armour"/-->
-    <unit name="I-armour"/>
-    <unit name="F-armour"/>
-    <unit name="UK-anti-Tank"/>
-    <unit name="G-anti-Tank"/>
+    <unit name="UK-scoutcar"/>
+    <unit name="scoutcar"/>
+    <unit name="tank"/>
+    <unit name="matilda"/>
+    <unit name="sherman"/>
+    <unit name="tiger"/>	
+    <unit name="I-tank"/>
+    <unit name="F-tank"/>
+    <unit name="UK-antitank"/>
+    <unit name="G-antitank"/>
     <unit name="truck"/>
     <unit name="fighter"/>
     <unit name="bomber"/>
     <unit name="G-bomber"/>
-    <!-- Stubbed in case it's needed. -->
-    <!--  unit name="transport"/-->
+    <unit name="transport"/> <!-- I think we need transports -->
     <unit name="battleship"/>
     <unit name="destroyer"/>
     <unit name="submarine"/>
@@ -375,13 +372,11 @@
     <unit name="supply"/>
     <unit name="5-supply"/>
     <unit name="landmine"/>
-    <unit name="navalmine"/>
+    <unit name="seamine"/>
     <unit name="aaGun"/>
   </unitList>
   <gamePlay>
     <delegate name="initDelegate" javaClass="games.strategy.triplea.delegate.InitializationDelegate" display="Initializing Delegates"/>
-    <!-- delegate name="tech" javaClass="games.strategy.triplea.delegate.TechnologyDelegate" display="Research Technology"/-->
-    <!-- delegate name="tech_activation" javaClass="games.strategy.triplea.delegate.TechActivationDelegate" display="Activate Technology"/-->
     <delegate name="battle" javaClass="games.strategy.triplea.delegate.BattleDelegate" display="Combat"/>
     <delegate name="move" javaClass="games.strategy.triplea.delegate.MoveDelegate" display="Combat Move"/>
     <delegate name="place" javaClass="games.strategy.triplea.delegate.PlaceDelegate" display="Place Units"/>
@@ -408,36 +403,38 @@
       <step name="italiansBidPlace" delegate="placeBid" player="Italians" maxRunCount="1"/>
       <step name="americansBid" delegate="bid" player="Americans" maxRunCount="1"/>
       <step name="americansBidPlace" delegate="placeBid" player="Americans" maxRunCount="1"/>
-      <step name="russianPurchase" delegate="purchase" player="Russians"/>
-      <step name="russianCombatMove" delegate="move" player="Russians"/>
-      <step name="russianBattle" delegate="battle" player="Russians"/>
-      <step name="russianNonCombatMove" delegate="move" player="Russians" display="Non Combat Move"/>
-      <step name="russianPlace" delegate="place" player="Russians"/>
-      <step name="russianEndTurn" delegate="endTurn" player="Russians"/>
-      <step name="germanPurchase" delegate="purchase" player="Germans"/>
-      <step name="germanCombatMove" delegate="move" player="Germans"/>
-      <step name="germanBattle" delegate="battle" player="Germans"/>
-      <step name="germanNonCombatMove" delegate="move" player="Germans" display="Non Combat Move"/>
-      <step name="germanPlace" delegate="place" player="Germans"/>
-      <step name="germanEndTurn" delegate="endTurn" player="Germans"/>
+	  
+      <step name="germansPurchase" delegate="purchase" player="Germans"/>
+      <step name="germansPlace" delegate="place" player="Germans"/> <!-- Second placement phase for mines -->
+      <step name="germansCombatMove" delegate="move" player="Germans"/>
+      <step name="germansBattle" delegate="battle" player="Germans"/>
+      <step name="germansNonCombatMove" delegate="move" player="Germans" display="Non Combat Move"/>
+      <step name="germansPlace2" delegate="place" player="Germans"/>
+      <step name="germansEndTurn" delegate="endTurn" player="Germans"/>
+	  
       <step name="britishPurchase" delegate="purchase" player="British"/>
+      <step name="britishPlace" delegate="place" player="British"/>	  
       <step name="britishCombatMove" delegate="move" player="British"/>
       <step name="britishBattle" delegate="battle" player="British"/>
       <step name="britishNonCombatMove" delegate="move" player="British" display="Non Combat Move"/>
-      <step name="britishPlace" delegate="place" player="British"/>
+      <step name="britishPlace2" delegate="place" player="British"/>
       <step name="britishEndTurn" delegate="endTurn" player="British"/>
-      <step name="italianPurchase" delegate="purchase" player="Italians"/>
-      <step name="italianCombatMove" delegate="move" player="Italians"/>
-      <step name="italianBattle" delegate="battle" player="Italians"/>
-      <step name="italianNonCombatMove" delegate="move" player="Italians" display="Non Combat Move"/>
-      <step name="italianPlace" delegate="place" player="Italians"/>
-      <step name="italianEndTurn" delegate="endTurn" player="Italians"/>
-      <step name="americanPurchase" delegate="purchase" player="Americans"/>
-      <step name="americanCombatMove" delegate="move" player="Americans"/>
-      <step name="americanBattle" delegate="battle" player="Americans"/>
-      <step name="americanNonCombatMove" delegate="move" player="Americans" display="Non Combat Move"/>
-      <step name="americanPlace" delegate="place" player="Americans"/>
-      <step name="americanEndTurn" delegate="endTurn" player="Americans"/>
+	  
+      <step name="italiansPurchase" delegate="purchase" player="Italians"/>
+      <step name="italiansPlace" delegate="place" player="Italians"/>	  
+      <step name="italiansCombatMove" delegate="move" player="Italians"/>
+      <step name="italiansBattle" delegate="battle" player="Italians"/>
+      <step name="italiansNonCombatMove" delegate="move" player="Italians" display="Non Combat Move"/>
+      <step name="italiansPlace2" delegate="place" player="Italians"/>
+      <step name="italiansEndTurn" delegate="endTurn" player="Italians"/>
+	  
+      <step name="americansPurchase" delegate="purchase" player="Americans"/>
+      <step name="americansPlace" delegate="place" player="Americans"/>	  
+      <step name="americansCombatMove" delegate="move" player="Americans"/>
+      <step name="americansBattle" delegate="battle" player="Americans"/>
+      <step name="americansNonCombatMove" delegate="move" player="Americans" display="Non Combat Move"/>
+      <step name="americansPlace2" delegate="place" player="Americans"/>
+      <step name="americansEndTurn" delegate="endTurn" player="Americans"/>
       <step name="endRoundStep" delegate="endRound"/>
     </sequence>
   </gamePlay>
@@ -458,41 +455,45 @@
       <cost resource="PUs" quantity="4"/>
       <result resourceOrUnit="artillery" quantity="1"/>
     </productionRule>
-    <productionRule name="buyArmour">
+    <productionRule name="buyTank">
       <cost resource="PUs" quantity="6"/>
-      <result resourceOrUnit="armour" quantity="1"/>
+      <result resourceOrUnit="tank" quantity="1"/>
     </productionRule>
-    <productionRule name="buyUKArmour">
+    <productionRule name="buyTigerTank">
+      <cost resource="PUs" quantity="9"/>
+      <result resourceOrUnit="tiger" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUKtank">
       <cost resource="PUs" quantity="5"/>
-      <result resourceOrUnit="UK-armour" quantity="1"/>
+      <result resourceOrUnit="matilda" quantity="1"/>
     </productionRule>
-    <productionRule name="buyItalianArmour">
+    <productionRule name="buyItalianTank">
       <cost resource="PUs" quantity="4"/>
-      <result resourceOrUnit="I-armour" quantity="1"/>
+      <result resourceOrUnit="I-tank" quantity="1"/>
     </productionRule>
-    <productionRule name="buyFrenchArmour">
+    <productionRule name="buyFrenchTank">
       <cost resource="PUs" quantity="4"/>
-      <result resourceOrUnit="F-armour" quantity="1"/>
+      <result resourceOrUnit="F-tank" quantity="1"/>
     </productionRule>
     <productionRule name="buyMech">
       <cost resource="PUs" quantity="4"/>
       <result resourceOrUnit="mech" quantity="1"/>
     </productionRule>
-    <productionRule name="buyUKScout">
+    <productionRule name="buyUKscoutcar">
       <cost resource="PUs" quantity="4"/>
-      <result resourceOrUnit="UK-scout" quantity="1"/>
+      <result resourceOrUnit="UK-scoutcar" quantity="1"/>
     </productionRule>
-    <productionRule name="buyScout">
+    <productionRule name="buyScoutcar">
       <cost resource="PUs" quantity="4"/>
-      <result resourceOrUnit="scout" quantity="1"/>
+      <result resourceOrUnit="scoutcar" quantity="1"/>
     </productionRule>
     <productionRule name="buyUKAntiTank">
       <cost resource="PUs" quantity="4"/>
-      <result resourceOrUnit="UK-anti-Tank" quantity="1"/>
+      <result resourceOrUnit="UK-antitank" quantity="1"/>
     </productionRule>
     <productionRule name="buyGermanAntiTank">
       <cost resource="PUs" quantity="5"/>
-      <result resourceOrUnit="G-anti-Tank" quantity="1"/>
+      <result resourceOrUnit="G-antitank" quantity="1"/>
     </productionRule>
     <productionRule name="buyTruck">
       <cost resource="PUs" quantity="2"/>
@@ -534,24 +535,21 @@
       <cost resource="PUs" quantity="1"/>
       <result resourceOrUnit="landmine" quantity="1"/>
     </productionRule>
-    <productionRule name="buyNavalmine">
+    <productionRule name="buySeamine">
       <cost resource="PUs" quantity="2"/>
-      <result resourceOrUnit="navalmine" quantity="1"/>
+      <result resourceOrUnit="seamine" quantity="1"/>
     </productionRule>
     <productionRule name="buyAAGun">
       <cost resource="PUs" quantity="3"/>
       <result resourceOrUnit="aaGun" quantity="1"/>
     </productionRule>
-    <!-- You can abuse the Production Frontiers to give each playable country their own set of unique buy-lists.
-         This is normally used for the tech in older editions to give cheaper buys, but here can be used to
-         account for the asynchronous unit lists available to each country.  -->
     <productionFrontier name="B-production">
       <frontierRules name="buyInfantry"/>
       <frontierRules name="buyArtillery"/>
       <frontierRules name="buyUKAntiTank"/>
       <frontierRules name="buyAAGun"/>
-      <frontierRules name="buyUKScout"/>
-      <frontierRules name="buyUKArmour"/>
+      <frontierRules name="buyUKscoutcar"/>
+      <frontierRules name="buyUKtank"/>
       <frontierRules name="buyTruck"/>
       <frontierRules name="buyFighter"/>
       <frontierRules name="buyBomber"/>
@@ -561,14 +559,14 @@
       <frontierRules name="buySupply"/>
       <frontierRules name="buy5Supply"/>
       <frontierRules name="buyLandmine"/>
-      <frontierRules name="buyNavalmine"/>
+      <frontierRules name="buySeamine"/>
     </productionFrontier>
     <productionFrontier name="I-production">
       <frontierRules name="buyItalianInfantry"/>
       <frontierRules name="buyArtillery"/>
       <frontierRules name="buyAAGun"/>
-      <frontierRules name="buyScout"/>
-      <frontierRules name="buyItalianArmour"/>
+      <frontierRules name="buyScoutcar"/>
+      <frontierRules name="buyItalianTank"/>
       <frontierRules name="buyTruck"/>
       <frontierRules name="buyFighter"/>
       <frontierRules name="buyBomber"/>
@@ -577,15 +575,15 @@
       <frontierRules name="buySupply"/>
       <frontierRules name="buy5Supply"/>
       <frontierRules name="buyLandmine"/>
-      <frontierRules name="buyNavalmine"/>
+      <frontierRules name="buySeamine"/>
     </productionFrontier>
     <productionFrontier name="A-production">
       <frontierRules name="buyInfantry"/>
       <frontierRules name="buyFrenchInfantry"/>
       <frontierRules name="buyArtillery"/>
       <frontierRules name="buyAAGun"/>
-      <frontierRules name="buyArmour"/>
-      <frontierRules name="buyFrenchArmour"/>
+      <frontierRules name="buyTank"/>
+      <frontierRules name="buyFrenchTank"/>
       <frontierRules name="buyTruck"/>
       <frontierRules name="buyFighter"/>
       <frontierRules name="buyBomber"/>
@@ -593,15 +591,15 @@
       <frontierRules name="buySupply"/>
       <frontierRules name="buy5Supply"/>
       <frontierRules name="buyLandmine"/>
-      <frontierRules name="buyNavalmine"/>
+      <frontierRules name="buySeamine"/>
     </productionFrontier>
     <productionFrontier name="G-production">
       <frontierRules name="buyInfantry"/>
       <frontierRules name="buyMech"/>
       <frontierRules name="buyArtillery"/>
       <frontierRules name="buyGermanAntiTank"/>
-      <frontierRules name="buyScout"/>
-      <frontierRules name="buyArmour"/>
+      <frontierRules name="buyScoutcar"/>
+      <frontierRules name="buyTank"/>
       <frontierRules name="buyTruck"/>
       <frontierRules name="buyFighter"/>
       <frontierRules name="buyGermanBomber"/>
@@ -609,7 +607,24 @@
       <frontierRules name="buySupply"/>
       <frontierRules name="buy5Supply"/>
       <frontierRules name="buyLandmine"/>
-      <frontierRules name="buyNavalmine"/>
+      <frontierRules name="buySeamine"/>
+    </productionFrontier>
+    <productionFrontier name="G-production_tiger">
+      <frontierRules name="buyInfantry"/>
+      <frontierRules name="buyMech"/>
+      <frontierRules name="buyArtillery"/>
+      <frontierRules name="buyGermanAntiTank"/>
+      <frontierRules name="buyScoutcar"/>
+      <frontierRules name="buyTank"/>
+      <frontierRules name="buyTigerTank"/>
+      <frontierRules name="buyTruck"/>
+      <frontierRules name="buyFighter"/>
+      <frontierRules name="buyGermanBomber"/>
+      <frontierRules name="buySubmarine"/>
+      <frontierRules name="buySupply"/>
+      <frontierRules name="buy5Supply"/>
+      <frontierRules name="buyLandmine"/>
+      <frontierRules name="buySeamine"/>
     </productionFrontier>
     <playerProduction player="British" frontier="B-production"/>
     <playerProduction player="Italians" frontier="I-production"/>
@@ -617,13 +632,13 @@
     <playerProduction player="Germans" frontier="G-production"/>
   </production>
   <attachmentList>
-  	<!-- TODO:  May be able to use the Unit Properties to implement some game rules (mostly trucks being capture-able) -->
     <attachment name="unitAttachment" attachTo="infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
       <option name="transportCost" value="1"/>
       <option name="attack" value="2"/>
       <option name="defense" value="3"/>
       <option name="artillerySupportable" value="true"/>
+	  <option name="isLandTransportable" value="true"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="F-infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
@@ -631,6 +646,7 @@
       <option name="attack" value="2"/>
       <option name="defense" value="3"/>
       <option name="artillerySupportable" value="true"/>
+	  <option name="isLandTransportable" value="true"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="I-infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
@@ -638,6 +654,7 @@
       <option name="attack" value="2"/>
       <option name="defense" value="2"/>
       <option name="artillerySupportable" value="true"/>
+	  <option name="isLandTransportable" value="true"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
@@ -645,92 +662,125 @@
       <option name="attack" value="3"/>
       <option name="defense" value="3"/>
       <option name="artillery" value="true"/>
+	  <option name="isLandTransportable" value="true"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="mech" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
-      <option name="transportCost" value="1"/>
       <option name="attack" value="2"/>
       <option name="defense" value="3"/>
-      <!-- TODO:  Need to make it so mech must pair with Tank to Blitz.  Need to see how G40 does it. -->
-      <option name="canBlitz" value="true"/>
+      <option name="artillerySupportable" value="true"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:tank"/>
+	  <!-- Can they blitz with Tiger Tanks too? -->
     </attachment>
-    <attachment name="unitAttachment" attachTo="UK-scout" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <!-- TODO:  Scouts:
+    <attachment name="unitAttachment" attachTo="UK-scoutcar" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <!-- TODO:  scoutcars:
       				-Destroy 1 enemy supply instantly during the first round of combat (but bringing 2+ bombers to one battle only results in 1 destroyed supply).
       				-Target fire Vs. Planes
       				-Must retreat after 1 round of combat
       				-Do not consume supply -->
       <option name="movement" value="4"/>
-      <option name="transportCost" value="1"/>
       <option name="attack" value="2"/>
       <option name="defense" value="1"/>
     </attachment>
-    <attachment name="unitAttachment" attachTo="scout" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <!-- TODO:  Scouts:
+    <attachment name="unitAttachment" attachTo="scoutcar" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <!-- TODO:  scoutcars:
       				-Destroy enemy supply instantly
       				-Target fire Vs. Planes
       				-Must retreat after 1 round of combat
       				-Do not consume supply -->
       <option name="movement" value="3"/>
-      <option name="transportCost" value="1"/>
       <option name="attack" value="2"/>
       <option name="defense" value="2"/>
     </attachment>
-    <!-- TODO:  Tanks, Mech, Scout Cars and Trucks all have "Coast Road Move", which may be a nusiance to implement properly.
+    <!-- TODO:  Tanks, Mech, scoutcar Cars and Trucks all have "Coast Road Move", which may be a nusiance to implement properly.
                 See if there is a GW36 Module in TripleA and see how they handled railroads (or a similar mechanic). -->
-    <attachment name="unitAttachment" attachTo="armour" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <attachment name="unitAttachment" attachTo="tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
-      <option name="transportCost" value="1"/>
       <option name="canBlitz" value="true"/>
       <option name="attack" value="5"/>
       <option name="defense" value="4"/>
     </attachment>
-    <attachment name="unitAttachment" attachTo="UK-armour" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="movement" value="1"/>
-      <option name="transportCost" value="1"/>
+	
+    <attachment name="unitAttachment" attachTo="tiger" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
       <option name="canBlitz" value="true"/>
+      <option name="attack" value="6"/>
+      <option name="defense" value="7"/>
+    </attachment>
+	
+    <attachment name="unitAttachment" attachTo="matilda" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
       <option name="attack" value="4"/>
       <option name="defense" value="5"/>
     </attachment>
-    <attachment name="unitAttachment" attachTo="I-armour" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <attachment name="unitAttachment" attachTo="sherman" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
-      <option name="transportCost" value="1"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="5"/>
+      <option name="defense" value="4"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="I-tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
       <option name="canBlitz" value="true"/>
       <option name="attack" value="3"/>
       <option name="defense" value="3"/>
     </attachment>
-    <attachment name="unitAttachment" attachTo="F-armour" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <attachment name="unitAttachment" attachTo="F-tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
-      <option name="transportCost" value="1"/>
       <option name="canBlitz" value="true"/>
       <option name="attack" value="3"/>
       <option name="defense" value="3"/>
     </attachment>
-    <!-- TODO:  Anti-Tanks Prioritize Tanks ("Armour") if they get hits on-defense in combat *DURING THE FIRST ROUND ONLY*
-                NOTE:  DOUBLE-CHECK THE ABOVE!!!  This is how I remember AT working during the playtest but the final rules may be different. -->
-    <attachment name="unitAttachment" attachTo="UK-anti-Tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <!-- TODO:  AntiTanks Prioritize Tanks ("tank") if they get hits in combat *DURING THE FIRST ROUND ONLY* -->
+    <attachment name="unitAttachment" attachTo="UK-antitank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
       <option name="transportCost" value="1"/>
       <option name="attack" value="2"/>
       <option name="defense" value="3"/>
+	  <option name="isLandTransportable" value="true"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="maxAAattacks" value="3"/>
+	  <option name="attackAA" value="2"/>
+	<!-- <option name="canNotMoveDuringCombatMove" value="true"/> -->
+	<!-- TODO: If anti tanks only have AA ability when defending, this might cause problems. -->
     </attachment>
     <!-- Germany AT are also AA -->
-    <attachment name="unitAttachment" attachTo="G-anti-Tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <attachment name="unitAttachment" attachTo="G-antitank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
       <option name="transportCost" value="1"/>
       <option name="attack" value="3"/>
       <option name="defense" value="5"/>
-      <option name="isAA" value="true"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="maxAAattacks" value="3"/>
+	  <option name="attackAA" value="2"/>
+	  <option name="isLandTransportable" value="true"/>
+    </attachment>
+	<!-- AA guns work like G40 -->
+    <attachment name="unitAttachment" attachTo="aaGun" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="transportCost" value="1"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="canNotMoveDuringCombatMove" value="true"/>
+      <option name="movement" value="1"/>
+      <option name="transportCost" value="1	"/>
+      <option name="maxAAattacks" value="3"/>
+	  <option name="attackAA" value="2"/>
+      <!-- option name="destroyedWhenCapturedFrom" value="Russians:Germans:British:Japanese:Americans"/-->
     </attachment>
     <!-- TODO:  Trucks can only transport certain types of units.  Double-check the rulebook and fix the "transportCost" of relevant units later! -->
-    <attachment name="unitAttachment" attachTo="transport" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="movement" value="2"/>
-      <option name="transportCapacity" value="6"/>
-      <option name="attack" value="0"/>
-      <option name="defense" value="0"/>
-      <!-- Only Germany/Italy can capture trucks.  If Allies capture Axis trucks they are simply destroyed.
-           TODO:  Double-check the syntax on this! -->
-      <option name="destroyedWhenCapturedFrom" value="British:Americans"/>
+    <attachment name="unitAttachment" attachTo="truck" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+		<option name="movement" value="2"/>
+		<option name="attack" value="0"/>
+		<option name="defense" value="0"/>
+		<!-- <option name="canBeDamaged" value="true"/> -->
+		<!-- <option name="maxDamage" value="1"/> -->
+		<!-- <option name="canDieFromReachingMaxDamage" value="true"/> -->
+		<option name="isLandTransport" value="true"/>
+		<option name="transportCapacity" value="6"/>
+		<option name="isLandTransportable" value="false"/>
+		<option name="isInfrastructure" value="true"/>
+		<option name="isAAmovement" value="true"/>
+        <option name="destroyedWhenCapturedBy" value="British:Americans"/>
+	  <!-- I have to check the rules to see if it is By or From -->
     </attachment>
     <!-- TODO:  FTRs in this game:
     			-Can go on CAP similar to but not identical to Pacific (2001).
@@ -766,23 +816,18 @@
       <option name="isStrategicBomber" value="true"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="destroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="movement" value="4/>
+      <option name="movement" value="4"/>
       <option name="isSea" value="true"/>
       <option name="attack" value="4"/>
       <option name="defense" value="4"/>
       <option name="isDestroyer" value="true"/>
     </attachment>
-    
-    <!-- TODO:  TTs are not in this game, but instead are replaced by the intricate "Convoy System".  Implementing this system may be difficult. -->
-    
-    <!-- TODO:  BBs must repair @ the harbor (the only one on the map is in Cairo).  See how this was handled in G40/1914.
-                NOTE:  DOUBLE CHECK THE RULES ON WHETHER BOMBARDS EXIST IN THIS GAME! -->
+   
     <attachment name="unitAttachment" attachTo="battleship" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="4"/>
       <option name="isSea" value="true"/>
       <option name="attack" value="6"/>
       <option name="defense" value="6"/>
-      <option name="canBombard" value="true"/>
       <option name="hitPoints" value="2"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="submarine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -791,6 +836,15 @@
       <option name="isSea" value="true"/>
       <option name="attack" value="4"/>
       <option name="defense" value="2"/>
+    </attachment>
+	
+    <!-- TODO:  TTs are not in this game, but instead are replaced by the intricate "Convoy System".  Implementing this system may be difficult. -->
+    <attachment name="unitAttachment" attachTo="transport" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="99"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+	  <option name="transportCapacity" value="1"/> <!-- Will unfortunately cause problems with supplies, but I believe you can't have separate costs for units -->
     </attachment>
     <!-- TODO:  Not sure how to handle unit production here.
                 Was thinking of having the "Convoy Zones" have invisible factories in them but not sure. -->
@@ -801,35 +855,31 @@
     <!-- TODO:  Check how Harbors work in G40/1914 -->
     <attachment name="unitAttachment" attachTo="harbor" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isFactory" value="true"/>
+      <option name="isInfrastructure" value="true"/>
+      <option name="repairsUnits" value="battleship"/>
+      <option name="movement" value="0"/>
       <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
-    </attachment>
-    <!-- TODO:  Might be able to repurpose "destroyedWhenCapturedFrom" for trucks and mines.
-                NOTE:  DOUBLE CHECK HOW AA:NA's AA RULES WORK!  I FORGET IF IT'S Old-Style (AAC thru AA50) OR New-Style (G40 and beyond) -->
-    <attachment name="unitAttachment" attachTo="aaGun" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="isAA" value="true"/>
-      <option name="transportCost" value="2"/>
-      <option name="movement" value="1"/>
-      <option name="attack" value="0"/>
-      <option name="defense" value="0"/>
-      <!-- option name="destroyedWhenCapturedFrom" value="Russians:Germans:British:Japanese:Americans"/-->
     </attachment>
     <!-- TODO:  Need to figure out how to get Supply to work. -->
     <attachment name="unitAttachment" attachTo="supply" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+	  <option name="transportCost" value="1"/>
+	  <option name="isLandTransportable" value="true"/>
       <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="5-supply" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+	  <option name="transportCost" value="5"/>
+	  <option name="isLandTransportable" value="true"/>
       <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
     </attachment>
-    <!-- NOTE:  Might be able to see how mines were implemented in 1914.
-                However, important to note is that LAND mines DO NOT KILL.  Rather, they FORCE UNITS OUT OF BATTLE.
-                May need to resort to trickery like what was done for amphibs Vs. ART in 1914. -->
+	
+    <!-- I think it's best if the mines are handled using an independent die roller -->
     <attachment name="unitAttachment" attachTo="landmine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
     </attachment>
-    <attachment name="unitAttachment" attachTo="navalmine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <attachment name="unitAttachment" attachTo="seamine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+		<option name="isSea" value="true"/>
     </attachment>
-    <!-- TODO:  Need to figure out how to get Stacking Limit working. 
-                No Stated SL = SL8 -->
+
     <!-- TODO:  Need to figure out how to create/assign the "Coast Road" Property to the relevant tiles. -->
     <attachment name="territoryAttachment" attachTo="Portugal" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -885,9 +935,7 @@
          -They do not collect income until turn 7.
          -They have 36 "Base Income" that needs to come from somewhere.
          -USA does not naturally "own" any territories nor do they have a Capital.
-         -For now, I am going to put America's Capital and 36 base income in Cyprus, and make it a US-owned territory.
-         NOTE:  Is there a function/script to automatically change territory-ownership on a given turn?
-                Surely G40 must have implemented something like this for America entering the war and/or transfer of neutral territories. -->
+         -For now, I am going to put America's Capital and 36 base income in Cyprus, and make it a US-owned territory. -->
     <attachment name="territoryAttachment" attachTo="Cyprus" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="36"/>
       <option name="capital" value="Americans"/>
@@ -1012,7 +1060,7 @@
       <!-- option name="originalFactory" value="true"/-->
       <option name="capital" value="British"/>
     </attachment>
-    <!-- TODO:  Need to figure out how to implement the "Desert Territories", which only Scout Cars can enter/exit. -->
+    <!-- TODO:  Need to figure out how to implement the "Desert Territories", which only scoutcar Cars can enter/exit. -->
      <attachment name="territoryAttachment" attachTo="Desert Zone A" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
@@ -1047,6 +1095,77 @@
       <option name="production" value="0"/>
     </attachment>
     
+	<!-- Tiger Tanks -->
+	<attachment name="TigerTanks" attachTo="Germans" javaClass="RulesAttachment" type="player">
+		<option name="gameProperty" value="Tiger Tanks"/> <!-- This makes it a game option -->
+	</attachment>
+	
+	<attachment name="conditionAttachmentRound8" attachTo="Germans" javaClass="RulesAttachment" type="player">
+		<option name="rounds" value="8-+"/>
+	</attachment>
+	
+	<attachment name="triggerAttachmentTigerTanks" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentRound8:TigerTanks"/>
+		<option name="uses" value="1"/>
+		<option name="when" value="before:germansPurchase"/>
+		<option name="notification" value="TigerTanksAvailable"/>
+		<option name="frontier" value="G-production_tiger"/> <!-- Adds tiger tanks to the German production frontier -->
+	</attachment>
+	
+	<!-- UK free tank units -->
+	<attachment name="conditionAttachmentRound6" attachTo="British" javaClass="RulesAttachment" type="player">
+		<option name="rounds" value="6-+"/>
+	</attachment>
+	
+	<attachment name="triggerAttachmentFreeUKtanks" attachTo="British" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentRound6"/>
+		<option name="placement" value="Atlantic Ocean Convoy:sherman" value="2"/>
+		<option name="uses" value="1" <!-- if it's only once. If it's every turn from turn 6 we need to delete this line -->
+		<option name="when" value="after:britishPlace"/>
+	</attachment>
+
+    <!-- US enters the game (not the most elegant solution regarding Cyprus but will work for now) -->
+	<attachment name="conditionAttachmentRound7" attachTo="Americans" javaClass="RulesAttachment" type="player">
+		<option name="rounds" value="7-+"/>
+	</attachment>
+	
+	<attachment name="AmericaJoinsSwitch" attachTo="Americans" javaClass="RulesAttachment" type="player">
+  		<option name="switch" value="false"/>
+	</attachment>
+	
+	<attachment name="triggerAttachmentAmericaJoins" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentRound7"/>
+		<option name="changeOwnership" value="Cyprus:ANY:Americans:true"/>
+		<option name="placement" value="Casablanca:infantry" count="5"/>
+		<option name="placement" value="Casablanca:supply" count="4"/>
+		<option name="placement" value="Oran:infantry" count="5"/>
+		<option name="placement" value="Oran:supply" count="4"/>
+		<option name="placement" value="Algiers:infantry" count="3"/>
+		<option name="placement" value="Algiers:supply" count="5"/>
+   		<option name="playerAttachmentName" value="RulesAttachment" count="AmericaJoinsSwitch"/>
+  		<option name="playerProperty" value="switch" count="true"/>
+		<option name="when" value="before:americansPurchase"/>
+		<option name="uses" value="1"/>
+	</attachment>
+	
+	<attachment name="triggerAttachmentBritishReaction" attachTo="British" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="AmericaJoinsSwitch"/>
+		<option name="placement" value="Algiers:infantry" count="3"/>
+		<option name="uses" value="1"/>
+		<option name="when" value="before:AmericansPurchase"/>
+	</attachment>
+
+	<attachment name="triggerAttachmentAxisReaction" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="AmericaJoinsSwitch"/>
+		<option name="changeOwnership" value="Tunis:ANY:Germans:true"/>
+		<option name="changeOwnership" value="Kasserine Pass:ANY:Germans:true"/>
+		<option name="changeOwnership" value="Mareth:ANY:Italians:true"/>
+		<option name="placement" value="Tunis:supply" count="3"/>
+		<option name="uses" value="1"/>
+		<option name="when" value="before:AmericansPurchase"/>
+	</attachment>
+
+	
     <!--  NOTE:  The movement restriction rules below may be helpful in implementing the rules that prevent Axis from entering French North Africa prior to turn 8. -->
     <!--  TODO:  Need to figure out how to get the movement restrictions Regarding Desert Zones working. -->
     <!-- canals -->
@@ -1116,12 +1235,12 @@
       <unitPlacement unitType="G-bomber" territory="Sicily" quantity="1" owner="Germans"/>
       <unitPlacement unitType="mech" territory="El Agheila" quantity="1" owner="Germans"/>
       <unitPlacement unitType="artillery" territory="El Agheila" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="G-anti-Tank" territory="El Agheila" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="armour" territory="El Agheila" quantity="2" owner="Germans"/>
-      <unitPlacement unitType="scout" territory="Zella" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="G-antitank" territory="El Agheila" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="tank" territory="El Agheila" quantity="2" owner="Germans"/>
+      <unitPlacement unitType="scoutcar" territory="Zella" quantity="1" owner="Germans"/>
       <unitPlacement unitType="F-infantry" territory="Casablanca" quantity="2" owner="Vichy-French"/>
       <unitPlacement unitType="F-infantry" territory="Oran" quantity="2" owner="Vichy-French"/>
-      <unitPlacement unitType="F-armour" territory="Oran" quantity="1" owner="Vichy-French"/>
+      <unitPlacement unitType="F-tank" territory="Oran" quantity="1" owner="Vichy-French"/>
       <unitPlacement unitType="F-infantry" territory="Algiers" quantity="2" owner="Vichy-French"/>
       <unitPlacement unitType="supply" territory="Tunis" quantity="3" owner="Germans"/>
       <!-- Italians -->
@@ -1136,25 +1255,26 @@
       <unitPlacement unitType="artillery" territory="El Agheila" quantity="2" owner="Italians"/>
       <unitPlacement unitType="fighter" territory="El Agheila" quantity="1" owner="Italians"/>
       <unitPlacement unitType="5-supply" territory="El Agheila" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="scout" territory="Zella" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="navalmine" territory="Sea Zone 10" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="scoutcar" territory="Zella" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="seamine" territory="Sea Zone 10" quantity="1" owner="Italians"/>
       <unitPlacement unitType="destroyer" territory="Tripoli Convoy" quantity="1" owner="Italians"/>
       <unitPlacement unitType="submarine" territory="Tripoli Convoy" quantity="1" owner="Italians"/>
-      <!-- British -->
-      <!-- TODO:  UK gets 2 free armour (*NOT* UK Armour, the same tier of Tank as USA/G)
-                  in the "Atlantic Ocean Convoy" on turn 6.-->
+
       <unitPlacement unitType="infantry" territory="Cairo" quantity="1" owner="British"/>
-      <unitPlacement unitType="UK-anti-Tank" territory="Cairo" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-antitank" territory="Cairo" quantity="1" owner="British"/>
       <unitPlacement unitType="aaGun" territory="Cairo" quantity="1" owner="British"/>
       <unitPlacement unitType="fighter" territory="Cairo" quantity="1" owner="British"/>
       <unitPlacement unitType="5-supply" territory="Cairo" quantity="1" owner="British"/>
       <!-- TODO:  Land Mines are placed for specific borders of territories, rather than the whole territory.
                   This may be difficult to implement. -->
+				  
+	<!-- We can solve this by creating a separate land mine unit for each border, e.g. landmine_CAIR-MATR, landmine_TOBR-HACH, etc. -->
+				  
       <unitPlacement unitType="landmine" territory="Cairo" quantity="3" owner="British"/>
-      <unitPlacement unitType="UK-scout" territory="Mersa Matruh" quantity="2" owner="British"/>
+      <unitPlacement unitType="UK-scoutcar" territory="Mersa Matruh" quantity="2" owner="British"/>
       <unitPlacement unitType="infantry" territory="Tobruk" quantity="1" owner="British"/>
       <unitPlacement unitType="aaGun" territory="Tobruk" quantity="1" owner="British"/>
-      <unitPlacement unitType="UK-armour" territory="Tobruk" quantity="1" owner="British"/>
+      <unitPlacement unitType="british_tank" territory="Tobruk" quantity="1" owner="British"/>
       <unitPlacement unitType="5-supply" territory="Tobruk" quantity="3" owner="British"/>
       <unitPlacement unitType="supply" territory="Tobruk" quantity="3" owner="British"/>
       <unitPlacement unitType="landmine" territory="Tobruk" quantity="1" owner="British"/>
@@ -1164,13 +1284,13 @@
       <unitPlacement unitType="supply" territory="Benghazi" quantity="3" owner="British"/>
       <unitPlacement unitType="infantry" territory="Mersa Brega" quantity="1" owner="British"/>
       <unitPlacement unitType="artillery" territory="Mersa Brega" quantity="1" owner="British"/>
-      <unitPlacement unitType="UK-armour" territory="Mersa Brega" quantity="1" owner="British"/>
+      <unitPlacement unitType="british_tank" territory="Mersa Brega" quantity="1" owner="British"/>
       <unitPlacement unitType="truck" territory="Mersa Brega" quantity="1" owner="British"/>
       <unitPlacement unitType="5-supply" territory="Mersa Brega" quantity="1" owner="British"/>
-      <unitPlacement unitType="UK-scout" territory="Desert Zone J" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-scoutcar" territory="Desert Zone J" quantity="1" owner="British"/>
       <unitPlacement unitType="fighter" territory="Malta" quantity="1" owner="British"/>
       <unitPlacement unitType="supply" territory="Malta" quantity="2" owner="British"/>
-      <unitPlacement unitType="navalmine" territory="Sea Zone 3" quantity="1" owner="British"/>
+      <unitPlacement unitType="seamine" territory="Sea Zone 3" quantity="1" owner="British"/>
       <unitPlacement unitType="submarine" territory="Malta Convoy" quantity="1" owner="British"/>
       <unitPlacement unitType="destroyer" territory="Sea Zone 31" quantity="1" owner="British"/>
       <unitPlacement unitType="battleship" territory="Sea Zone 31" quantity="1" owner="British"/>
@@ -1197,16 +1317,13 @@
     </resourceInitialize>
   </initialize>
   <propertyList>
-    <property name="Russians bid" value="0" editable="true">
-      <number min="0" max="1000"/>
-    </property>
     <property name="Germans bid" value="0" editable="true">
       <number min="0" max="1000"/>
     </property>
     <property name="British bid" value="0" editable="true">
       <number min="0" max="1000"/>
     </property>
-    <property name="Italian bid" value="0" editable="true">
+    <property name="Italians bid" value="0" editable="true">
       <number min="0" max="1000"/>
     </property>
     <property name="Americans bid" value="0" editable="true">
@@ -1221,14 +1338,10 @@
     <property name="Use Triggers" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Movement By Territory Restricted" value="false" editable="true">
+    <property name="Movement By Territory Restricted" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Units Can Be Destroyed Instead Of Captured" value="false" editable="true">
-      <boolean/>
-    </property>
-    <!-- TODO:  Find out what this does. -->
-    <property name="Territory Turn Limit" value="false" editable="true">
+    <property name="Units Can Be Destroyed Instead Of Captured" value="true" editable="false">
       <boolean/>
     </property>
     <property name="Always on AA" value="false" editable="true">
@@ -1237,10 +1350,10 @@
     <property name="AA Territory Restricted" value="false" editable="false">
       <boolean/>
     </property>
-    <property name="Choose AA Casualties" value="true" editable="true">
+    <property name="Choose AA Casualties" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Multiple AA Per Territory" value="false" editable="true">
+    <property name="Multiple AA Per Territory" value="true" editable="false">
       <boolean/>
     </property>
     <property name="Submarines Defending May Submerge Or Retreat" value="false" editable="true">
@@ -1252,31 +1365,22 @@
     <property name="Two hit battleship" value="true" editable="true">
       <boolean/>
     </property>
-    <property name="Units Repair Hits End Turn" value="false" editable="true">
+    <property name="Units Repair Hits End Turn" value="false" editable="false">
       <boolean/>
     </property>
-    <property name="Units Repair Hits Start Turn" value="false" editable="true">
+    <property name="Units Repair Hits Start Turn" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Shore Bombard Per Ground Unit Restricted" value="false" editable="true">
-      <boolean/>
-    </property>
-    <property name="Naval Bombard Casualties Return Fire" value="true" editable="true">
-      <boolean/>
-    </property>
-    <property name="Partial Amphibious Retreat" value="false" editable="true">
+    <property name="Two HitPoint Units Require Repair Facilities" value="true" editable="false">
       <boolean/>
     </property>
     <property name="Attacker Retreat Planes" value="false" editable="true">
       <boolean/>
     </property>
-    <property name="Unplaced units live when not placed" value="false" editable="false">
+    <property name="Unplaced units live when not placed" value="true" editable="false">
       <boolean/>
     </property>
     <property name="Unit Placement In Enemy Seas" value="false" editable="true">
-      <boolean/>
-    </property>
-    <property name="Surviving Air Move To Land" value="false" editable="false">
       <boolean/>
     </property>
     <property name="Allied Air Dependents" value="true" editable="false">
@@ -1289,6 +1393,9 @@
       <boolean/>
     </property>
     <property name="Neutrals Are Impassable" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="Tiger Tanks" value="false" editable="true">
       <boolean/>
     </property>
     <property name="maxFactoriesPerTerritory" value="1" editable="false">
