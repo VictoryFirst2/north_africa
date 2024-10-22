@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="Rommel Scenario" version="0.12"/>
+  <info name="Rommel Scenario" version="0.13"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.6.1"/>
   <diceSides value="10"/>
@@ -173,13 +173,13 @@
     <connection t1="Laghouat" t2="Kasserine Pass"/>
     <connection t1="Laghouat" t2="Desert Zone B"/>
     <connection t1="Laghouat" t2="Desert Zone C"/>
-    <connection t1="Laghouat" t2="El Qued"/>
-    <connection t1="Constantine" t2="Akgiers Convoy"/>
+    <connection t1="Laghouat" t2="El Oued"/>
+    <connection t1="Constantine" t2="Algiers Convoy"/>
     <connection t1="Constantine" t2="Tunis Convoy"/>
     <connection t1="Constantine" t2="Kasserine Pass"/>
     <connection t1="Constantine" t2="Tunis"/>
     <connection t1="Kasserine Pass" t2="Tunis"/>
-    <connection t1="Kasserine Pass" t2="El Qued"/>
+    <connection t1="Kasserine Pass" t2="El Oued"/>
     <connection t1="Kasserine Pass" t2="Mareth"/>
     <connection t1="El Oued" t2="Desert Zone C"/>
     <connection t1="El Oued" t2="Desert Zone D"/>
@@ -774,7 +774,6 @@
       <option name="isAAforCombatOnly" value="true"/>
       <option name="canNotMoveDuringCombatMove" value="true"/>
       <option name="movement" value="1"/>
-      <option name="transportCost" value="1	"/>
       <option name="maxAAattacks" value="3"/>
 	  <option name="attackAA" value="2"/>
       <!-- option name="destroyedWhenCapturedFrom" value="Russians:Germans:British:Japanese:Americans"/-->
@@ -898,7 +897,7 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Spain" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
-	  <option name="impassable" value="true"/>
+	  <option name="isImpassable" value="true"/>
     </attachment>
     <!-- SL 2 -->
     <attachment name="territoryAttachment" attachTo="Gibraltar" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -922,19 +921,19 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Albania" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
-	  <option name="impassable" value="true"/>
+	  <option name="isImpassable" value="true"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Yugoslavia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
-	  <option name="impassable" value="true"/>
+	  <option name="isImpassable" value="true"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Greece" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
-	  <option name="impassable" value="true"/>
+	  <option name="isImpassable" value="true"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Turkey" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
-	  <option name="impassable" value="true"/>
+	  <option name="isImpassable" value="true"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Crete" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -946,27 +945,27 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Syria" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
-	  <option name="impassable" value="true"/>
+	  <option name="isImpassable" value="true"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Palestine" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
-	  <option name="impassable" value="true"/>
+	  <option name="isImpassable" value="true"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Jordan" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
-	  <option name="impassable" value="true"/>
+	  <option name="isImpassable" value="true"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Saudi Arabia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
-	  <option name="impassable" value="true"/>
+	  <option name="isImpassable" value="true"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Sinai" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
-	  <option name="impassable" value="true"/>
+	  <option name="isImpassable" value="true"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Spanish Morocco" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
-      <option name="impassable" value="true"/>
+      <option name="isImpassable" value="true"/>
     </attachment>
     <!-- SL 10 -->
     <attachment name="territoryAttachment" attachTo="Casablanca" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -998,7 +997,7 @@
     </attachment>
     <!-- The Axis lose instantly if Tunis falls, so I designated it as a "Capital".
          However, I made it the "Vichy French" Capital instead of German to account for the fact that Germany cannot own the territory until turn 7.
-         If desired, we can do this some other way.
+         If desired, we can do this some other way. -->
          <!-- SL 10 -->
     <attachment name="territoryAttachment" attachTo="Tunis" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="10"/>
@@ -1059,7 +1058,7 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Qattara Depression" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
-      <option name="impassable" value="true"/>
+      <option name="isImpassable" value="true"/>
     </attachment>
          <!-- SL 10 -->
     <attachment name="territoryAttachment" attachTo="Cairo" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -1150,7 +1149,7 @@
       <option name="movementRestrictionTerritories" value="Tunis:Mareth:Constantine:Kasserine Pass:El Oued:Algiers:Laghouat:Oran:Fez:Casablanca"/>
       <option name="movementRestrictionType" value="disallowed"/>
     </attachment>
-    <attachment name="conditionAttachmentTurn1" attachTo="Germans" javaClass="RulesAttachment" type="player">
+    <attachment name="conditionAttachmentTurn8" attachTo="Germans" javaClass="RulesAttachment" type="player">
       <option name="rounds" value="8-+"/>
     </attachment>
     <attachment name="triggerAttachmentGermansCanEnterFrenchNorthAfrica" attachTo="Germans" javaClass="TriggerAttachment" type="player">
@@ -1161,7 +1160,7 @@
       <option name="playerAttachmentName" value="RulesAttachment" count="rulesAttachment"/>
       <option name="playerProperty" value="movementRestrictionTerritories" count="-reset-"/> <!-- not sure what this does, hope it works -->
       <option name="playerProperty" value="movementRestrictionType" count="allowed"/>
-    </attachment-->
+    </attachment>
     <attachment name="triggerAttachmentItaliansCanEnterFrenchNorthAfrica" attachTo="Italians" javaClass="TriggerAttachment" type="player">
       <option name="conditions" value="conditionAttachmentTurn8"/>
       <option name="when" value="before:germansPurchase"/>
@@ -1170,11 +1169,11 @@
       <option name="playerAttachmentName" value="RulesAttachment" count="rulesAttachment"/>
       <option name="playerProperty" value="movementRestrictionTerritories" count="-reset-"/> <!-- not sure what this does, hope it works -->
       <option name="playerProperty" value="movementRestrictionType" count="allowed"/>
-    </attachment-->
+    </attachment>
 	
 		<!-- Desert Territories -->
     <attachment name="territoryEffectAttachment" attachTo="Desert" javaClass="TerritoryEffectAttachment" type="territoryEffect">
-      <option name="unitsNotAllowed" value="infantry:G-infantry:F-infantry:I-infantry:artillery:mech:tank:matilda:sherman:tiger:I-tank:F-tank:UK-antitank:G-antitank:truck:fighter:bomber:G-bomber:supply:5-supply:aaGun:landmine"/>
+      <option name="unitsNotAllowed" value="infantry:F-infantry:I-infantry:artillery:mech:tank:matilda:sherman:tiger:I-tank:F-tank:UK-antitank:G-antitank:truck:fighter:bomber:G-bomber:supply:5-supply:aaGun:landmine"/>
 	  <!-- This will disallow any unit from entering desert territories except scout cars -->
     </attachment>
     
@@ -1199,7 +1198,7 @@
 	</attachment>
 	<attachment name="triggerAttachmentFreeUKtanks" attachTo="British" javaClass="TriggerAttachment" type="player">
 		<option name="conditions" value="conditionAttachmentRound6"/>
-		<option name="placement" value="Atlantic Ocean Convoy:sherman" value="2"/>
+		<option name="placement" value="Atlantic Ocean Convoy:sherman" count="2"/>
 		<option name="uses" value="1"/> <!-- if it's only once. If it's every turn from turn 6 we need to delete this line -->
 		<option name="when" value="after:british2Place"/>
 	</attachment>
@@ -1208,7 +1207,7 @@
 	<attachment name="conditionAttachmentRound7" attachTo="Americans" javaClass="RulesAttachment" type="player">
 		<option name="rounds" value="7-+"/>
 	</attachment>
-	<attachment name="AmericaJoinsSwitch" attachTo="Americans" javaClass="RulesAttachment" type="player">
+	<attachment name="conditionAttachmentAmericaJoinsSwitch" attachTo="Americans" javaClass="RulesAttachment" type="player">
   		<option name="switch" value="false"/>
 	</attachment>
 	<attachment name="triggerAttachmentAmericaJoins" attachTo="Americans" javaClass="TriggerAttachment" type="player">
@@ -1220,19 +1219,19 @@
 		<option name="placement" value="Oran:supply" count="4"/>
 		<option name="placement" value="Algiers:infantry" count="3"/>
 		<option name="placement" value="Algiers:supply" count="5"/>
-   		<option name="playerAttachmentName" value="RulesAttachment" count="AmericaJoinsSwitch"/>
+   		<option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachmentAmericaJoinsSwitch"/>
   		<option name="playerProperty" value="switch" count="true"/>
 		<option name="when" value="before:americansPurchase"/>
 		<option name="uses" value="1"/>
 	</attachment>
 	<attachment name="triggerAttachmentBritishReaction" attachTo="British" javaClass="TriggerAttachment" type="player">
-		<option name="conditions" value="AmericaJoinsSwitch"/>
+		<option name="conditions" value="conditionAttachmentAmericaJoinsSwitch"/>
 		<option name="placement" value="Algiers:infantry" count="3"/>
 		<option name="uses" value="1"/>
 		<option name="when" value="before:americansPurchase"/>
 	</attachment>
 	<attachment name="triggerAttachmentAxisReaction" attachTo="Germans" javaClass="TriggerAttachment" type="player">
-		<option name="conditions" value="AmericaJoinsSwitch"/>
+		<option name="conditions" value="conditionAttachmentAmericaJoinsSwitch"/>
 		<option name="changeOwnership" value="Tunis:ANY:Germans:true"/>
 		<option name="changeOwnership" value="Kasserine Pass:ANY:Germans:true"/>
 		<option name="changeOwnership" value="Mareth:ANY:Italians:true"/>
@@ -1282,6 +1281,7 @@
    </attachmentList>
 	
   	<!-- TODO:  These initialization steps will be different in the Rommel Game Vs. the Torch Game. -->
+  <initialize>	
     <ownerInitialize>
 	<!-- Germans -->
       <territoryOwner territory="Crete" owner="Germans"/>
@@ -1398,7 +1398,7 @@
       <unitPlacement unitType="UK-scoutcar" territory="Mersa Matruh" quantity="2" owner="British"/>
       <unitPlacement unitType="infantry" territory="Tobruk" quantity="1" owner="British"/>
       <unitPlacement unitType="aaGun" territory="Tobruk" quantity="1" owner="British"/>
-      <unitPlacement unitType="british_tank" territory="Tobruk" quantity="1" owner="British"/>
+      <unitPlacement unitType="matilda" territory="Tobruk" quantity="1" owner="British"/>
       <unitPlacement unitType="5-supply" territory="Tobruk" quantity="3" owner="British"/>
       <unitPlacement unitType="supply" territory="Tobruk" quantity="3" owner="British"/>
       <unitPlacement unitType="landmine" territory="Tobruk" quantity="1" owner="British"/>
@@ -1408,7 +1408,7 @@
       <unitPlacement unitType="supply" territory="Benghazi" quantity="3" owner="British"/>
       <unitPlacement unitType="infantry" territory="Mersa Brega" quantity="1" owner="British"/>
       <unitPlacement unitType="artillery" territory="Mersa Brega" quantity="1" owner="British"/>
-      <unitPlacement unitType="british_tank" territory="Mersa Brega" quantity="1" owner="British"/>
+      <unitPlacement unitType="matilda" territory="Mersa Brega" quantity="1" owner="British"/>
       <unitPlacement unitType="truck" territory="Mersa Brega" quantity="1" owner="British"/>
       <unitPlacement unitType="5-supply" territory="Mersa Brega" quantity="1" owner="British"/>
       <unitPlacement unitType="UK-scoutcar" territory="Desert Zone J" quantity="1" owner="British"/>
