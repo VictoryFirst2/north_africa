@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="North Africa - Rommel Scenario" version="0.14"/>
+  <info name="North Africa - Rommel Scenario" version="0.16"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.6.1"/>
   <diceSides value="10"/>
@@ -384,11 +384,15 @@
     <unit name="seamine"/>
     <unit name="aaGun"/>
   </unitList>
+  <territoryEffectList>
+	<territoryEffect name="Desert"/>
+  </territoryEffectList>
   <gamePlay>
     <delegate name="initDelegate" javaClass="games.strategy.triplea.delegate.InitializationDelegate" display="Initializing Delegates"/>
     <delegate name="battle" javaClass="games.strategy.triplea.delegate.BattleDelegate" display="Combat"/>
     <delegate name="move" javaClass="games.strategy.triplea.delegate.MoveDelegate" display="Combat Move"/>
-    <delegate name="place" javaClass="games.strategy.triplea.delegate.PlaceDelegate" display="Place Units"/>
+    <!-- <delegate name="place" javaClass="games.strategy.triplea.delegate.PlaceDelegate" display="Place Units"/> -->
+    <delegate name="placeNoAirCheck" javaClass="games.strategy.triplea.delegate.NoAirCheckPlaceDelegate" display="Place Units"/>
     <delegate name="purchase" javaClass="games.strategy.triplea.delegate.PurchaseDelegate" display="Purchase Units"/>
     <delegate name="endTurn" javaClass="games.strategy.triplea.delegate.EndTurnDelegate" display="Start Turn"/>
     <delegate name="endTurnNoPU" javaClass="games.strategy.triplea.delegate.NoPUEndTurnDelegate" display="Turn Complete"/>
@@ -415,43 +419,59 @@
       <step name="americansBidPlace" delegate="placeBid" player="Americans" maxRunCount="1"/>
 	  
 	  <step name="germansEndTurn" delegate="endTurn" player="Germans"/>
-	  <step name="germansNonCombatMove" delegate="move" player="Germans" display="Advance Convoys"/>
+	  <step name="germansNonCombatMove" delegate="move" player="Germans" display="Advance Convoys">
+		<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
       <step name="germansPurchase" delegate="purchase" player="Germans"/>
-      <step name="germansPlace" delegate="place" player="Germans" display="Place Mines"/>
+      <step name="germansPlace" delegate="placeNoAirCheck" player="Germans" display="Place Mines"/>
       <step name="germansCombatMove" delegate="move" player="Germans"/>
       <step name="germansBattle" delegate="battle" player="Germans"/>
-      <step name="germans2NonCombatMove" delegate="move" player="Germans" display="Non Combat Move"/>
-      <step name="germans2Place" delegate="place" player="Germans"/>
+      <step name="germans2NonCombatMove" delegate="move" player="Germans" display="Non Combat Move">
+	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
+      <step name="germans2Place" delegate="placeNoAirCheck" player="Germans"/>
       <step name="germansEndTurnNoPU" delegate="endTurnNoPU" player="Germans"/>
 	  
 	  <step name="britishEndTurn" delegate="endTurn" player="British"/>
-	  <step name="britishNonCombatMove" delegate="move" player="British" display="Advance Convoys"/>
+	  <step name="britishNonCombatMove" delegate="move" player="British" display="Advance Convoys">
+	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
       <step name="britishPurchase" delegate="purchase" player="British"/>
-      <step name="britishPlace" delegate="place" player="British" display="Place Mines"/>
+      <step name="britishPlace" delegate="placeNoAirCheck" player="British" display="Place Mines"/>
       <step name="britishCombatMove" delegate="move" player="British"/>
       <step name="britishBattle" delegate="battle" player="British"/>
-      <step name="british2NonCombatMove" delegate="move" player="British" display="Non Combat Move"/>
-      <step name="british2Place" delegate="place" player="British"/>
+      <step name="british2NonCombatMove" delegate="move" player="British" display="Non Combat Move">
+	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
+      <step name="british2Place" delegate="placeNoAirCheck" player="British"/>
       <step name="britishEndTurnNoPU" delegate="endTurnNoPU" player="British"/>
 	  
 	  <step name="italiansEndTurn" delegate="endTurn" player="Italians"/>
-	  <step name="italiansNonCombatMove" delegate="move" player="Italians" display="Advance Convoys"/>
+	  <step name="italiansNonCombatMove" delegate="move" player="Italians" display="Advance Convoys">
+	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
       <step name="italiansPurchase" delegate="purchase" player="Italians"/>
-      <step name="italiansPlace" delegate="place" player="Italians" display="Place Mines"/>
+      <step name="italiansPlace" delegate="placeNoAirCheck" player="Italians" display="Place Mines"/>
       <step name="italiansCombatMove" delegate="move" player="Italians"/>
       <step name="italiansBattle" delegate="battle" player="Italians"/>
-      <step name="italians2NonCombatMove" delegate="move" player="Italians" display="Non Combat Move"/>
-      <step name="italians2Place" delegate="place" player="Italians"/>
+      <step name="italians2NonCombatMove" delegate="move" player="Italians" display="Non Combat Move">
+	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
+      <step name="italians2Place" delegate="placeNoAirCheck" player="Italians"/>
       <step name="italiansEndTurnNoPU" delegate="endTurnNoPU" player="Italians"/>
 	  
 	  <step name="americansEndTurn" delegate="endTurn" player="Americans"/>
-	  <step name="americansNonCombatMove" delegate="move" player="Americans" display="Advance Convoys"/>
+	  <step name="americansNonCombatMove" delegate="move" player="Americans" display="Advance Convoys">
+	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
       <step name="americansPurchase" delegate="purchase" player="Americans"/>
-      <step name="americansPlace" delegate="place" player="Americans" display="Place Mines"/>
+      <step name="americansPlace" delegate="placeNoAirCheck" player="Americans" display="Place Mines"/>
       <step name="americansCombatMove" delegate="move" player="Americans"/>
       <step name="americansBattle" delegate="battle" player="Americans"/>
-      <step name="americans2NonCombatMove" delegate="move" player="Americans" display="Non Combat Move"/>
-      <step name="americans2Place" delegate="place" player="Americans"/>
+      <step name="americans2NonCombatMove" delegate="move" player="Americans" display="Non Combat Move">
+	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
+      <step name="americans2Place" delegate="placeNoAirCheck" player="Americans"/>
       <step name="americansEndTurnNoPU" delegate="endTurnNoPU" player="Americans"/>
       <step name="endRoundStep" delegate="endRound"/>
     </sequence>
@@ -870,13 +890,11 @@
       <option name="isFactory" value="true"/>
       <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
     </attachment>
-    <!-- TODO:  Check how Harbors work in G40/1914 -->
+    <!-- NOTE:  In this game, repairing a BB costs 1 Supply.  May be necessary to note for later. -->
     <attachment name="unitAttachment" attachTo="harbor" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="isFactory" value="true"/>
       <option name="isInfrastructure" value="true"/>
       <option name="repairsUnits" value="battleship"/>
       <option name="movement" value="0"/>
-      <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
     </attachment>
     <!-- TODO:  Need to figure out how to get Supply to work. -->
     <attachment name="unitAttachment" attachTo="supply" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -890,12 +908,24 @@
       <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
     </attachment>
 	
+
+    <attachment name="unitAttachment" attachTo="landmine" javaClass="UnitAttachment" type="unitType">
     <!-- I think it's best if the mines are handled using an independent die roller -->
-    <attachment name="unitAttachment" attachTo="landmine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
+      <option name="isInfrastructure" value="true"/>
+      <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="landmine"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+      <option name="maxConstructionsPerTerritory" value="1"/>
     </attachment>
-    <attachment name="unitAttachment" attachTo="seamine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <attachment name="unitAttachment" attachTo="seamine" javaClass="UnitAttachment" type="unitType">
+        <option name="isAAforFlyOverOnly" value="true"/>
+		<option name="isAAforCombatOnly" value="false"/>
+		<option name="damageableAA" value="true"/> <!-- this makes it cause damage to a BB instead of outright killing it -->
 		<option name="isSea" value="true"/>
+		<option name="typeAA" value="seamine"/>
+		<option name="targetsAA" value="submarine:destroyer:battleship:transport"/> <!-- not sure if it can target convoys -->
+		<option name="attackAA" value="3"/> 
     </attachment>
     <!-- TODO:  Need to figure out how to create/assign the "Coast Road" Property to the relevant tiles. -->
     <attachment name="territoryAttachment" attachTo="Portugal" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -922,11 +952,8 @@
     <attachment name="territoryAttachment" attachTo="Sicily" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
-    <!-- TODO:  Malta can only provide its 15 IPC if UK Spends a supply there.
-                This may be a bit hard to implement. -->
     <attachment name="territoryAttachment" attachTo="Malta" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
-	  <!-- I think it's best to do this using a national objective -->
     </attachment>
     <attachment name="territoryAttachment" attachTo="Albania" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
@@ -1183,12 +1210,11 @@
 		<!-- Desert Territories -->
     <attachment name="territoryEffectAttachment" attachTo="Desert" javaClass="TerritoryEffectAttachment" type="territoryEffect">
       <option name="unitsNotAllowed" value="infantry:F-infantry:I-infantry:artillery:mech:tank:matilda:sherman:tiger:I-tank:F-tank:UK-antitank:G-antitank:truck:fighter:bomber:G-bomber:supply:5-supply:aaGun:landmine"/>
-	  <!-- This will disallow any unit from entering desert territories except scout cars -->
     </attachment>
     
 	<!-- Tiger Tanks -->
 	<attachment name="TigerTanks" attachTo="Germans" javaClass="RulesAttachment" type="player">
-		<option name="gameProperty" value="Tiger Tanks"/> <!-- This makes it a game option -->
+		<option name="gameProperty" value="Tiger Tanks"/>
 	</attachment>
 	<attachment name="conditionAttachmentRound8" attachTo="Germans" javaClass="RulesAttachment" type="player">
 		<option name="rounds" value="8-+"/>
@@ -1198,7 +1224,7 @@
 		<option name="uses" value="1"/>
 		<option name="when" value="before:germansPurchase"/>
 		<option name="notification" value="TigerTanksAvailable"/>
-		<option name="frontier" value="G-production_tiger"/> <!-- Adds tiger tanks to the German production frontier -->
+		<option name="frontier" value="G-production_tiger"/>
 	</attachment>
 	
 	<!-- UK free tank units -->
@@ -1208,7 +1234,7 @@
 	<attachment name="triggerAttachmentFreeUKtanks" attachTo="British" javaClass="TriggerAttachment" type="player">
 		<option name="conditions" value="conditionAttachmentRound6"/>
 		<option name="placement" value="Atlantic Ocean Convoy:sherman" count="2"/>
-		<option name="uses" value="1"/> <!-- Confirming that this only happens one time. -->
+		<option name="uses" value="1"/>
 		<option name="when" value="after:british2Place"/>
 	</attachment>
 
@@ -1249,7 +1275,7 @@
 		<option name="when" value="before:americansPurchase"/>
 	</attachment>
 	
-	<!-- Base income (using national objectives -->
+	<!-- Base income (using national objectives) -->
 	<attachment name="objectiveAttachment_Germans_Base_Income" attachTo="Germans" javaClass="RulesAttachment" type="player">
 		<option name="objectiveValue" value="25"/>
 	</attachment>
@@ -1325,8 +1351,7 @@
       <territoryOwner territory="Zella" owner="Neutral"/>
 
 	<!-- Desert -->
-		<!-- Controlled by a separate power so that we can make these have a different color -->
-		<!-- I suggest giving these a nice brown/beige desert-looking color :) -->
+		<!-- Controlled by a separate power so that we can make these have a different color (e.g. yellow) -->
 	  <territoryOwner territory="Desert Zone A" owner="Desert"/>
 	  <territoryOwner territory="Desert Zone B" owner="Desert"/>
 	  <territoryOwner territory="Desert Zone C" owner="Desert"/>
@@ -1377,10 +1402,6 @@
       <unitPlacement unitType="aaGun" territory="Cairo" quantity="1" owner="British"/>
       <unitPlacement unitType="fighter" territory="Cairo" quantity="1" owner="British"/>
       <unitPlacement unitType="5-supply" territory="Cairo" quantity="1" owner="British"/>
-      <!-- TODO:  Land Mines are placed for specific borders of territories, rather than the whole territory.
-                  This may be difficult to implement. -->
-				  
-	<!-- We can solve this by creating a separate land mine unit for each border, e.g. landmine_CAIR-MATR, landmine_TOBR-HACH, etc. -->
 				  
       <unitPlacement unitType="landmine" territory="Cairo" quantity="3" owner="British"/>
       <unitPlacement unitType="UK-scoutcar" territory="Mersa Matruh" quantity="2" owner="British"/>
@@ -1420,6 +1441,7 @@
       <resourceGiven player="Germans" resource="PUs" quantity="0"/>
     </resourceInitialize>
   </initialize>
+  <!-- General -->
   <propertyList>
     <property name="Germans bid" value="0" editable="true">
       <number min="0" max="1000"/>
@@ -1452,13 +1474,8 @@
     <property name="Triggered Victory" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Movement By Territory Restricted" value="true" editable="false">
-      <boolean/>
-    </property>
-    <property name="Units Can Be Destroyed Instead Of Captured" value="true" editable="false">
-      <boolean/>
-    </property>
-    <property name="Always on AA" value="false" editable="true">
+<!-- AA -->
+   <property name="Always on AA" value="false" editable="true">
       <boolean/>
     </property>
     <property name="AA Territory Restricted" value="false" editable="false">
@@ -1470,12 +1487,20 @@
     <property name="Multiple AA Per Territory" value="true" editable="false">
       <boolean/>
     </property>
+ <!-- Submarines -->
     <property name="Submarines Defending May Submerge Or Retreat" value="false" editable="true">
       <boolean/>
     </property>
     <property name="Submersible Subs" value="false" editable="true">
       <boolean/>
     </property>
+    <property name="Air Attack Sub Restricted" value="false" editable="false">
+      <boolean/>
+    </property>
+    <property name="Sub Control Sea Zone Restricted" value="false" editable="false">
+      <boolean/>
+    </property>
+<!-- Naval/Air -->
     <property name="Two hit battleship" value="true" editable="true">
       <boolean/>
     </property>
@@ -1488,32 +1513,39 @@
     <property name="Two HitPoint Units Require Repair Facilities" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Attacker Retreat Planes" value="false" editable="true">
-      <boolean/>
-    </property>
-    <property name="Unplaced units live when not placed" value="true" editable="false">
-      <boolean/>
-    </property>
     <property name="Unit Placement In Enemy Seas" value="false" editable="true">
       <boolean/>
     </property>
     <property name="Allied Air Dependents" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Air Attack Sub Restricted" value="false" editable="false">
+    <property name="Attacker Retreat Planes" value="false" editable="true">
       <boolean/>
     </property>
-    <property name="Sub Control Sea Zone Restricted" value="false" editable="false">
+<!-- Other -->
+    <property name="Unplaced units live when not placed" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="Movement By Territory Restricted" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="Units Can Be Destroyed Instead Of Captured" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="Unlimited Constructions" value="true" editable="false">
       <boolean/>
     </property>
     <property name="Neutrals Are Impassable" value="true" editable="true">
       <boolean/>
     </property>
+    <property name="maxFactoriesPerTerritory" value="1" editable="false">
+      <number min="1" max="100"/>
+    </property>	
+<!-- Game options -->
     <property name="Tiger Tanks" value="false" editable="true">
       <boolean/>
     </property>
-    <property name="maxFactoriesPerTerritory" value="1" editable="false">
-    </property>
+
     <property name="mapName" value="world_war_ii_north_africa_rommel" editable="false">
       <string/>
     </property>
