@@ -1,326 +1,429 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="North Africa - Rommel Scenario" version="0.16"/>
+  <info name="North Africa - Rommel Scenario" version="0.17"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.6.1"/>
   <diceSides value="10"/>
   <map>
-    <territory name="Portugal"/>
-    <territory name="Spain"/>
-    <territory name="Gibraltar"/>
-    <territory name="Sardinia"/>
-    <territory name="Italy"/>
-    <territory name="Sicily"/>
-    <territory name="Malta"/>
-    <territory name="Albania"/>
-    <territory name="Yugoslavia"/>
-    <territory name="Greece"/>
-    <territory name="Turkey"/>
-    <territory name="Crete"/>
-    <territory name="Cyprus"/>
-    <territory name="Syria"/>
-    <territory name="Palestine"/>
-    <territory name="Jordan"/>
-    <territory name="Saudi Arabia"/>
-    <territory name="Sinai"/>
-    <territory name="Spanish Morocco"/>
-    <territory name="Casablanca"/>
-    <territory name="Fez"/>
-    <territory name="Oran"/>
-    <territory name="Algiers"/>
-    <territory name="Laghouat"/>
-    <territory name="Constantine"/>
-    <territory name="Kasserine Pass"/>
-    <territory name="El Oued"/>
-    <territory name="Tunis"/>
-    <territory name="Mareth"/>
-    <territory name="Nalut"/>
-    <territory name="Ghadames"/>
-    <territory name="Tripoli"/>
-    <territory name="Sirte"/>
-    <territory name="Sokna"/>
-    <territory name="El Agheila"/>
-    <territory name="Zella"/>
-    <territory name="Mersa Brega"/>
-    <territory name="Jalo"/>
-    <territory name="Benghazi"/>
-    <territory name="Tobruk"/>
-    <territory name="Bir Hacheim"/>
-    <territory name="Siwa"/>
-    <territory name="Mersa Matruh"/>
-    <territory name="Qattara Depression"/>
-    <territory name="Cairo"/>
-    <territory name="Desert Zone A"/>
-    <territory name="Desert Zone B"/>
-    <territory name="Desert Zone C"/>
-    <territory name="Desert Zone D"/>
-    <territory name="Desert Zone E"/>
-    <territory name="Desert Zone F"/>
-    <territory name="Desert Zone G"/>
-    <territory name="Desert Zone H"/>
-    <territory name="Desert Zone I"/>
-    <territory name="Desert Zone J"/>
-    <territory name="Desert Zone K"/>
-    <territory name="Sea Zone 1" water="true"/>
-    <territory name="Casablanca Convoy" water="true"/>
-    <territory name="Sea Zone 3" water="true"/>
-    <territory name="Oran Convoy" water="true"/>
-    <territory name="Sea Zone 5" water="true"/>
-    <territory name="Algiers Convoy" water="true"/>
-    <territory name="Sea Zone 7" water="true"/>
-    <territory name="Sea Zone 9" water="true"/>
-    <territory name="Tunis Convoy" water="true"/>
-    <territory name="Sea Zone 10" water="true"/>
-    <territory name="Sea Zone 11" water="true"/>
-    <territory name="Malta Convoy" water="true"/>
-    <territory name="Tripoli Convoy" water="true"/>
-    <territory name="Benghazi Convoy" water="true"/>
-    <territory name="Sea Zone 18" water="true"/>
-    <territory name="Sea Zone 17" water="true"/>
-    <territory name="Sea Zone 16" water="true"/>
-    <territory name="Sea Zone 19" water="true"/>
-    <territory name="Sea Zone 14" water="true"/>
-    <territory name="Sea Zone 21" water="true"/>
-    <territory name="Sea Zone 20" water="true"/>
-    <territory name="Sea Zone 22" water="true"/>
-    <territory name="Sea Zone 23" water="true"/>
-    <territory name="Sea Zone 27" water="true"/>
-    <territory name="Sea Zone 26" water="true"/>
-    <territory name="Sea Zone 25" water="true"/>
-    <territory name="Sea Zone 24" water="true"/>
-    <territory name="Sea Zone 28" water="true"/>
-    <territory name="Sea Zone 29" water="true"/>
-    <territory name="Sea Zone 30" water="true"/>
-    <territory name="Sea Zone 31" water="true"/>
-    <territory name="Sea Zone 32" water="true"/>
-    <territory name="Suez Canal Convoy" water="true"/>
-    <territory name="Indian Ocean Convoy" water="true"/>
-    <territory name="Atlantic Ocean Convoy" water="true"/>
-    <!-- Connections -->
-    <connection t1="Portugal" t2="Sea Zone 1"/>
-    <connection t1="Portugal" t2="Spain"/>
-    <connection t1="Spain" t2="Gibraltar"/>
-    <connection t1="Spain" t2="Sea Zone 1"/>
-    <connection t1="Spain" t2="Sea Zone 3"/>
-    <connection t1="Spain" t2="Sea Zone 5"/>
-    <connection t1="Spain" t2="Oran Convoy"/>
-    <connection t1="Gibraltar" t2="Sea Zone 3"/>
-    <connection t1="Sardinia" t2="Sea Zone 9"/>
-    <connection t1="Italy" t2="Sea Zone 10"/>
-    <connection t1="Italy" t2="Sea Zone 11"/>
-    <connection t1="Italy" t2="Sea Zone 16"/>
-    <connection t1="Italy" t2="Sea Zone 18"/>
-    <connection t1="Italy" t2="Sea Zone 17"/>
-    <connection t1="Sicily" t2="Sea Zone 11"/>
-    <connection t1="Sicily" t2="Tunis Convoy"/>
-    <connection t1="Sicily" t2="Malta Convoy"/>
-    <connection t1="Sicily" t2="Sea Zone 16"/>
-    <connection t1="Malta" t2="Malta Convoy"/>
-    <connection t1="Albania" t2="Sea Zone 18"/>
-    <connection t1="Albania" t2="Sea Zone 17"/>
-    <connection t1="Albania" t2="Yugoslavia"/>
-    <connection t1="Albania" t2="Greece"/>
-    <connection t1="Yugoslavia" t2="Greece"/>
-    <connection t1="Greece" t2="Turkey"/>
-    <connection t1="Greece" t2="Sea Zone 17"/>
-    <connection t1="Greece" t2="Sea Zone 19"/>
-    <connection t1="Greece" t2="Sea Zone 23"/>
-    <connection t1="Greece" t2="Sea Zone 26"/>
-    <connection t1="Greece" t2="Sea Zone 27"/>
-    <connection t1="Turkey" t2="Sea Zone 27"/>
-    <connection t1="Turkey" t2="Sea Zone 28"/>
-    <connection t1="Turkey" t2="Sea Zone 30"/>
-    <connection t1="Turkey" t2="Sea Zone 32"/>
-    <connection t1="Turkey" t2="Syria"/>
-    <connection t1="Crete" t2="Sea Zone 26"/>
-    <connection t1="Crete" t2="Sea Zone 25"/>
-    <connection t1="Crete" t2="Sea Zone 28"/>
-    <connection t1="Cyprus" t2="Sea Zone 30"/>
-    <connection t1="Cyprus" t2="Sea Zone 32"/>
-    <connection t1="Syria" t2="Sea Zone 32"/>
-    <connection t1="Syria" t2="Palestine"/>
-    <connection t1="Syria" t2="Jordan"/>
-    <connection t1="Palestine" t2="Sea Zone 32"/>
-    <connection t1="Palestine" t2="Jordan"/>
-    <connection t1="Palestine" t2="Sinai"/>
-    <connection t1="Jordan" t2="Sinai"/>
-    <connection t1="Jordan" t2="Saudi Arabia"/>
-    <connection t1="Sinai" t2="Sea Zone 32"/>
-    <connection t1="Sinai" t2="Sea Zone 31"/>
-    <connection t1="Sinai" t2="Cairo"/>
-    <connection t1="Sinai" t2="Suez Canal Convoy"/>
-    <connection t1="Spanish Morocco" t2="Sea Zone 3"/>
-    <connection t1="Spanish Morocco" t2="Casablanca"/>
-    <connection t1="Spanish Morocco" t2="Fez"/>
-    <connection t1="Spanish Morocco" t2="Oran"/>
-    <connection t1="Casablanca" t2="Fez"/>
-    <connection t1="Casablanca" t2="Casablanca Convoy"/>
-    <connection t1="Casablanca" t2="Desert Zone A"/>
-    <connection t1="Fez" t2="Oran"/>
-    <connection t1="Fez" t2="Desert Zone A"/>
-    <connection t1="Fez" t2="Desert Zone B"/>
-    <connection t1="Oran" t2="Oran Convoy"/>
-    <connection t1="Oran" t2="Sea Zone 3"/>
-    <connection t1="Oran" t2="Desert Zone B"/>
-    <connection t1="Oran" t2="Algiers"/>
-    <connection t1="Oran" t2="Laghouat"/>
-    <connection t1="Algiers" t2="Oran Convoy"/>
-    <connection t1="Algiers" t2="Algiers Convoy"/>
-    <connection t1="Algiers" t2="Laghouat"/>
-    <connection t1="Algiers" t2="Constantine"/>
-    <connection t1="Algiers" t2="Kasserine Pass"/>
-    <connection t1="Laghouat" t2="Kasserine Pass"/>
-    <connection t1="Laghouat" t2="Desert Zone B"/>
-    <connection t1="Laghouat" t2="Desert Zone C"/>
-    <connection t1="Laghouat" t2="El Oued"/>
-    <connection t1="Constantine" t2="Algiers Convoy"/>
-    <connection t1="Constantine" t2="Tunis Convoy"/>
-    <connection t1="Constantine" t2="Kasserine Pass"/>
-    <connection t1="Constantine" t2="Tunis"/>
-    <connection t1="Kasserine Pass" t2="Tunis"/>
-    <connection t1="Kasserine Pass" t2="El Oued"/>
-    <connection t1="Kasserine Pass" t2="Mareth"/>
-    <connection t1="El Oued" t2="Desert Zone C"/>
-    <connection t1="El Oued" t2="Desert Zone D"/>
-    <connection t1="El Oued" t2="Mareth"/>
-    <connection t1="Tunis" t2="Tunis Convoy"/>
-    <connection t1="Tunis" t2="Malta Convoy"/>
-    <connection t1="Tunis" t2="Tripoli Convoy"/>
-    <connection t1="Tunis" t2="Mareth"/>
-    <connection t1="Mareth" t2="Tripoli Convoy"/>
-    <connection t1="Mareth" t2="Desert Zone D"/>
-    <connection t1="Mareth" t2="Nalut"/>
-    <connection t1="Mareth" t2="Tripoli"/>
-    <connection t1="Nalut" t2="Tripoli"/>
-    <connection t1="Nalut" t2="Desert Zone D"/>
-    <connection t1="Nalut" t2="Desert Zone E"/>
-    <connection t1="Nalut" t2="Ghadames"/>
-    <connection t1="Ghadames" t2="Desert Zone E"/>
-    <connection t1="Ghadames" t2="Desert Zone F"/>
-    <connection t1="Ghadames" t2="Desert Zone G"/>
-    <connection t1="Ghadames" t2="Tripoli"/>
-    <connection t1="Ghadames" t2="Sokna"/>
-    <connection t1="Tripoli" t2="Tripoli Convoy"/>
-    <connection t1="Tripoli" t2="Sirte"/>
-    <connection t1="Tripoli" t2="Sokna"/>
-    <connection t1="Sirte" t2="Sokna"/>
-    <connection t1="Sirte" t2="El Agheila"/>
-    <connection t1="Sirte" t2="Tripoli Convoy"/>
-    <connection t1="Sirte" t2="Sea Zone 14"/>
-    <connection t1="Sokna" t2="El Agheila"/>
-    <connection t1="Sokna" t2="Zella"/>
-    <connection t1="Sokna" t2="Desert Zone G"/>
-    <connection t1="Sokna" t2="Desert Zone H"/>
-    <connection t1="El Agheila" t2="Sea Zone 14"/>
-    <connection t1="El Agheila" t2="Sea Zone 21"/>
-    <connection t1="El Agheila" t2="Mersa Brega"/>
-    <connection t1="El Agheila" t2="Zella"/>
-    <connection t1="Zella" t2="Desert Zone H"/>
-    <connection t1="Zella" t2="Desert Zone I"/>
-    <connection t1="Zella" t2="Mersa Brega"/>
-    <connection t1="Zella" t2="Jalo"/>
-    <connection t1="Mersa Brega" t2="Sea Zone 21"/>
-    <connection t1="Mersa Brega" t2="Sea Zone 22"/>
-    <connection t1="Mersa Brega" t2="Benghazi"/>
-    <connection t1="Mersa Brega" t2="Bir Hacheim"/>
-    <connection t1="Mersa Brega" t2="Jalo"/>
-    <connection t1="Jalo" t2="Bir Hacheim"/>
-    <connection t1="Jalo" t2="Siwa"/>
-    <connection t1="Jalo" t2="Desert Zone I"/>
-    <connection t1="Jalo" t2="Desert Zone J"/>
-    <connection t1="Benghazi" t2="Sea Zone 22"/>
-    <connection t1="Benghazi" t2="Tobruk"/>
-    <connection t1="Benghazi" t2="Bir Hacheim"/>
-    <connection t1="Tobruk" t2="Sea Zone 22"/>
-    <connection t1="Tobruk" t2="Sea Zone 24"/>
-    <connection t1="Tobruk" t2="Bir Hacheim"/>
-    <connection t1="Tobruk" t2="Mersa Matruh"/>
-    <connection t1="Bir Hacheim" t2="Mersa Matruh"/>
-    <connection t1="Bir Hacheim" t2="Siwa"/>
-    <connection t1="Siwa" t2="Qattara Depression"/>
-    <connection t1="Siwa" t2="Mersa Matruh"/>
-    <connection t1="Siwa" t2="Desert Zone J"/>
-    <connection t1="Siwa" t2="Desert Zone K"/>
-    <connection t1="Mersa Matruh" t2="Qattara Depression"/>
-    <connection t1="Mersa Matruh" t2="Sea Zone 24"/>
-    <connection t1="Mersa Matruh" t2="Sea Zone 29"/>
-    <connection t1="Mersa Matruh" t2="Cairo"/>
-    <connection t1="Qattara Depression" t2="Cairo"/>
-    <connection t1="Cairo" t2="Sea Zone 29"/>
-    <connection t1="Cairo" t2="Sea Zone 31"/>
-    <connection t1="Cairo" t2="Suez Canal Convoy"/>
-    <connection t1="Desert Zone A" t2="Desert Zone B"/>
-    <connection t1="Desert Zone B" t2="Desert Zone C"/>
-    <connection t1="Desert Zone C" t2="Desert Zone D"/>
-    <connection t1="Desert Zone D" t2="Desert Zone E"/>
-    <connection t1="Desert Zone E" t2="Desert Zone F"/>
-    <connection t1="Desert Zone F" t2="Desert Zone G"/>
-    <connection t1="Desert Zone G" t2="Desert Zone H"/>
-    <connection t1="Desert Zone H" t2="Desert Zone I"/>
-    <connection t1="Desert Zone I" t2="Desert Zone J"/>
-    <connection t1="Desert Zone J" t2="Desert Zone K"/>
-    <connection t1="Sea Zone 1" t2="Casablanca Convoy"/>
-    <connection t1="Sea Zone 1" t2="Sea Zone 3"/>
-    <connection t1="Casablanca Convoy" t2="Sea Zone 3"/>
-    <connection t1="Sea Zone 3" t2="Oran Convoy"/>
-    <connection t1="Oran Convoy" t2="Sea Zone 5"/>
-    <connection t1="Oran Convoy" t2="Algiers Convoy"/>
-    <connection t1="Sea Zone 5" t2="Algiers Convoy"/>
-    <connection t1="Sea Zone 5" t2="Sea Zone 7"/>
-    <connection t1="Algiers Convoy" t2="Sea Zone 7"/>
-    <connection t1="Algiers Convoy" t2="Tunis Convoy"/>
-    <connection t1="Sea Zone 7" t2="Tunis Convoy"/>
-    <connection t1="Sea Zone 7" t2="Sea Zone 9"/>
-    <connection t1="Sea Zone 9" t2="Tunis Convoy"/>
-    <connection t1="Sea Zone 9" t2="Sea Zone 10"/>
-    <connection t1="Sea Zone 9" t2="Sea Zone 11"/>
-    <connection t1="Sea Zone 10" t2="Sea Zone 11"/>
-    <connection t1="Tunis Convoy" t2="Sea Zone 11"/>
-    <connection t1="Tunis Convoy" t2="Malta Convoy"/>
-    <connection t1="Sea Zone 11" t2="Malta Convoy"/>
-    <connection t1="Malta Convoy" t2="Sea Zone 16"/>
-    <connection t1="Malta Convoy" t2="Tripoli Convoy"/>
-    <connection t1="Malta Convoy" t2="Benghazi Convoy"/>
-    <connection t1="Tripoli Convoy" t2="Benghazi Convoy"/>
-    <connection t1="Tripoli Convoy" t2="Sea Zone 14"/>
-    <connection t1="Benghazi Convoy" t2="Sea Zone 14"/>
-    <connection t1="Benghazi Convoy" t2="Sea Zone 16"/>
-    <connection t1="Benghazi Convoy" t2="Sea Zone 20"/>
-    <connection t1="Benghazi Convoy" t2="Sea Zone 21"/>
-    <connection t1="Sea Zone 18" t2="Sea Zone 17"/>
-    <connection t1="Sea Zone 17" t2="Sea Zone 16"/>
-    <connection t1="Sea Zone 17" t2="Sea Zone 19"/>
-    <connection t1="Sea Zone 16" t2="Sea Zone 19"/>
-    <connection t1="Sea Zone 16" t2="Sea Zone 20"/>
-    <connection t1="Sea Zone 19" t2="Sea Zone 20"/>
-    <connection t1="Sea Zone 19" t2="Sea Zone 23"/>
-    <connection t1="Sea Zone 14" t2="Sea Zone 21"/>
-    <connection t1="Sea Zone 21" t2="Sea Zone 20"/>
-    <connection t1="Sea Zone 21" t2="Sea Zone 22"/>
-    <connection t1="Sea Zone 20" t2="Sea Zone 22"/>
-    <connection t1="Sea Zone 20" t2="Sea Zone 23"/>
-    <connection t1="Sea Zone 22" t2="Sea Zone 23"/>
-    <connection t1="Sea Zone 22" t2="Sea Zone 24"/>
-    <connection t1="Sea Zone 23" t2="Sea Zone 26"/>
-    <connection t1="Sea Zone 23" t2="Sea Zone 25"/>
-    <connection t1="Sea Zone 27" t2="Sea Zone 26"/>
-    <connection t1="Sea Zone 26" t2="Sea Zone 25"/>
-    <connection t1="Sea Zone 26" t2="Sea Zone 28"/>
-    <connection t1="Sea Zone 25" t2="Sea Zone 24"/>
-    <connection t1="Sea Zone 25" t2="Sea Zone 28"/>
-    <connection t1="Sea Zone 24" t2="Sea Zone 28"/>
-    <connection t1="Sea Zone 24" t2="Sea Zone 29"/>
-    <connection t1="Sea Zone 28" t2="Sea Zone 30"/>
-    <connection t1="Sea Zone 28" t2="Sea Zone 29"/>
-    <connection t1="Sea Zone 29" t2="Sea Zone 30"/>
-    <connection t1="Sea Zone 29" t2="Sea Zone 31"/>
-    <connection t1="Sea Zone 30" t2="Sea Zone 31"/>
-    <connection t1="Sea Zone 30" t2="Sea Zone 32"/>
-    <connection t1="Sea Zone 31" t2="Sea Zone 32"/>
-    <connection t1="Sea Zone 31" t2="Suez Canal Convoy"/>
-    <connection t1="Indian Ocean Convoy" t2="Suez Canal Convoy"/>
-    <connection t1="Indian Ocean Convoy" t2="Atlantic Ocean Convoy"/>    
+	<!-- Territory Definitions -->
+	<territory name="AGH-BRE"/>
+	<territory name="AGH-SOK"/>
+	<territory name="Albania"/>
+	<territory name="Algiers"/>
+	<territory name="Algiers Convoy"/>
+	<territory name="Atlantic Ocean Convoy"/>
+	<territory name="BEN-TOB"/>
+	<territory name="BRE-BEN"/>
+	<territory name="Benghazi"/>
+	<territory name="Benghazi Convoy"/>
+	<territory name="Bir Hacheim"/>
+	<territory name="Cairo"/>
+	<territory name="Casablanca"/>
+	<territory name="Casablanca Convoy"/>
+	<territory name="Constantine"/>
+	<territory name="Crete"/>
+	<territory name="Cyprus"/>
+	<territory name="Desert Zone A"/>
+	<territory name="Desert Zone B"/>
+	<territory name="Desert Zone C"/>
+	<territory name="Desert Zone D"/>
+	<territory name="Desert Zone E"/>
+	<territory name="Desert Zone F"/>
+	<territory name="Desert Zone G"/>
+	<territory name="Desert Zone H"/>
+	<territory name="Desert Zone I"/>
+	<territory name="Desert Zone J"/>
+	<territory name="Desert Zone K"/>
+	<territory name="El Agheila"/>
+	<territory name="El Oued"/>
+	<territory name="Fez"/>
+	<territory name="GHA-G"/>
+	<territory name="GHA-SOK"/>
+	<territory name="Ghadames"/>
+	<territory name="Gibraltar"/>
+	<territory name="Greece"/>
+	<territory name="HAC-MAT"/>
+	<territory name="Indian Ocean Convoy"/>
+	<territory name="Italy"/>
+	<territory name="JAL-HAC"/>
+	<territory name="Jalo"/>
+	<territory name="Jordan"/>
+	<territory name="Kasserine Pass"/>
+	<territory name="Laghouat"/>
+	<territory name="MAT-CAI"/>
+	<territory name="Malta"/>
+	<territory name="Malta Convoy"/>
+	<territory name="Mareth"/>
+	<territory name="Mersa Brega"/>
+	<territory name="Mersa Matruh"/>
+	<territory name="NAL-GHA"/>
+	<territory name="NAL-TRI"/>
+	<territory name="Nalut"/>
+	<territory name="Oran"/>
+	<territory name="Oran Convoy"/>
+	<territory name="Palestine"/>
+	<territory name="Portugal"/>
+	<territory name="Qattara Depression"/>
+	<territory name="SIR-AGH"/>
+	<territory name="SIR-SOK"/>
+	<territory name="SIW-J"/>
+	<territory name="SIW-K"/>
+	<territory name="SIW-MAT"/>
+	<territory name="SOK-G"/>
+	<territory name="SOK-H"/>
+	<territory name="SOK-ZEL"/>
+	<territory name="Sardinia"/>
+	<territory name="Saudi Arabia"/>
+	<territory name="Sea Zone 1" water="true"/>
+	<territory name="Sea Zone 2" water="true"/>
+	<territory name="Sea Zone 3" water="true"/>
+	<territory name="Sea Zone 4" water="true"/>
+	<territory name="Sea Zone 5" water="true"/>
+	<territory name="Sea Zone 6" water="true"/>
+	<territory name="Sea Zone 7" water="true"/>
+	<territory name="Sea Zone 8" water="true"/>
+	<territory name="Sea Zone 9" water="true"/>
+	<territory name="Sea Zone 10" water="true"/>
+	<territory name="Sea Zone 11" water="true"/>
+	<territory name="Sea Zone 12" water="true"/>
+	<territory name="Sea Zone 13" water="true"/>
+	<territory name="Sea Zone 14" water="true"/>
+	<territory name="Sea Zone 15" water="true"/>
+	<territory name="Sea Zone 16" water="true"/>
+	<territory name="Sea Zone 17" water="true"/>
+	<territory name="Sea Zone 18" water="true"/>
+	<territory name="Sea Zone 19" water="true"/>
+	<territory name="Sea Zone 20" water="true"/>
+	<territory name="Sea Zone 21" water="true"/>
+	<territory name="Sea Zone 22" water="true"/>
+	<territory name="Sea Zone 23" water="true"/>
+	<territory name="Sea Zone 24" water="true"/>
+	<territory name="Sea Zone 25" water="true"/>
+	<territory name="Sea Zone 26" water="true"/>
+	<territory name="Sea Zone 27" water="true"/>
+	<territory name="Sea Zone 28" water="true"/>
+	<territory name="Sea Zone 29" water="true"/>
+	<territory name="Sea Zone 30" water="true"/>
+	<territory name="Sea Zone 31" water="true"/>
+	<territory name="Sea Zone 32" water="true"/>
+	<territory name="Sicily"/>
+	<territory name="Sinai"/>
+	<territory name="Sirte"/>
+	<territory name="Siwa"/>
+	<territory name="Sokna"/>
+	<territory name="Spain"/>
+	<territory name="Spanish Morocco"/>
+	<territory name="Suez Canal Convoy"/>
+	<territory name="Syria"/>
+	<territory name="TOB-HAC"/>
+	<territory name="TOB-MAT"/>
+	<territory name="TRI-GHA"/>
+	<territory name="TRI-SIR"/>
+	<territory name="Tobruk"/>
+	<territory name="Tripoli"/>
+	<territory name="Tripoli Convoy"/>
+	<territory name="Tunis"/>
+	<territory name="Tunis Convoy"/>
+	<territory name="Turkey"/>
+	<territory name="Yugoslavia"/>
+	<territory name="ZEL-I"/>
+	<territory name="ZEL-JAL"/>
+	<territory name="Zella"/>
+
+	<!-- Territory Connections -->
+	<connection t1="AGH-BRE" t2="El Agheila"/>
+	<connection t1="AGH-BRE" t2="Mersa Brega"/>
+	<connection t1="AGH-SOK" t2="El Agheila"/>
+	<connection t1="AGH-SOK" t2="Sokna"/>
+	<connection t1="Albania" t2="Greece"/>
+	<connection t1="Albania" t2="Sea Zone 17"/>
+	<connection t1="Albania" t2="Sea Zone 18"/>
+	<connection t1="Albania" t2="Yugoslavia"/>
+	<connection t1="Algiers" t2="Constantine"/>
+	<connection t1="Algiers" t2="Kasserine Pass"/>
+	<connection t1="Algiers" t2="Laghouat"/>
+	<connection t1="Algiers" t2="Oran"/>
+	<connection t1="Algiers" t2="Oran Convoy"/>
+	<connection t1="Algiers" t2="Sea Zone 4"/>
+	<connection t1="Algiers" t2="Sea Zone 6"/>
+	<connection t1="Algiers Convoy" t2="Sea Zone 6"/>
+	<connection t1="Atlantic Ocean Convoy" t2="Cairo"/>
+	<connection t1="Atlantic Ocean Convoy" t2="Desert Zone K"/>
+	<connection t1="Atlantic Ocean Convoy" t2="Indian Ocean Convoy"/>
+	<connection t1="Atlantic Ocean Convoy" t2="Qattara Depression"/>
+	<connection t1="BEN-TOB" t2="Benghazi"/>
+	<connection t1="BEN-TOB" t2="Tobruk"/>
+	<connection t1="BRE-BEN" t2="Benghazi"/>
+	<connection t1="BRE-BEN" t2="Mersa Brega"/>
+	<connection t1="Benghazi" t2="Bir Hacheim"/>
+	<connection t1="Benghazi" t2="Mersa Brega"/>
+	<connection t1="Benghazi" t2="Sea Zone 22"/>
+	<connection t1="Benghazi" t2="Tobruk"/>
+	<connection t1="Benghazi Convoy" t2="Sea Zone 15"/>
+	<connection t1="Bir Hacheim" t2="HAC-MAT"/>
+	<connection t1="Bir Hacheim" t2="JAL-HAC"/>
+	<connection t1="Bir Hacheim" t2="Jalo"/>
+	<connection t1="Bir Hacheim" t2="Mersa Brega"/>
+	<connection t1="Bir Hacheim" t2="Mersa Matruh"/>
+	<connection t1="Bir Hacheim" t2="Siwa"/>
+	<connection t1="Bir Hacheim" t2="TOB-HAC"/>
+	<connection t1="Bir Hacheim" t2="Tobruk"/>
+	<connection t1="Cairo" t2="MAT-CAI"/>
+	<connection t1="Cairo" t2="Mersa Matruh"/>
+	<connection t1="Cairo" t2="Qattara Depression"/>
+	<connection t1="Cairo" t2="Sea Zone 29"/>
+	<connection t1="Cairo" t2="Sea Zone 31"/>
+	<connection t1="Cairo" t2="Suez Canal Convoy"/>
+	<connection t1="Casablanca" t2="Desert Zone A"/>
+	<connection t1="Casablanca" t2="Fez"/>
+	<connection t1="Casablanca" t2="Sea Zone 2"/>
+	<connection t1="Casablanca" t2="Sea Zone 3"/>
+	<connection t1="Casablanca" t2="Spanish Morocco"/>
+	<connection t1="Casablanca Convoy" t2="Sea Zone 2"/>
+	<connection t1="Constantine" t2="Kasserine Pass"/>
+	<connection t1="Constantine" t2="Sea Zone 6"/>
+	<connection t1="Constantine" t2="Sea Zone 8"/>
+	<connection t1="Constantine" t2="Tunis"/>
+	<connection t1="Crete" t2="Sea Zone 25"/>
+	<connection t1="Crete" t2="Sea Zone 26"/>
+	<connection t1="Crete" t2="Sea Zone 28"/>
+	<connection t1="Cyprus" t2="Sea Zone 30"/>
+	<connection t1="Cyprus" t2="Sea Zone 32"/>
+	<connection t1="Desert Zone A" t2="Desert Zone B"/>
+	<connection t1="Desert Zone A" t2="Fez"/>
+	<connection t1="Desert Zone B" t2="Desert Zone C"/>
+	<connection t1="Desert Zone B" t2="Fez"/>
+	<connection t1="Desert Zone B" t2="Laghouat"/>
+	<connection t1="Desert Zone B" t2="Oran"/>
+	<connection t1="Desert Zone C" t2="Desert Zone D"/>
+	<connection t1="Desert Zone C" t2="El Oued"/>
+	<connection t1="Desert Zone C" t2="Laghouat"/>
+	<connection t1="Desert Zone D" t2="Desert Zone E"/>
+	<connection t1="Desert Zone D" t2="El Oued"/>
+	<connection t1="Desert Zone D" t2="Mareth"/>
+	<connection t1="Desert Zone D" t2="Nalut"/>
+	<connection t1="Desert Zone E" t2="Desert Zone F"/>
+	<connection t1="Desert Zone E" t2="Ghadames"/>
+	<connection t1="Desert Zone E" t2="Nalut"/>
+	<connection t1="Desert Zone F" t2="Desert Zone G"/>
+	<connection t1="Desert Zone F" t2="Ghadames"/>
+	<connection t1="Desert Zone G" t2="Desert Zone H"/>
+	<connection t1="Desert Zone G" t2="GHA-G"/>
+	<connection t1="Desert Zone G" t2="Ghadames"/>
+	<connection t1="Desert Zone G" t2="SOK-G"/>
+	<connection t1="Desert Zone G" t2="Sokna"/>
+	<connection t1="Desert Zone H" t2="Desert Zone I"/>
+	<connection t1="Desert Zone H" t2="SOK-H"/>
+	<connection t1="Desert Zone H" t2="Sokna"/>
+	<connection t1="Desert Zone H" t2="Zella"/>
+	<connection t1="Desert Zone I" t2="Desert Zone J"/>
+	<connection t1="Desert Zone I" t2="Jalo"/>
+	<connection t1="Desert Zone I" t2="ZEL-I"/>
+	<connection t1="Desert Zone I" t2="Zella"/>
+	<connection t1="Desert Zone J" t2="Desert Zone K"/>
+	<connection t1="Desert Zone J" t2="Jalo"/>
+	<connection t1="Desert Zone J" t2="SIW-J"/>
+	<connection t1="Desert Zone J" t2="Siwa"/>
+	<connection t1="Desert Zone K" t2="Qattara Depression"/>
+	<connection t1="Desert Zone K" t2="SIW-K"/>
+	<connection t1="Desert Zone K" t2="Siwa"/>
+	<connection t1="El Agheila" t2="Mersa Brega"/>
+	<connection t1="El Agheila" t2="SIR-AGH"/>
+	<connection t1="El Agheila" t2="Sea Zone 14"/>
+	<connection t1="El Agheila" t2="Sea Zone 21"/>
+	<connection t1="El Agheila" t2="Sirte"/>
+	<connection t1="El Agheila" t2="Sokna"/>
+	<connection t1="El Agheila" t2="Zella"/>
+	<connection t1="El Oued" t2="Kasserine Pass"/>
+	<connection t1="El Oued" t2="Laghouat"/>
+	<connection t1="El Oued" t2="Mareth"/>
+	<connection t1="Fez" t2="Oran"/>
+	<connection t1="Fez" t2="Spanish Morocco"/>
+	<connection t1="GHA-G" t2="Ghadames"/>
+	<connection t1="GHA-SOK" t2="Ghadames"/>
+	<connection t1="GHA-SOK" t2="Sokna"/>
+	<connection t1="Ghadames" t2="NAL-GHA"/>
+	<connection t1="Ghadames" t2="Nalut"/>
+	<connection t1="Ghadames" t2="Sokna"/>
+	<connection t1="Ghadames" t2="TRI-GHA"/>
+	<connection t1="Ghadames" t2="Tripoli"/>
+	<connection t1="Gibraltar" t2="Sea Zone 3"/>
+	<connection t1="Gibraltar" t2="Spain"/>
+	<connection t1="Greece" t2="Sea Zone 17"/>
+	<connection t1="Greece" t2="Sea Zone 19"/>
+	<connection t1="Greece" t2="Sea Zone 23"/>
+	<connection t1="Greece" t2="Sea Zone 26"/>
+	<connection t1="Greece" t2="Sea Zone 27"/>
+	<connection t1="Greece" t2="Turkey"/>
+	<connection t1="Greece" t2="Yugoslavia"/>
+	<connection t1="HAC-MAT" t2="Mersa Matruh"/>
+	<connection t1="Indian Ocean Convoy" t2="Suez Canal Convoy"/>
+	<connection t1="Italy" t2="Sea Zone 10"/>
+	<connection t1="Italy" t2="Sea Zone 11"/>
+	<connection t1="Italy" t2="Sea Zone 16"/>
+	<connection t1="Italy" t2="Sea Zone 17"/>
+	<connection t1="Italy" t2="Sea Zone 18"/>
+	<connection t1="JAL-HAC" t2="Jalo"/>
+	<connection t1="Jalo" t2="Mersa Brega"/>
+	<connection t1="Jalo" t2="Siwa"/>
+	<connection t1="Jalo" t2="ZEL-JAL"/>
+	<connection t1="Jalo" t2="Zella"/>
+	<connection t1="Jordan" t2="Palestine"/>
+	<connection t1="Jordan" t2="Saudi Arabia"/>
+	<connection t1="Jordan" t2="Sinai"/>
+	<connection t1="Jordan" t2="Syria"/>
+	<connection t1="Kasserine Pass" t2="Laghouat"/>
+	<connection t1="Kasserine Pass" t2="Mareth"/>
+	<connection t1="Kasserine Pass" t2="Tunis"/>
+	<connection t1="Laghouat" t2="Oran"/>
+	<connection t1="MAT-CAI" t2="Mersa Matruh"/>
+	<connection t1="Malta" t2="Sea Zone 12"/>
+	<connection t1="Malta Convoy" t2="Sea Zone 12"/>
+	<connection t1="Mareth" t2="Nalut"/>
+	<connection t1="Mareth" t2="Sea Zone 13"/>
+	<connection t1="Mareth" t2="Tripoli"/>
+	<connection t1="Mareth" t2="Tunis"/>
+	<connection t1="Mersa Brega" t2="Sea Zone 21"/>
+	<connection t1="Mersa Brega" t2="Sea Zone 22"/>
+	<connection t1="Mersa Brega" t2="Zella"/>
+	<connection t1="Mersa Matruh" t2="Qattara Depression"/>
+	<connection t1="Mersa Matruh" t2="SIW-MAT"/>
+	<connection t1="Mersa Matruh" t2="Sea Zone 24"/>
+	<connection t1="Mersa Matruh" t2="Sea Zone 29"/>
+	<connection t1="Mersa Matruh" t2="Siwa"/>
+	<connection t1="Mersa Matruh" t2="TOB-MAT"/>
+	<connection t1="Mersa Matruh" t2="Tobruk"/>
+	<connection t1="NAL-GHA" t2="Nalut"/>
+	<connection t1="NAL-TRI" t2="Nalut"/>
+	<connection t1="NAL-TRI" t2="Tripoli"/>
+	<connection t1="Nalut" t2="Tripoli"/>
+	<connection t1="Oran" t2="Oran Convoy"/>
+	<connection t1="Oran" t2="Sea Zone 3"/>
+	<connection t1="Oran" t2="Sea Zone 4"/>
+	<connection t1="Oran" t2="Spanish Morocco"/>
+	<connection t1="Oran Convoy" t2="Sea Zone 3"/>
+	<connection t1="Oran Convoy" t2="Sea Zone 4"/>
+	<connection t1="Oran Convoy" t2="Sea Zone 5"/>
+	<connection t1="Oran Convoy" t2="Sea Zone 6"/>
+	<connection t1="Oran Convoy" t2="Spain"/>
+	<connection t1="Palestine" t2="Sea Zone 32"/>
+	<connection t1="Palestine" t2="Sinai"/>
+	<connection t1="Palestine" t2="Syria"/>
+	<connection t1="Portugal" t2="Sea Zone 1"/>
+	<connection t1="Portugal" t2="Spain"/>
+	<connection t1="Qattara Depression" t2="Siwa"/>
+	<connection t1="SIR-AGH" t2="Sirte"/>
+	<connection t1="SIR-SOK" t2="Sirte"/>
+	<connection t1="SIR-SOK" t2="Sokna"/>
+	<connection t1="SIW-J" t2="Siwa"/>
+	<connection t1="SIW-K" t2="Siwa"/>
+	<connection t1="SIW-MAT" t2="Siwa"/>
+	<connection t1="SOK-G" t2="Sokna"/>
+	<connection t1="SOK-H" t2="Sokna"/>
+	<connection t1="SOK-ZEL" t2="Sokna"/>
+	<connection t1="SOK-ZEL" t2="Zella"/>
+	<connection t1="Sardinia" t2="Sea Zone 9"/>
+	<connection t1="Sea Zone 1" t2="Sea Zone 2"/>
+	<connection t1="Sea Zone 1" t2="Sea Zone 3"/>
+	<connection t1="Sea Zone 1" t2="Spain"/>
+	<connection t1="Sea Zone 2" t2="Sea Zone 3"/>
+	<connection t1="Sea Zone 3" t2="Sea Zone 4"/>
+	<connection t1="Sea Zone 3" t2="Spain"/>
+	<connection t1="Sea Zone 3" t2="Spanish Morocco"/>
+	<connection t1="Sea Zone 4" t2="Sea Zone 5"/>
+	<connection t1="Sea Zone 4" t2="Sea Zone 6"/>
+	<connection t1="Sea Zone 4" t2="Spain"/>
+	<connection t1="Sea Zone 5" t2="Sea Zone 6"/>
+	<connection t1="Sea Zone 5" t2="Sea Zone 7"/>
+	<connection t1="Sea Zone 5" t2="Spain"/>
+	<connection t1="Sea Zone 6" t2="Sea Zone 7"/>
+	<connection t1="Sea Zone 6" t2="Sea Zone 8"/>
+	<connection t1="Sea Zone 7" t2="Sea Zone 8"/>
+	<connection t1="Sea Zone 7" t2="Sea Zone 9"/>
+	<connection t1="Sea Zone 8" t2="Sea Zone 9"/>
+	<connection t1="Sea Zone 8" t2="Sea Zone 11"/>
+	<connection t1="Sea Zone 8" t2="Sea Zone 12"/>
+	<connection t1="Sea Zone 8" t2="Sicily"/>
+	<connection t1="Sea Zone 8" t2="Tunis"/>
+	<connection t1="Sea Zone 8" t2="Tunis Convoy"/>
+	<connection t1="Sea Zone 9" t2="Sea Zone 10"/>
+	<connection t1="Sea Zone 9" t2="Sea Zone 11"/>
+	<connection t1="Sea Zone 10" t2="Sea Zone 11"/>
+	<connection t1="Sea Zone 11" t2="Sea Zone 16"/>
+	<connection t1="Sea Zone 11" t2="Sicily"/>
+	<connection t1="Sea Zone 12" t2="Sea Zone 13"/>
+	<connection t1="Sea Zone 12" t2="Sea Zone 15"/>
+	<connection t1="Sea Zone 12" t2="Sea Zone 16"/>
+	<connection t1="Sea Zone 12" t2="Sicily"/>
+	<connection t1="Sea Zone 12" t2="Tunis"/>
+	<connection t1="Sea Zone 13" t2="Sea Zone 14"/>
+	<connection t1="Sea Zone 13" t2="Sea Zone 15"/>
+	<connection t1="Sea Zone 13" t2="Sirte"/>
+	<connection t1="Sea Zone 13" t2="Tripoli"/>
+	<connection t1="Sea Zone 13" t2="Tripoli Convoy"/>
+	<connection t1="Sea Zone 13" t2="Tunis"/>
+	<connection t1="Sea Zone 14" t2="Sea Zone 15"/>
+	<connection t1="Sea Zone 14" t2="Sea Zone 21"/>
+	<connection t1="Sea Zone 14" t2="Sirte"/>
+	<connection t1="Sea Zone 15" t2="Sea Zone 16"/>
+	<connection t1="Sea Zone 15" t2="Sea Zone 20"/>
+	<connection t1="Sea Zone 15" t2="Sea Zone 21"/>
+	<connection t1="Sea Zone 16" t2="Sea Zone 17"/>
+	<connection t1="Sea Zone 16" t2="Sea Zone 19"/>
+	<connection t1="Sea Zone 16" t2="Sea Zone 20"/>
+	<connection t1="Sea Zone 16" t2="Sicily"/>
+	<connection t1="Sea Zone 17" t2="Sea Zone 18"/>
+	<connection t1="Sea Zone 17" t2="Sea Zone 19"/>
+	<connection t1="Sea Zone 19" t2="Sea Zone 20"/>
+	<connection t1="Sea Zone 19" t2="Sea Zone 23"/>
+	<connection t1="Sea Zone 20" t2="Sea Zone 21"/>
+	<connection t1="Sea Zone 20" t2="Sea Zone 22"/>
+	<connection t1="Sea Zone 20" t2="Sea Zone 23"/>
+	<connection t1="Sea Zone 21" t2="Sea Zone 22"/>
+	<connection t1="Sea Zone 22" t2="Sea Zone 23"/>
+	<connection t1="Sea Zone 22" t2="Sea Zone 24"/>
+	<connection t1="Sea Zone 23" t2="Sea Zone 24"/>
+	<connection t1="Sea Zone 23" t2="Sea Zone 25"/>
+	<connection t1="Sea Zone 23" t2="Sea Zone 26"/>
+	<connection t1="Sea Zone 24" t2="Sea Zone 25"/>
+	<connection t1="Sea Zone 24" t2="Sea Zone 28"/>
+	<connection t1="Sea Zone 24" t2="Sea Zone 29"/>
+	<connection t1="Sea Zone 24" t2="Tobruk"/>
+	<connection t1="Sea Zone 25" t2="Sea Zone 26"/>
+	<connection t1="Sea Zone 25" t2="Sea Zone 28"/>
+	<connection t1="Sea Zone 26" t2="Sea Zone 27"/>
+	<connection t1="Sea Zone 26" t2="Sea Zone 28"/>
+	<connection t1="Sea Zone 26" t2="Turkey"/>
+	<connection t1="Sea Zone 27" t2="Turkey"/>
+	<connection t1="Sea Zone 28" t2="Sea Zone 29"/>
+	<connection t1="Sea Zone 28" t2="Sea Zone 30"/>
+	<connection t1="Sea Zone 28" t2="Turkey"/>
+	<connection t1="Sea Zone 29" t2="Sea Zone 30"/>
+	<connection t1="Sea Zone 29" t2="Sea Zone 31"/>
+	<connection t1="Sea Zone 30" t2="Sea Zone 31"/>
+	<connection t1="Sea Zone 30" t2="Sea Zone 32"/>
+	<connection t1="Sea Zone 30" t2="Turkey"/>
+	<connection t1="Sea Zone 31" t2="Sea Zone 32"/>
+	<connection t1="Sea Zone 31" t2="Sinai"/>
+	<connection t1="Sea Zone 31" t2="Suez Canal Convoy"/>
+	<connection t1="Sea Zone 32" t2="Sinai"/>
+	<connection t1="Sea Zone 32" t2="Syria"/>
+	<connection t1="Sea Zone 32" t2="Turkey"/>
+	<connection t1="Sinai" t2="Suez Canal Convoy"/>
+	<connection t1="Sirte" t2="Sokna"/>
+	<connection t1="Sirte" t2="TRI-SIR"/>
+	<connection t1="Sirte" t2="Tripoli"/>
+	<connection t1="Sokna" t2="Tripoli"/>
+	<connection t1="Sokna" t2="Zella"/>
+	<connection t1="Syria" t2="Turkey"/>
+	<connection t1="TOB-HAC" t2="Tobruk"/>
+	<connection t1="TOB-MAT" t2="Tobruk"/>
+	<connection t1="TRI-GHA" t2="Tripoli"/>
+	<connection t1="TRI-SIR" t2="Tripoli"/>
+	<connection t1="Tobruk" t2="Sea Zone 22"/>
+	<connection t1="ZEL-I" t2="Zella"/>
+	<connection t1="ZEL-JAL" t2="Zella"/>
   </map>
   <resourceList>
     <resource name="PUs"/>
@@ -384,6 +487,11 @@
     <unit name="seamine"/>
     <unit name="aaGun"/>
   </unitList>
+ 	<relationshipTypes>
+		<relationshipType name="Allied"/>
+		<relationshipType name="War"/>
+		<relationshipType name="Neutral"/>
+	</relationshipTypes>
   <territoryEffectList>
 	<territoryEffect name="Desert"/>
   </territoryEffectList>
@@ -674,6 +782,15 @@
     <playerProduction player="Germans" frontier="G-production"/>
   </production>
   <attachmentList>
+	<attachment name="relationshipTypeAttachment" attachTo="War" javaClass="RelationshipTypeAttachment" type="relationship">
+		<option name="archeType" value="war"/>
+	</attachment>
+	<attachment name="relationshipTypeAttachment" attachTo="Allied" javaClass="RelationshipTypeAttachment" type="relationship">
+		<option name="archeType" value="allied"/>
+	</attachment>
+	<attachment name="relationshipTypeAttachment" attachTo="Neutral" javaClass="RelationshipTypeAttachment" type="relationship">
+		<option name="archeType" value="neutral"/>
+	</attachment>
     <attachment name="unitAttachment" attachTo="infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
       <option name="transportCost" value="1"/>
@@ -911,21 +1028,21 @@
 
     <attachment name="unitAttachment" attachTo="landmine" javaClass="UnitAttachment" type="unitType">
     <!-- I think it's best if the mines are handled using an independent die roller -->
-      <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
-      <option name="isInfrastructure" value="true"/>
-      <option name="isConstruction" value="true"/>
-      <option name="constructionType" value="landmine"/>
-	  <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
-      <option name="maxConstructionsPerTerritory" value="1"/>
+	    <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
+	    <option name="isInfrastructure" value="true"/>
+	    <option name="isConstruction" value="true"/>
+	    <option name="constructionType" value="landmine"/>
+	    <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+	    <option name="maxConstructionsPerTypePerTerr" value="999"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="seamine" javaClass="UnitAttachment" type="unitType">
-        <option name="isAAforFlyOverOnly" value="true"/>
-		<option name="isAAforCombatOnly" value="false"/>
-		<option name="damageableAA" value="true"/> <!-- this makes it cause damage to a BB instead of outright killing it -->
 		<option name="isSea" value="true"/>
-		<option name="typeAA" value="seamine"/>
-		<option name="targetsAA" value="submarine:destroyer:battleship:transport"/> <!-- not sure if it can target convoys -->
-		<option name="attackAA" value="3"/> 
+		<option name="isInfrastructure" value="true"/>
+		<option name="isConstruction" value="true"/>
+        <option name="constructionType" value="seamine"/>
+	    <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+	    <option name="maxConstructionsPerTypePerTerr" value="999"/>
+
     </attachment>
     <!-- TODO:  Need to figure out how to create/assign the "Coast Road" Property to the relevant tiles. -->
     <attachment name="territoryAttachment" attachTo="Portugal" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -936,6 +1053,7 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Spain" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
+      <option name="capital" value="Neutral"/>
 	  <option name="isImpassable" value="true"/>
     </attachment>
     <!-- SL 2 -->
@@ -989,6 +1107,7 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Jordan" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
+      <option name="capital" value="Desert"/>
 	  <option name="isImpassable" value="true"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="Saudi Arabia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -1101,49 +1220,154 @@
       <option name="production" value="15"/>
       <!-- option name="originalFactory" value="true"/-->
     </attachment>
-     <attachment name="territoryAttachment" attachTo="Desert Zone A" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="Desert Zone A" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
 	  <option name="territoryEffect" value="Desert"/>
     </attachment>
-     <attachment name="territoryAttachment" attachTo="Desert Zone B" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="Desert Zone B" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
 	  <option name="territoryEffect" value="Desert"/>
     </attachment>
-     <attachment name="territoryAttachment" attachTo="Desert Zone C" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="Desert Zone C" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
 	  <option name="territoryEffect" value="Desert"/>
     </attachment>
-     <attachment name="territoryAttachment" attachTo="Desert Zone D" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="Desert Zone D" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
 	  <option name="territoryEffect" value="Desert"/>
     </attachment>
-     <attachment name="territoryAttachment" attachTo="Desert Zone E" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="Desert Zone E" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
 	  <option name="territoryEffect" value="Desert"/>
     </attachment>
-     <attachment name="territoryAttachment" attachTo="Desert Zone F" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="Desert Zone F" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
 	  <option name="territoryEffect" value="Desert"/>
     </attachment>
-     <attachment name="territoryAttachment" attachTo="Desert Zone G" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="Desert Zone G" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
 	  <option name="territoryEffect" value="Desert"/>
     </attachment>
-     <attachment name="territoryAttachment" attachTo="Desert Zone H" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="Desert Zone H" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
 	  <option name="territoryEffect" value="Desert"/>
     </attachment>
-     <attachment name="territoryAttachment" attachTo="Desert Zone I" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="Desert Zone I" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
 	  <option name="territoryEffect" value="Desert"/>
     </attachment>
-     <attachment name="territoryAttachment" attachTo="Desert Zone J" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="Desert Zone J" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
 	  <option name="territoryEffect" value="Desert"/>
     </attachment>
-     <attachment name="territoryAttachment" attachTo="Desert Zone K" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="Desert Zone K" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
 	  <option name="territoryEffect" value="Desert"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="Casablanca Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="Oran Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="Algiers Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="Tunis Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="Malta Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="Benghazi Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="Tripoli Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="Atlantic Ocean Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="Indian Ocean Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="Suez Canal	 Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+      <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="AGH-BRE" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="AGH-SOK" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="BEN-TOB" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="BRE-BEN" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="GHA-G" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="GHA-SOK" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="HAC-MAT" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="JAL-HAC" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="MAT-CAI" javaClass="games.strategy.triplea.attachment.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="NAL-GHA" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="NAL-TRI" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="SIR-AGH" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="SIR-SOK" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="SIW-J" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="SIW-K" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="SIW-MAT" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="SOK-G" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="SOK-H" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="SOK-ZEL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="TOB-HAC" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="TOB-MAT" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="TRI-GHA" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="TRI-SIR" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="ZEL-I" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
+    </attachment>
+    <attachment name="territoryAttachment" attachTo="ZEL-JAL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+	   <option name="production" value="0"/>
     </attachment>
 	
 	<!-- Remove Left-Over Money -->
@@ -1363,6 +1587,33 @@
 	  <territoryOwner territory="Desert Zone I" owner="Desert"/>
 	  <territoryOwner territory="Desert Zone J" owner="Desert"/>
 	  <territoryOwner territory="Desert Zone K" owner="Desert"/>
+	  
+	<!-- Border Territories (Neutral) -->
+     <territoryOwner territory="AGH-BRE" owner="Neutral"/>
+     <territoryOwner territory="AGH-SOK" owner="Neutral"/>
+     <territoryOwner territory="BEN-TOB" owner="Neutral"/>
+     <territoryOwner territory="BRE-BEN" owner="Neutral"/>
+     <territoryOwner territory="GHA-G" owner="Neutral"/>
+     <territoryOwner territory="GHA-SOK" owner="Neutral"/>
+     <territoryOwner territory="HAC-MAT" owner="Neutral"/>
+     <territoryOwner territory="JAL-HAC" owner="Neutral"/>
+     <territoryOwner territory="MAT-CAI" owner="Neutral"/>
+     <territoryOwner territory="NAL-GHA" owner="Neutral"/>
+     <territoryOwner territory="NAL-TRI" owner="Neutral"/>
+     <territoryOwner territory="SIR-AGH" owner="Neutral"/>
+     <territoryOwner territory="SIR-SOK" owner="Neutral"/>
+     <territoryOwner territory="SIW-J" owner="Neutral"/>
+     <territoryOwner territory="SIW-K" owner="Neutral"/>
+     <territoryOwner territory="SIW-MAT" owner="Neutral"/>
+     <territoryOwner territory="SOK-G" owner="Neutral"/>
+     <territoryOwner territory="SOK-H" owner="Neutral"/>
+     <territoryOwner territory="SOK-ZEL" owner="Neutral"/>
+     <territoryOwner territory="TOB-HAC" owner="Neutral"/>
+     <territoryOwner territory="TOB-MAT" owner="Neutral"/>
+     <territoryOwner territory="TRI-GHA" owner="Neutral"/>
+     <territoryOwner territory="TRI-SIR" owner="Neutral"/>
+     <territoryOwner territory="ZEL-I" owner="Neutral"/>
+     <territoryOwner territory="ZEL-JAL" owner="Neutral"/>
     </ownerInitialize>
     <unitInitialize>
       <!-- Germans -->
@@ -1394,8 +1645,6 @@
       <unitPlacement unitType="5-supply" territory="El Agheila" quantity="1" owner="Italians"/>
       <unitPlacement unitType="scoutcar" territory="Zella" quantity="1" owner="Italians"/>
       <unitPlacement unitType="seamine" territory="Sea Zone 10" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="destroyer" territory="Tripoli Convoy" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="submarine" territory="Tripoli Convoy" quantity="1" owner="Italians"/>
 
       <unitPlacement unitType="infantry" territory="Cairo" quantity="1" owner="British"/>
       <unitPlacement unitType="UK-antitank" territory="Cairo" quantity="1" owner="British"/>
@@ -1440,6 +1689,34 @@
       <resourceGiven player="Italians" resource="PUs" quantity="0"/>
       <resourceGiven player="Germans" resource="PUs" quantity="0"/>
     </resourceInitialize>
+	<relationshipInitialize>
+		<relationship player1="Germans" player2="British" type="War" roundValue="1"/>
+		<relationship player1="Germans" player2="Italians" type="Neutral" roundValue="1"/>
+		<relationship player1="Germans" player2="Americans" type="War" roundValue="1"/>
+		<relationship player1="Germans" player2="Vichy-French" type="Allied" roundValue="1"/>
+		<relationship player1="Germans" player2="Neutral" type="Allied" roundValue="1"/>
+		<relationship player1="Germans" player2="Desert" type="Allied" roundValue="1"/>
+		
+		<relationship player1="British" player2="Italians" type="War" roundValue="1"/>
+		<relationship player1="British" player2="Americans" type="Allied" roundValue="1"/>
+		<relationship player1="British" player2="Vichy-French" type="War" roundValue="1"/>
+		<relationship player1="British" player2="Neutral" type="Allied" roundValue="1"/>
+		<relationship player1="British" player2="Desert" type="Allied" roundValue="1"/>
+		
+		<relationship player1="Italians" player2="Americans" type="War" roundValue="1"/>
+		<relationship player1="Italians" player2="Vichy-French" type="Allied" roundValue="1"/>
+		<relationship player1="Italians" player2="Neutral" type="Allied" roundValue="1"/>
+		<relationship player1="Italians" player2="Desert" type="Allied" roundValue="1"/>
+		
+		<relationship player1="Americans" player2="Vichy-French" type="War" roundValue="1"/>
+		<relationship player1="Americans" player2="Neutral" type="Allied" roundValue="1"/>
+		<relationship player1="Americans" player2="Desert" type="Allied" roundValue="1"/>
+		
+		<relationship player1="Vichy-French" player2="Neutral" type="Allied" roundValue="1"/>
+		<relationship player1="Vichy-French" player2="Desert" type="Allied" roundValue="1"/>
+		
+		<relationship player1="Neutral" player2="Desert" type="Allied" roundValue="1"/>
+	</relationshipInitialize>		
   </initialize>
   <!-- General -->
   <propertyList>
@@ -1546,7 +1823,7 @@
       <boolean/>
     </property>
 
-    <property name="mapName" value="world_war_ii_north_africa_rommel" editable="false">
+    <property name="mapName" value="north_africa" editable="false">
       <string/>
     </property>
     <property name="notes">
