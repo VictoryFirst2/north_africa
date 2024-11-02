@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="North Africa - Rommel Scenario" version="0.17"/>
+  <info name="North Africa - Rommel Scenario" version="0.18"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.6.1"/>
   <diceSides value="10"/>
@@ -437,7 +437,7 @@
     <!-- Adding Vichy/Free French here in case they are needed -->
     <player name="Vichy-French" optional="false"/>
     <!--player name="Free-French" optional="false"/-->
-    <player name="Neutral" optional="true"/>
+    <player name="Uncontrolled" optional="true"/>
 	<player name="Desert" optional="true"/>
     <!-- alliances -->
     <alliance player="Germans" alliance="Axis"/>
@@ -490,7 +490,6 @@
  	<relationshipTypes>
 		<relationshipType name="Allied"/>
 		<relationshipType name="War"/>
-		<relationshipType name="Neutral"/>
 	</relationshipTypes>
   <territoryEffectList>
 	<territoryEffect name="Desert"/>
@@ -788,9 +787,6 @@
 	<attachment name="relationshipTypeAttachment" attachTo="Allied" javaClass="RelationshipTypeAttachment" type="relationship">
 		<option name="archeType" value="allied"/>
 	</attachment>
-	<attachment name="relationshipTypeAttachment" attachTo="Neutral" javaClass="RelationshipTypeAttachment" type="relationship">
-		<option name="archeType" value="neutral"/>
-	</attachment>
     <attachment name="unitAttachment" attachTo="infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
       <option name="transportCost" value="1"/>
@@ -1053,7 +1049,7 @@
     </attachment>
     <attachment name="territoryAttachment" attachTo="Spain" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
-      <option name="capital" value="Neutral"/>
+      <option name="capital" value="Uncontrolled"/>
 	  <option name="isImpassable" value="true"/>
     </attachment>
     <!-- SL 2 -->
@@ -1291,7 +1287,7 @@
     <attachment name="territoryAttachment" attachTo="Indian Ocean Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
-    <attachment name="territoryAttachment" attachTo="Suez Canal	 Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+    <attachment name="territoryAttachment" attachTo="Suez Canal	Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
       <option name="production" value="0"/>
     </attachment>
     <attachment name="territoryAttachment" attachTo="AGH-BRE" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -1530,10 +1526,12 @@
 	
 	<!-- British -->
 	  <territoryOwner territory="Benghazi" owner="British"/>
+      <territoryOwner territory="Cyprus" owner="British"/>
 	  <territoryOwner territory="Cairo" owner="British"/>
       <territoryOwner territory="Gibraltar" owner="British"/>
       <territoryOwner territory="Malta" owner="British"/>
-	  
+      <territoryOwner territory="Tobruk" owner="British"/>
+     
 	  <territoryOwner territory="Atlantic Ocean Convoy" owner="British"/>
 	  <territoryOwner territory="Indian Ocean Convoy" owner="British"/>
 	  <territoryOwner territory="Malta Convoy" owner="British"/>
@@ -1557,25 +1555,33 @@
       <territoryOwner territory="Oran" owner="Vichy-French"/>
       <territoryOwner territory="Tunis" owner="Vichy-French"/>
 	  
-	<!-- Neutral -->
+	<!-- Uncontrolled -->
 		<!-- These are 0 RP territories not controlled by anyone -->
 		<!-- I suggest giving these a white, gray, or maybe brown color -->
-      <territoryOwner territory="Bir Hacheim" owner="Neutral"/>	  	
-      <territoryOwner territory="Constantine" owner="Neutral"/>	  	
-	  <territoryOwner territory="El Oued" owner="Neutral"/>
-      <territoryOwner territory="Fez" owner="Neutral"/>
-      <territoryOwner territory="Ghadames" owner="Neutral"/>
-      <territoryOwner territory="Jalo" owner="Neutral"/>
-      <territoryOwner territory="Laghouat" owner="Neutral"/>
-      <territoryOwner territory="Mersa Brega" owner="Neutral"/>
-      <territoryOwner territory="Mersa Matruh" owner="Neutral"/>
-      <territoryOwner territory="Sirte" owner="Neutral"/>
-      <territoryOwner territory="Siwa" owner="Neutral"/>
-      <territoryOwner territory="Sokna" owner="Neutral"/>
-      <territoryOwner territory="Zella" owner="Neutral"/>
-
+      <territoryOwner territory="Bir Hacheim" owner="Uncontrolled"/>	  	
+      <territoryOwner territory="Constantine" owner="Uncontrolled"/>	  	
+	  <territoryOwner territory="El Oued" owner="Uncontrolled"/>
+      <territoryOwner territory="Fez" owner="Uncontrolled"/>
+      <territoryOwner territory="Ghadames" owner="Uncontrolled"/>
+      <territoryOwner territory="Jalo" owner="Uncontrolled"/>
+      <territoryOwner territory="Laghouat" owner="Uncontrolled"/>
+      <territoryOwner territory="Mersa Brega" owner="Uncontrolled"/>
+      <territoryOwner territory="Mersa Matruh" owner="Uncontrolled"/>
+      <territoryOwner territory="Nalut" owner="Uncontrolled"/>
+      <territoryOwner territory="Sirte" owner="Uncontrolled"/>
+      <territoryOwner territory="Siwa" owner="Uncontrolled"/>
+      <territoryOwner territory="Sokna" owner="Uncontrolled"/>
+      <territoryOwner territory="Zella" owner="Uncontrolled"/>
+	  
+	  <!-- Setting these to uncontrolled for now -->
+      <territoryOwner territory="Algiers Convoy" owner="Uncontrolled"/>
+      <territoryOwner territory="Casablanca Convoy" owner="Uncontrolled"/>
+      <territoryOwner territory="Oran Convoy" owner="Uncontrolled"/>
+      <territoryOwner territory="Tunis Convoy" owner="Uncontrolled"/>
+	  
+	 
 	<!-- Desert -->
-		<!-- Controlled by a separate power so that we can make these have a different color (e.g. yellow) -->
+		<!-- Controlled by a separate power so that we can make these have a different color -->
 	  <territoryOwner territory="Desert Zone A" owner="Desert"/>
 	  <territoryOwner territory="Desert Zone B" owner="Desert"/>
 	  <territoryOwner territory="Desert Zone C" owner="Desert"/>
@@ -1589,33 +1595,35 @@
 	  <territoryOwner territory="Desert Zone K" owner="Desert"/>
 	  
 	<!-- Border Territories (Neutral) -->
-     <territoryOwner territory="AGH-BRE" owner="Neutral"/>
-     <territoryOwner territory="AGH-SOK" owner="Neutral"/>
-     <territoryOwner territory="BEN-TOB" owner="Neutral"/>
-     <territoryOwner territory="BRE-BEN" owner="Neutral"/>
-     <territoryOwner territory="GHA-G" owner="Neutral"/>
-     <territoryOwner territory="GHA-SOK" owner="Neutral"/>
-     <territoryOwner territory="HAC-MAT" owner="Neutral"/>
-     <territoryOwner territory="JAL-HAC" owner="Neutral"/>
-     <territoryOwner territory="MAT-CAI" owner="Neutral"/>
-     <territoryOwner territory="NAL-GHA" owner="Neutral"/>
-     <territoryOwner territory="NAL-TRI" owner="Neutral"/>
-     <territoryOwner territory="SIR-AGH" owner="Neutral"/>
-     <territoryOwner territory="SIR-SOK" owner="Neutral"/>
-     <territoryOwner territory="SIW-J" owner="Neutral"/>
-     <territoryOwner territory="SIW-K" owner="Neutral"/>
-     <territoryOwner territory="SIW-MAT" owner="Neutral"/>
-     <territoryOwner territory="SOK-G" owner="Neutral"/>
-     <territoryOwner territory="SOK-H" owner="Neutral"/>
-     <territoryOwner territory="SOK-ZEL" owner="Neutral"/>
-     <territoryOwner territory="TOB-HAC" owner="Neutral"/>
-     <territoryOwner territory="TOB-MAT" owner="Neutral"/>
-     <territoryOwner territory="TRI-GHA" owner="Neutral"/>
-     <territoryOwner territory="TRI-SIR" owner="Neutral"/>
-     <territoryOwner territory="ZEL-I" owner="Neutral"/>
-     <territoryOwner territory="ZEL-JAL" owner="Neutral"/>
+     <territoryOwner territory="AGH-BRE" owner="Uncontrolled"/>
+     <territoryOwner territory="AGH-SOK" owner="Uncontrolled"/>
+     <territoryOwner territory="BEN-TOB" owner="Uncontrolled"/>
+     <territoryOwner territory="BRE-BEN" owner="Uncontrolled"/>
+     <territoryOwner territory="GHA-G" owner="Uncontrolled"/>
+     <territoryOwner territory="GHA-SOK" owner="Uncontrolled"/>
+     <territoryOwner territory="HAC-MAT" owner="Uncontrolled"/>
+     <territoryOwner territory="JAL-HAC" owner="Uncontrolled"/>
+     <territoryOwner territory="MAT-CAI" owner="Uncontrolled"/>
+     <territoryOwner territory="NAL-GHA" owner="Uncontrolled"/>
+     <territoryOwner territory="NAL-TRI" owner="Uncontrolled"/>
+     <territoryOwner territory="SIR-AGH" owner="Uncontrolled"/>
+     <territoryOwner territory="SIR-SOK" owner="Uncontrolled"/>
+     <territoryOwner territory="SIW-J" owner="Uncontrolled"/>
+     <territoryOwner territory="SIW-K" owner="Uncontrolled"/>
+     <territoryOwner territory="SIW-MAT" owner="Uncontrolled"/>
+     <territoryOwner territory="SOK-G" owner="Uncontrolled"/>
+     <territoryOwner territory="SOK-H" owner="Uncontrolled"/>
+     <territoryOwner territory="SOK-ZEL" owner="Uncontrolled"/>
+     <territoryOwner territory="TOB-HAC" owner="Uncontrolled"/>
+     <territoryOwner territory="TOB-MAT" owner="Uncontrolled"/>
+     <territoryOwner territory="TRI-GHA" owner="Uncontrolled"/>
+     <territoryOwner territory="TRI-SIR" owner="Uncontrolled"/>
+     <territoryOwner territory="ZEL-I" owner="Uncontrolled"/>
+     <territoryOwner territory="ZEL-JAL" owner="Uncontrolled"/>
     </ownerInitialize>
     <unitInitialize>
+	
+	<!-- The setup for Tripoli Convoy is missing here due to my mistake -->
       <!-- Germans -->
       <unitPlacement unitType="mech" territory="Tripoli" quantity="1" owner="Germans"/>
       <unitPlacement unitType="fighter" territory="Tripoli" quantity="1" owner="Germans"/>
@@ -1691,31 +1699,31 @@
     </resourceInitialize>
 	<relationshipInitialize>
 		<relationship player1="Germans" player2="British" type="War" roundValue="1"/>
-		<relationship player1="Germans" player2="Italians" type="Neutral" roundValue="1"/>
+		<relationship player1="Germans" player2="Italians" type="Allied" roundValue="1"/>
 		<relationship player1="Germans" player2="Americans" type="War" roundValue="1"/>
 		<relationship player1="Germans" player2="Vichy-French" type="Allied" roundValue="1"/>
-		<relationship player1="Germans" player2="Neutral" type="Allied" roundValue="1"/>
+		<relationship player1="Germans" player2="Uncontrolled" type="Allied" roundValue="1"/>
 		<relationship player1="Germans" player2="Desert" type="Allied" roundValue="1"/>
 		
 		<relationship player1="British" player2="Italians" type="War" roundValue="1"/>
 		<relationship player1="British" player2="Americans" type="Allied" roundValue="1"/>
 		<relationship player1="British" player2="Vichy-French" type="War" roundValue="1"/>
-		<relationship player1="British" player2="Neutral" type="Allied" roundValue="1"/>
+		<relationship player1="British" player2="Uncontrolled" type="Allied" roundValue="1"/>
 		<relationship player1="British" player2="Desert" type="Allied" roundValue="1"/>
 		
 		<relationship player1="Italians" player2="Americans" type="War" roundValue="1"/>
 		<relationship player1="Italians" player2="Vichy-French" type="Allied" roundValue="1"/>
-		<relationship player1="Italians" player2="Neutral" type="Allied" roundValue="1"/>
+		<relationship player1="Italians" player2="Uncontrolled" type="Allied" roundValue="1"/>
 		<relationship player1="Italians" player2="Desert" type="Allied" roundValue="1"/>
 		
 		<relationship player1="Americans" player2="Vichy-French" type="War" roundValue="1"/>
-		<relationship player1="Americans" player2="Neutral" type="Allied" roundValue="1"/>
+		<relationship player1="Americans" player2="Uncontrolled" type="Allied" roundValue="1"/>
 		<relationship player1="Americans" player2="Desert" type="Allied" roundValue="1"/>
 		
-		<relationship player1="Vichy-French" player2="Neutral" type="Allied" roundValue="1"/>
+		<relationship player1="Vichy-French" player2="Uncontrolled" type="Allied" roundValue="1"/>
 		<relationship player1="Vichy-French" player2="Desert" type="Allied" roundValue="1"/>
 		
-		<relationship player1="Neutral" player2="Desert" type="Allied" roundValue="1"/>
+		<relationship player1="Uncontrolled" player2="Desert" type="Allied" roundValue="1"/>
 	</relationshipInitialize>		
   </initialize>
   <!-- General -->
