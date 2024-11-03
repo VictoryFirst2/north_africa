@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="North Africa - Rommel Scenario" version="0.18"/>
+  <info name="North Africa - Rommel Scenario" version="0.19"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.6.1"/>
   <diceSides value="10"/>
@@ -722,6 +722,20 @@
       <frontierRules name="buyLandmine"/>
       <frontierRules name="buySeamine"/>
     </productionFrontier>
+    <productionFrontier name="A-production_NoAir">
+      <frontierRules name="buyInfantry"/>
+      <frontierRules name="buyFrenchInfantry"/>
+      <frontierRules name="buyArtillery"/>
+      <frontierRules name="buyAAGun"/>
+      <frontierRules name="buyTank"/>
+      <frontierRules name="buyFrenchTank"/>
+      <frontierRules name="buyTruck"/>
+      <frontierRules name="buyDestroyer"/>
+      <frontierRules name="buySupply"/>
+      <frontierRules name="buy5Supply"/>
+      <frontierRules name="buyLandmine"/>
+      <frontierRules name="buySeamine"/>
+    </productionFrontier>
     <productionFrontier name="A-production">
       <frontierRules name="buyInfantry"/>
       <frontierRules name="buyFrenchInfantry"/>
@@ -777,7 +791,7 @@
          (This is being re-added for readibility/future reference)  -->
     <playerProduction player="British" frontier="B-production"/>
     <playerProduction player="Italians" frontier="I-production"/>
-    <playerProduction player="Americans" frontier="A-production"/>
+    <playerProduction player="Americans" frontier="A-production_NoAir"/>
     <playerProduction player="Germans" frontier="G-production"/>
   </production>
   <attachmentList>
@@ -1495,6 +1509,15 @@
 		<option name="when" value="before:americansPurchase"/>
 	</attachment>
 	
+	<!-- US can buy air from turn 8 -->
+	<attachment name="triggerAttachmentUSACanBuyAir" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentRound8"/>
+		<option name="uses" value="1"/>
+		<option name="when" value="before:AmericansPurchase"/>
+		<option name="notification" value="USACanBuyAir"/>
+		<option name="frontier" value="A-production"/>
+	</attachment>
+	
 	<!-- Base income (using national objectives) -->
 	<attachment name="objectiveAttachment_Germans_Base_Income" attachTo="Germans" javaClass="RulesAttachment" type="player">
 		<option name="objectiveValue" value="25"/>
@@ -1557,7 +1580,6 @@
 	  
 	<!-- Uncontrolled -->
 		<!-- These are 0 RP territories not controlled by anyone -->
-		<!-- I suggest giving these a white, gray, or maybe brown color -->
       <territoryOwner territory="Bir Hacheim" owner="Uncontrolled"/>	  	
       <territoryOwner territory="Constantine" owner="Uncontrolled"/>	  	
 	  <territoryOwner territory="El Oued" owner="Uncontrolled"/>
@@ -1620,9 +1642,9 @@
      <territoryOwner territory="TRI-SIR" owner="Uncontrolled"/>
      <territoryOwner territory="ZEL-I" owner="Uncontrolled"/>
      <territoryOwner territory="ZEL-JAL" owner="Uncontrolled"/>
+	 
     </ownerInitialize>
     <unitInitialize>
-	
 	<!-- The setup for Tripoli Convoy is missing here due to my mistake -->
       <!-- Germans -->
       <unitPlacement unitType="mech" territory="Tripoli" quantity="1" owner="Germans"/>
@@ -1634,32 +1656,13 @@
       <unitPlacement unitType="G-antitank" territory="El Agheila" quantity="1" owner="Germans"/>
       <unitPlacement unitType="tank" territory="El Agheila" quantity="2" owner="Germans"/>
       <unitPlacement unitType="scoutcar" territory="Zella" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="F-infantry" territory="Casablanca" quantity="2" owner="Vichy-French"/>
-      <unitPlacement unitType="F-infantry" territory="Oran" quantity="2" owner="Vichy-French"/>
-      <unitPlacement unitType="F-tank" territory="Oran" quantity="1" owner="Vichy-French"/>
-      <unitPlacement unitType="F-infantry" territory="Algiers" quantity="2" owner="Vichy-French"/>
       <unitPlacement unitType="supply" territory="Tunis" quantity="3" owner="Germans"/>
-      <!-- Italians -->
-      <unitPlacement unitType="I-infantry" territory="Tripoli" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="truck" territory="Tripoli" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="supply" territory="Tripoli" quantity="3" owner="Italians"/>
-      <unitPlacement unitType="aaGun" territory="Sicily" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="fighter" territory="Sicily" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="bomber" territory="Sicily" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="I-infantry" territory="Sirte" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="I-infantry" territory="El Agheila" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="artillery" territory="El Agheila" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="fighter" territory="El Agheila" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="5-supply" territory="El Agheila" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="scoutcar" territory="Zella" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="seamine" territory="Sea Zone 10" quantity="1" owner="Italians"/>
-
+	  <!-- British -->
       <unitPlacement unitType="infantry" territory="Cairo" quantity="1" owner="British"/>
       <unitPlacement unitType="UK-antitank" territory="Cairo" quantity="1" owner="British"/>
       <unitPlacement unitType="aaGun" territory="Cairo" quantity="1" owner="British"/>
       <unitPlacement unitType="fighter" territory="Cairo" quantity="1" owner="British"/>
       <unitPlacement unitType="5-supply" territory="Cairo" quantity="1" owner="British"/>
-				  
       <unitPlacement unitType="landmine" territory="Cairo" quantity="3" owner="British"/>
       <unitPlacement unitType="UK-scoutcar" territory="Mersa Matruh" quantity="2" owner="British"/>
       <unitPlacement unitType="infantry" territory="Tobruk" quantity="1" owner="British"/>
@@ -1684,11 +1687,31 @@
       <unitPlacement unitType="submarine" territory="Malta Convoy" quantity="1" owner="British"/>
       <unitPlacement unitType="destroyer" territory="Sea Zone 31" quantity="1" owner="British"/>
       <unitPlacement unitType="battleship" territory="Sea Zone 31" quantity="1" owner="British"/>
+      <!-- Italians -->
+      <unitPlacement unitType="I-infantry" territory="Tripoli" quantity="2" owner="Italians"/>
+      <unitPlacement unitType="truck" territory="Tripoli" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="supply" territory="Tripoli" quantity="3" owner="Italians"/>
+      <unitPlacement unitType="aaGun" territory="Sicily" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="fighter" territory="Sicily" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="bomber" territory="Sicily" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="I-infantry" territory="Sirte" quantity="2" owner="Italians"/>
+      <unitPlacement unitType="I-infantry" territory="El Agheila" quantity="2" owner="Italians"/>
+      <unitPlacement unitType="artillery" territory="El Agheila" quantity="2" owner="Italians"/>
+      <unitPlacement unitType="fighter" territory="El Agheila" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="5-supply" territory="El Agheila" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="scoutcar" territory="Zella" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="seamine" territory="Sea Zone 10" quantity="1" owner="Italians"/>
+	  <!-- Vichy French -->
+      <unitPlacement unitType="F-infantry" territory="Casablanca" quantity="2" owner="Vichy-French"/>
+      <unitPlacement unitType="F-infantry" territory="Oran" quantity="2" owner="Vichy-French"/>
+      <unitPlacement unitType="F-tank" territory="Oran" quantity="1" owner="Vichy-French"/>
+      <unitPlacement unitType="F-infantry" territory="Algiers" quantity="2" owner="Vichy-French"/>
       
       <!-- Americans -->
       <!-- America doesn't join the game until turn 7, so they start with nothing. -->
-      <!-- TODO:  USA cannot buy air on turn 7.
-                  USA can only deploy to Casablanca Convoy on turn 7. -->
+      <!-- TODO: USA can only deploy to Casablanca Convoy on turn 7. -->
+				  
+				  <!-- USA cannot buy air on turn 7 has been implemented -->
     </unitInitialize>
     <resourceInitialize>
       <!-- Players receive IPC at the start of the turn, so this can be 0 across the board. -->
