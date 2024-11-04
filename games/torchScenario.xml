@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
+  <info name="North Africa - Torch Scenario" version="0.15"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.6.1"/>
   <diceSides value="10"/>
@@ -383,6 +384,9 @@
     <unit name="seamine"/>
     <unit name="aaGun"/>
   </unitList>
+  <territoryEffectList>
+	<territoryEffect name="Desert"/>
+  </territoryEffectList>
   <gamePlay>
     <delegate name="initDelegate" javaClass="games.strategy.triplea.delegate.InitializationDelegate" display="Initializing Delegates"/>
     <delegate name="battle" javaClass="games.strategy.triplea.delegate.BattleDelegate" display="Combat"/>
@@ -869,13 +873,11 @@
       <option name="isFactory" value="true"/>
       <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
     </attachment>
-    <!-- TODO:  Check how Harbors work in G40/1914 -->
+    <!-- NOTE:  In this game, repairing a BB costs 1 Supply.  May be necessary to note for later. -->
     <attachment name="unitAttachment" attachTo="harbor" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
-      <option name="isFactory" value="true"/>
       <option name="isInfrastructure" value="true"/>
       <option name="repairsUnits" value="battleship"/>
       <option name="movement" value="0"/>
-      <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
     </attachment>
     <!-- TODO:  Need to figure out how to get Supply to work. -->
     <attachment name="unitAttachment" attachTo="supply" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -1532,6 +1534,7 @@
       <boolean/>
     </property>
     <property name="maxFactoriesPerTerritory" value="1" editable="false">
+      <number min="1" max="100"/>
     </property>
     <property name="mapName" value="world_war_ii_north_africa_torch" editable="false">
       <string/>
