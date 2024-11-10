@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="North Africa - Rommel Scenario" version="0.19"/>
+  <info name="North Africa - Rommel Scenario" version="0.20"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.6.1"/>
   <diceSides value="10"/>
@@ -801,6 +801,7 @@
 	<attachment name="relationshipTypeAttachment" attachTo="Allied" javaClass="RelationshipTypeAttachment" type="relationship">
 		<option name="archeType" value="allied"/>
 	</attachment>
+
     <attachment name="unitAttachment" attachTo="infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
       <option name="transportCost" value="1"/>
@@ -808,6 +809,8 @@
       <option name="defense" value="3"/>
       <option name="artillerySupportable" value="true"/>
 	  <option name="isLandTransportable" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="12"/>
+      <option name="maxConstructionsPerTypePerTerr" value="12"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="F-infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
@@ -816,6 +819,11 @@
       <option name="defense" value="3"/>
       <option name="artillerySupportable" value="true"/>
 	  <option name="isLandTransportable" value="true"/>
+	  <option name="unitPlacementOnlyAllowedIn" value="Oran"/>
+  	  <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="F-infantry"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="I-infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
@@ -824,6 +832,8 @@
       <option name="defense" value="2"/>
       <option name="artillerySupportable" value="true"/>
 	  <option name="isLandTransportable" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="12"/>
+      <option name="maxConstructionsPerTypePerTerr" value="12"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
@@ -832,6 +842,8 @@
       <option name="defense" value="3"/>
       <option name="artillery" value="true"/>
 	  <option name="isLandTransportable" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="mech" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
@@ -839,7 +851,10 @@
       <option name="defense" value="3"/>
       <option name="artillerySupportable" value="true"/>
       <option name="receivesAbilityWhenWith" value="canBlitz:tank"/>
-	  <!-- Can they blitz with Tiger Tanks too? -->
+	  <!-- Can they blitz with Tiger Tanks too?-->
+	  <!-- This was never directly stated.  May need to ask Krieghund on the forums. -->
+	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="UK-scoutcar" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <!-- TODO:  scoutcars:
@@ -850,6 +865,8 @@
       <option name="movement" value="4"/>
       <option name="attack" value="2"/>
       <option name="defense" value="1"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="scoutcar" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <!-- TODO:  scoutcars:
@@ -860,6 +877,8 @@
       <option name="movement" value="3"/>
       <option name="attack" value="2"/>
       <option name="defense" value="2"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
+      <option name="maxConstructionsPerTypePerTerr" value="4"/>
     </attachment>
     <!-- TODO:  Tanks, Mech, scoutcar Cars and Trucks all have "Coast Road Move", which may be a nusiance to implement properly.
                 See if there is a GW36 Module in TripleA and see how they handled railroads (or a similar mechanic). -->
@@ -868,6 +887,8 @@
       <option name="canBlitz" value="true"/>
       <option name="attack" value="5"/>
       <option name="defense" value="4"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="10"/>
+      <option name="maxConstructionsPerTypePerTerr" value="10"/>
     </attachment>
 	
     <attachment name="unitAttachment" attachTo="tiger" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -875,30 +896,40 @@
       <option name="canBlitz" value="true"/>
       <option name="attack" value="6"/>
       <option name="defense" value="7"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+      <option name="maxConstructionsPerTypePerTerr" value="1"/>
     </attachment>
 	
     <attachment name="unitAttachment" attachTo="matilda" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
       <option name="attack" value="4"/>
       <option name="defense" value="5"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="8"/>
+      <option name="maxConstructionsPerTypePerTerr" value="8"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="sherman" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
       <option name="canBlitz" value="true"/>
       <option name="attack" value="5"/>
       <option name="defense" value="4"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="8"/>
+      <option name="maxConstructionsPerTypePerTerr" value="8"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="I-tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
       <option name="canBlitz" value="true"/>
       <option name="attack" value="3"/>
       <option name="defense" value="3"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="7"/>
+      <option name="maxConstructionsPerTypePerTerr" value="7"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="F-tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
       <option name="canBlitz" value="true"/>
       <option name="attack" value="3"/>
       <option name="defense" value="3"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
+      <option name="maxConstructionsPerTypePerTerr" value="4"/>
     </attachment>
     <!-- TODO:  AntiTanks Prioritize Tanks ("tank") if they get hits in combat *DURING THE FIRST ROUND ONLY* -->
     <attachment name="unitAttachment" attachTo="UK-antitank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -913,6 +944,8 @@
 	<!-- <option name="canNotMoveDuringCombatMove" value="true"/> -->
 	<!-- Non-German Anti-Tanks do not have AA properties.-->
 	<!-- This is poorly worded in the rulebook but you can see the ability specifically given to the German Ant-Tank on the Player-Aid Cards. -->
+	<option name="constructionsPerTerrPerTypePerTurn" value="8"/>
+      <option name="maxConstructionsPerTypePerTerr" value="8"/>
     </attachment>
     <!-- Germany AT are also AA -->
     <attachment name="unitAttachment" attachTo="G-antitank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -924,6 +957,8 @@
       <option name="maxAAattacks" value="3"/>
 	  <option name="attackAA" value="2"/>
 	  <option name="isLandTransportable" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
     </attachment>
 	<!-- AA guns work like G40 -->
     <attachment name="unitAttachment" attachTo="aaGun" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -933,6 +968,9 @@
       <option name="movement" value="1"/>
       <option name="maxAAattacks" value="3"/>
 	  <option name="attackAA" value="2"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
+      <option name="maxConstructionsPerTypePerTerr" value="4"/>
+      <!-- TODO:  UK may need 6 instead of 4.  Not sure. -->
       <!-- option name="destroyedWhenCapturedFrom" value="Russians:Germans:British:Japanese:Americans"/-->
     </attachment>
     <attachment name="unitAttachment" attachTo="truck" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -949,6 +987,13 @@
 		<option name="isAAmovement" value="true"/>
         <option name="destroyedWhenCapturedBy" value="British:Americans"/>
 	  <!-- I have to check the rules to see if it is By or From -->
+	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
+      <!-- TODO #1:  Axis are only allowed 1 truck each at first, then unlock a 2nd truck post-turn-7 -->
+      <!-- TODO #2:  USA is allowed only 2 truck stacks -->
+      <!-- The above TODOs will require coding to deal with.
+           USA, UK and Axis each need their own separate "truck" units.
+           Allied ones can be captured by Axis, Axis ones do not.  This also solves the problem where captured Allied trucks *do not* count against the Axis' unit limit.-->
     </attachment>
     <!-- TODO:  FTRs in this game:
     			-Can go on CAP similar to but not identical to Pacific (2001).
@@ -960,6 +1005,15 @@
       <option name="isAir" value="true"/>
       <option name="attack" value="4"/>
       <option name="defense" value="5"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
+      <option name="maxBuiltPerPlayer" value="6"/>
+      <!-- Note that this also uses "maxBuiltPerPlayer" because it's a PIECE LIMIT and not a STACK LIMIT-->
+      <!-- TODO:  I used the highest value (UK's) as a PLACEHOLDER. -->
+      <!-- TODO:  In reality, each power needs their OWN SEPARETE FTR UNIT:
+                  Germany - 5 FTR Limit
+                  UK      - 6 FTR Limit
+                  Italy&USA 3 FTR Limit -->
     </attachment>
     <!-- BOMBs in this game:
     	-Can only land in land territories with an IPC Value >= 1, and "Islands" (Malta, Gibraltar, Sardinia, Italy, Crete, Cyprus)
@@ -971,6 +1025,14 @@
       <option name="isAir" value="true"/>
       <option name="attack" value="6"/>
       <option name="defense" value="1"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="3"/>
+      <option name="maxConstructionsPerTypePerTerr" value="3"/>
+      <option name="maxBuiltPerPlayer" value="3"/>
+      <!-- TODO:  I used the highest value (UK's) as a PLACEHOLDER. -->
+      <!-- TODO:  In reality, Italy needs a SEPARETE BOMB UNIT:
+                  USA     - Same limit (3) as UK
+                  Germany - Handled separately already.
+                  Italy   - 2 BOMB Limit -->
     </attachment>
     <!-- TODO:  In addition to the above properties, a German Bomber has target fire against any land or naval unit when attacking. -->
     <attachment name="unitAttachment" attachTo="G-bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -979,6 +1041,9 @@
       <option name="attack" value="5"/>
       <option name="defense" value="2"/>
       <option name="isStrategicBomber" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
+      <option name="maxConstructionsPerTypePerTerr" value="4"/>
+      <option name="maxBuiltPerPlayer" value="4"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="destroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="4"/>
@@ -986,6 +1051,17 @@
       <option name="attack" value="4"/>
       <option name="defense" value="4"/>
       <option name="isDestroyer" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
+      <option name="maxConstructionsPerTypePerTerr" value="4"/>
+      <option name="maxBuiltPerPlayer" value="4"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Sea Zone 3:Atlantic Ocean Convoy"/>
+  	  <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="UK-DD"/>
+      <!-- TODO:  I used the highest value (UK's) as a PLACEHOLDER. -->
+      <!-- TODO:  In reality, each power needs their OWN SEPARETE DD UNIT:
+                  Germany - Cannot build
+                  Italy   - 3 DD Limit, built only in Sea Zone 10
+                  USA     - 2 DD Limit, built only in Casablanca Convoy -->
     </attachment>
    
     <attachment name="unitAttachment" attachTo="battleship" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -994,6 +1070,12 @@
       <option name="attack" value="6"/>
       <option name="defense" value="6"/>
       <option name="hitPoints" value="2"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Sea Zone 3:Atlantic Ocean Convoy"/>
+  	  <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="UK-BB"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="submarine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isSub" value="true"/>
@@ -1001,6 +1083,17 @@
       <option name="isSea" value="true"/>
       <option name="attack" value="4"/>
       <option name="defense" value="2"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="3"/>
+      <option name="maxConstructionsPerTypePerTerr" value="3"/>
+      <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Sea Zone 1"/>
+  	  <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="G-Sub"/>
+      <!-- TODO:  I used the highest value (Germany) as a PLACEHOLDER. -->
+      <!-- TODO:  In reality, Italy and UK needs its OWN SEPARETE SUB UNIT:
+                  Italy   - 3 Sub Limit, can only build in Sea Zone 10
+                  UK      - 2 SUB Limit, can only build in Sea Zone 3 and Atlantic Ocean Convoy
+                  USA     - Cannot build-->
     </attachment>
 	
     <!-- TODO:  TTs are not in this game, but instead are replaced by the intricate "Convoy System".  Implementing this system may be difficult. -->
