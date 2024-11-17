@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="North Africa - Rommel Scenario" version="0.20"/>
+  <info name="North Africa - Rommel Scenario" version="0.21"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.6.1"/>
   <diceSides value="10"/>
@@ -464,8 +464,15 @@
     <unit name="UK-antitank"/>
     <unit name="G-antitank"/>
     <unit name="truck"/>
+    <unit name="UK-truck"/>
+    <unit name="US-truck"/>
+    <unit name="Axis-truck"/>
+    <unit name="Axis-truck-latewar"/>
     <unit name="fighter"/>
+    <unit name="UK-fighter"/>
+    <unit name="G-fighter"/>
     <unit name="bomber"/>
+    <unit name="I-bomber"/>
     <unit name="G-bomber"/>
     <unit name="transport"/> <!-- I think we need transports -->
     <!--  Re: Transports.  I do not think they are needed because of how the convoy rules work Vs. how Transports work in normal A&A:
@@ -477,8 +484,12 @@
     	               In my opinion, as this is a cooperative effort between the players, such a thing would need to be done via manual dice rolls and edits rather than in-engine.
     	               Happy to discuss further over email if there's something I am overlooking. -->
     <unit name="battleship"/>
-    <unit name="destroyer"/>
-    <unit name="submarine"/>
+    <unit name="UK-destroyer"/>
+    <unit name="I-destroyer"/>
+    <unit name="A-destroyer"/>
+    <unit name="UK-submarine"/>
+    <unit name="G-submarine"/>
+    <unit name="I-submarine"/>
     <unit name="factory"/>
     <unit name="harbor"/>
     <unit name="supply"/>
@@ -486,6 +497,7 @@
     <unit name="landmine"/>
     <unit name="seamine"/>
     <unit name="aaGun"/>
+    <unit name="UK-aaGun"/>
   </unitList>
  	<relationshipTypes>
 		<relationshipType name="Allied"/>
@@ -644,7 +656,31 @@
       <cost resource="PUs" quantity="2"/>
       <result resourceOrUnit="truck" quantity="1"/>
     </productionRule>
+    <productionRule name="buyUKTruck">
+      <cost resource="PUs" quantity="2"/>
+      <result resourceOrUnit="UK-truck" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSTruck">
+      <cost resource="PUs" quantity="2"/>
+      <result resourceOrUnit="US-truck" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyAxisTruck">
+      <cost resource="PUs" quantity="2"/>
+      <result resourceOrUnit="Axis-truck" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyAxisTruckLateWar">
+      <cost resource="PUs" quantity="2"/>
+      <result resourceOrUnit="Axis-truck-latewar" quantity="1"/>
+    </productionRule>
     <productionRule name="buyFighter">
+      <cost resource="PUs" quantity="10"/>
+      <result resourceOrUnit="fighter" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUKFighter">
+      <cost resource="PUs" quantity="10"/>
+      <result resourceOrUnit="fighter" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGFighter">
       <cost resource="PUs" quantity="10"/>
       <result resourceOrUnit="fighter" quantity="1"/>
     </productionRule>
@@ -652,21 +688,41 @@
       <cost resource="PUs" quantity="10"/>
       <result resourceOrUnit="bomber" quantity="1"/>
     </productionRule>
+    <productionRule name="buyItalianBomber">
+      <cost resource="PUs" quantity="10"/>
+      <result resourceOrUnit="I-bomber" quantity="1"/>
+    </productionRule>
     <productionRule name="buyGermanBomber">
       <cost resource="PUs" quantity="10"/>
       <result resourceOrUnit="G-bomber" quantity="1"/>
     </productionRule>
-    <productionRule name="buyDestroyer">
+    <productionRule name="buyBritishDestroyer">
       <cost resource="PUs" quantity="8"/>
-      <result resourceOrUnit="destroyer" quantity="1"/>
+      <result resourceOrUnit="UK-destroyer" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyItalianDestroyer">
+      <cost resource="PUs" quantity="8"/>
+      <result resourceOrUnit="I-destroyer" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyAmericanDestroyer">
+      <cost resource="PUs" quantity="8"/>
+      <result resourceOrUnit="A-destroyer" quantity="1"/>
     </productionRule>
     <productionRule name="buyBattleship">
       <cost resource="PUs" quantity="13"/>
       <result resourceOrUnit="battleship" quantity="1"/>
     </productionRule>
-    <productionRule name="buySubmarine">
+    <productionRule name="buyBritishSubmarine">
       <cost resource="PUs" quantity="6"/>
-      <result resourceOrUnit="submarine" quantity="1"/>
+      <result resourceOrUnit="UK-submarine" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyItalianSubmarine">
+      <cost resource="PUs" quantity="6"/>
+      <result resourceOrUnit="I-submarine" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGermanSubmarine">
+      <cost resource="PUs" quantity="6"/>
+      <result resourceOrUnit="G-submarine" quantity="1"/>
     </productionRule>
     <productionRule name="buySupply">
       <cost resource="PUs" quantity="1"/>
@@ -688,19 +744,23 @@
       <cost resource="PUs" quantity="3"/>
       <result resourceOrUnit="aaGun" quantity="1"/>
     </productionRule>
+    <productionRule name="buyUK-aaGun">
+      <cost resource="PUs" quantity="3"/>
+      <result resourceOrUnit="UK-aaGun" quantity="1"/>
+    </productionRule>
     <productionFrontier name="B-production">
       <frontierRules name="buyInfantry"/>
       <frontierRules name="buyArtillery"/>
       <frontierRules name="buyUKAntiTank"/>
-      <frontierRules name="buyAAGun"/>
+      <frontierRules name="buyUK-aaGun"/>
       <frontierRules name="buyUKscoutcar"/>
       <frontierRules name="buyUKtank"/>
-      <frontierRules name="buyTruck"/>
-      <frontierRules name="buyFighter"/>
+      <frontierRules name="buyUKTruck"/>
+      <frontierRules name="buyUKFighter"/>
       <frontierRules name="buyBomber"/>
       <frontierRules name="buyBattleship"/>
-      <frontierRules name="buyDestroyer"/>
-      <frontierRules name="buySubmarine"/>
+      <frontierRules name="buyBritishDestroyer"/>
+      <frontierRules name="buyBritishSubmarine"/>
       <frontierRules name="buySupply"/>
       <frontierRules name="buy5Supply"/>
       <frontierRules name="buyLandmine"/>
@@ -712,11 +772,27 @@
       <frontierRules name="buyAAGun"/>
       <frontierRules name="buyScoutcar"/>
       <frontierRules name="buyItalianTank"/>
-      <frontierRules name="buyTruck"/>
+      <frontierRules name="buyAxisTruck"/>
       <frontierRules name="buyFighter"/>
-      <frontierRules name="buyBomber"/>
-      <frontierRules name="buyDestroyer"/>
-      <frontierRules name="buySubmarine"/>
+      <frontierRules name="buyItalianBomber"/>
+      <frontierRules name="buyItalianDestroyer"/>
+      <frontierRules name="buyItalianSubmarine"/>
+      <frontierRules name="buySupply"/>
+      <frontierRules name="buy5Supply"/>
+      <frontierRules name="buyLandmine"/>
+      <frontierRules name="buySeamine"/>
+    </productionFrontier>
+    <productionFrontier name="I-production-latewar">
+      <frontierRules name="buyItalianInfantry"/>
+      <frontierRules name="buyArtillery"/>
+      <frontierRules name="buyAAGun"/>
+      <frontierRules name="buyScoutcar"/>
+      <frontierRules name="buyItalianTank"/>
+      <frontierRules name="buyAxisTruckLateWar"/>
+      <frontierRules name="buyFighter"/>
+      <frontierRules name="buyItalianBomber"/>
+      <frontierRules name="buyItalianDestroyer"/>
+      <frontierRules name="buyItalianSubmarine"/>
       <frontierRules name="buySupply"/>
       <frontierRules name="buy5Supply"/>
       <frontierRules name="buyLandmine"/>
@@ -729,8 +805,8 @@
       <frontierRules name="buyAAGun"/>
       <frontierRules name="buyTank"/>
       <frontierRules name="buyFrenchTank"/>
-      <frontierRules name="buyTruck"/>
-      <frontierRules name="buyDestroyer"/>
+      <frontierRules name="buyUSTruck"/>
+      <frontierRules name="buyAmericanDestroyer"/>
       <frontierRules name="buySupply"/>
       <frontierRules name="buy5Supply"/>
       <frontierRules name="buyLandmine"/>
@@ -743,10 +819,10 @@
       <frontierRules name="buyAAGun"/>
       <frontierRules name="buyTank"/>
       <frontierRules name="buyFrenchTank"/>
-      <frontierRules name="buyTruck"/>
+      <frontierRules name="buyUSTruck"/>
       <frontierRules name="buyFighter"/>
       <frontierRules name="buyBomber"/>
-      <frontierRules name="buyDestroyer"/>
+      <frontierRules name="buyAmericanDestroyer"/>
       <frontierRules name="buySupply"/>
       <frontierRules name="buy5Supply"/>
       <frontierRules name="buyLandmine"/>
@@ -759,10 +835,26 @@
       <frontierRules name="buyGermanAntiTank"/>
       <frontierRules name="buyScoutcar"/>
       <frontierRules name="buyTank"/>
-      <frontierRules name="buyTruck"/>
-      <frontierRules name="buyFighter"/>
+      <frontierRules name="buyAxisTruck"/>
+      <frontierRules name="buyGFighter"/>
       <frontierRules name="buyGermanBomber"/>
-      <frontierRules name="buySubmarine"/>
+      <frontierRules name="buyGermanSubmarine"/>
+      <frontierRules name="buySupply"/>
+      <frontierRules name="buy5Supply"/>
+      <frontierRules name="buyLandmine"/>
+      <frontierRules name="buySeamine"/>
+    </productionFrontier>
+    <productionFrontier name="G-production-latewar">
+      <frontierRules name="buyInfantry"/>
+      <frontierRules name="buyMech"/>
+      <frontierRules name="buyArtillery"/>
+      <frontierRules name="buyGermanAntiTank"/>
+      <frontierRules name="buyScoutcar"/>
+      <frontierRules name="buyTank"/>
+      <frontierRules name="buyAxisTruckLateWar"/>
+      <frontierRules name="buyGFighter"/>
+      <frontierRules name="buyGermanBomber"/>
+      <frontierRules name="buyGermanSubmarine"/>
       <frontierRules name="buySupply"/>
       <frontierRules name="buy5Supply"/>
       <frontierRules name="buyLandmine"/>
@@ -776,10 +868,10 @@
       <frontierRules name="buyScoutcar"/>
       <frontierRules name="buyTank"/>
       <frontierRules name="buyTigerTank"/>
-      <frontierRules name="buyTruck"/>
-      <frontierRules name="buyFighter"/>
+      <frontierRules name="buyAxisTruckLateWar"/>
+      <frontierRules name="buyGFighter"/>
       <frontierRules name="buyGermanBomber"/>
-      <frontierRules name="buySubmarine"/>
+      <frontierRules name="buyGermanSubmarine"/>
       <frontierRules name="buySupply"/>
       <frontierRules name="buy5Supply"/>
       <frontierRules name="buyLandmine"/>
@@ -811,6 +903,7 @@
 	  <option name="isLandTransportable" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="12"/>
       <option name="maxConstructionsPerTypePerTerr" value="12"/>
+      <option name="constructionType" value="infantry"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="F-infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
@@ -834,6 +927,7 @@
 	  <option name="isLandTransportable" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="12"/>
       <option name="maxConstructionsPerTypePerTerr" value="12"/>
+      <option name="constructionType" value="I-infantry"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
@@ -844,6 +938,7 @@
 	  <option name="isLandTransportable" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
       <option name="maxConstructionsPerTypePerTerr" value="6"/>
+      <option name="constructionType" value="art"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="mech" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
@@ -855,6 +950,7 @@
 	  <!-- This was never directly stated.  May need to ask Krieghund on the forums. -->
 	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
       <option name="maxConstructionsPerTypePerTerr" value="6"/>
+      <option name="constructionType" value="mech"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="UK-scoutcar" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <!-- TODO:  scoutcars:
@@ -867,6 +963,7 @@
       <option name="defense" value="1"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
       <option name="maxConstructionsPerTypePerTerr" value="6"/>
+      <option name="constructionType" value="UK-scout"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="scoutcar" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <!-- TODO:  scoutcars:
@@ -879,6 +976,7 @@
       <option name="defense" value="2"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
       <option name="maxConstructionsPerTypePerTerr" value="4"/>
+      <option name="constructionType" value="scout"/>
     </attachment>
     <!-- TODO:  Tanks, Mech, scoutcar Cars and Trucks all have "Coast Road Move", which may be a nusiance to implement properly.
                 See if there is a GW36 Module in TripleA and see how they handled railroads (or a similar mechanic). -->
@@ -898,6 +996,7 @@
       <option name="defense" value="7"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
       <option name="maxConstructionsPerTypePerTerr" value="1"/>
+      <option name="constructionType" value="tiger"/>
     </attachment>
 	
     <attachment name="unitAttachment" attachTo="matilda" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -906,6 +1005,7 @@
       <option name="defense" value="5"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="8"/>
       <option name="maxConstructionsPerTypePerTerr" value="8"/>
+      <option name="constructionType" value="UK-tank"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="sherman" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
@@ -914,6 +1014,7 @@
       <option name="defense" value="4"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="8"/>
       <option name="maxConstructionsPerTypePerTerr" value="8"/>
+      <option name="constructionType" value="US-tank"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="I-tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="2"/>
@@ -922,6 +1023,7 @@
       <option name="defense" value="3"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="7"/>
       <option name="maxConstructionsPerTypePerTerr" value="7"/>
+      <option name="constructionType" value="I-tank"/>
     </attachment>
     <attachment name="unitAttachment" attachTo="F-tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="1"/>
@@ -930,6 +1032,9 @@
       <option name="defense" value="3"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
       <option name="maxConstructionsPerTypePerTerr" value="4"/>
+      <option name="constructionType" value="F-tank"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Oran"/>
+  	  <option name="isConstruction" value="true"/>
     </attachment>
     <!-- TODO:  AntiTanks Prioritize Tanks ("tank") if they get hits in combat *DURING THE FIRST ROUND ONLY* -->
     <attachment name="unitAttachment" attachTo="UK-antitank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -944,8 +1049,9 @@
 	<!-- <option name="canNotMoveDuringCombatMove" value="true"/> -->
 	<!-- Non-German Anti-Tanks do not have AA properties.-->
 	<!-- This is poorly worded in the rulebook but you can see the ability specifically given to the German Ant-Tank on the Player-Aid Cards. -->
-	<option name="constructionsPerTerrPerTypePerTurn" value="8"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="8"/>
       <option name="maxConstructionsPerTypePerTerr" value="8"/>
+      <option name="constructionType" value="UK-antitank"/>
     </attachment>
     <!-- Germany AT are also AA -->
     <attachment name="unitAttachment" attachTo="G-antitank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -959,6 +1065,7 @@
 	  <option name="isLandTransportable" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
       <option name="maxConstructionsPerTypePerTerr" value="6"/>
+      <option name="constructionType" value="G-antitank"/>
     </attachment>
 	<!-- AA guns work like G40 -->
     <attachment name="unitAttachment" attachTo="aaGun" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -970,10 +1077,60 @@
 	  <option name="attackAA" value="2"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
       <option name="maxConstructionsPerTypePerTerr" value="4"/>
-      <!-- TODO:  UK may need 6 instead of 4.  Not sure. -->
+      <option name="constructionType" value="AA"/>
       <!-- option name="destroyedWhenCapturedFrom" value="Russians:Germans:British:Japanese:Americans"/-->
     </attachment>
-    <attachment name="unitAttachment" attachTo="truck" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <attachment name="unitAttachment" attachTo="UK-aaGun" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="transportCost" value="1"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="canNotMoveDuringCombatMove" value="true"/>
+      <option name="movement" value="1"/>
+      <option name="maxAAattacks" value="3"/>
+	  <option name="attackAA" value="2"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
+      <option name="maxConstructionsPerTypePerTerr" value="4"/>
+      <option name="constructionType" value="UK-AA"/>
+      <!-- option name="destroyedWhenCapturedFrom" value="Russians:Germans:British:Japanese:Americans"/-->
+    </attachment>
+    <attachment name="unitAttachment" attachTo="UK-truck" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+		<option name="movement" value="2"/>
+		<option name="attack" value="0"/>
+		<option name="defense" value="0"/>
+		<!-- <option name="canBeDamaged" value="true"/> -->
+		<!-- <option name="maxDamage" value="1"/> -->
+		<!-- <option name="canDieFromReachingMaxDamage" value="true"/> -->
+		<option name="isLandTransport" value="true"/>
+		<option name="transportCapacity" value="6"/>
+		<option name="isLandTransportable" value="false"/>
+		<option name="isInfrastructure" value="true"/>
+		<option name="isAAmovement" value="true"/>
+        <!--option name="destroyedWhenCapturedBy" value="British:Americans"/ This is no longer needed because Axis/Allied trucks are now different units types. -->
+	  <!-- I have to check the rules to see if it is By or From -->
+	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
+      <option name="maxBuiltPerPlayer" value="6"/>
+      <!-- Note that air/naval/truck units also uses "maxBuiltPerPlayer" because it's a PIECE LIMIT and not a STACK LIMIT-->
+      <option name="constructionType" value="UK-truck"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="US-truck" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+		<option name="movement" value="2"/>
+		<option name="attack" value="0"/>
+		<option name="defense" value="0"/>
+		<!-- <option name="canBeDamaged" value="true"/> -->
+		<!-- <option name="maxDamage" value="1"/> -->
+		<!-- <option name="canDieFromReachingMaxDamage" value="true"/> -->
+		<option name="isLandTransport" value="true"/>
+		<option name="transportCapacity" value="6"/>
+		<option name="isLandTransportable" value="false"/>
+		<option name="isInfrastructure" value="true"/>
+		<option name="isAAmovement" value="true"/>
+	  <!-- I have to check the rules to see if it is By or From -->
+	  <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="constructionType" value="US-truck"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="Axis-truck" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
 		<option name="movement" value="2"/>
 		<option name="attack" value="0"/>
 		<option name="defense" value="0"/>
@@ -987,20 +1144,39 @@
 		<option name="isAAmovement" value="true"/>
         <option name="destroyedWhenCapturedBy" value="British:Americans"/>
 	  <!-- I have to check the rules to see if it is By or From -->
-	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
-      <option name="maxConstructionsPerTypePerTerr" value="6"/>
-      <!-- TODO #1:  Axis are only allowed 1 truck each at first, then unlock a 2nd truck post-turn-7 -->
-      <!-- TODO #2:  USA is allowed only 2 truck stacks -->
-      <!-- The above TODOs will require coding to deal with.
-           USA, UK and Axis each need their own separate "truck" units.
-           Allied ones can be captured by Axis, Axis ones do not.  This also solves the problem where captured Allied trucks *do not* count against the Axis' unit limit.-->
+	  <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+      <option name="maxConstructionsPerTypePerTerr" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="constructionType" value="axis-truck"/>
     </attachment>
+    <!-- From turn 7 onwards, Germany/Italy are allowed a second truck each. -->
+    <attachment name="unitAttachment" attachTo="Axis-truck-latewar" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+		<option name="movement" value="2"/>
+		<option name="attack" value="0"/>
+		<option name="defense" value="0"/>
+		<!-- <option name="canBeDamaged" value="true"/> -->
+		<!-- <option name="maxDamage" value="1"/> -->
+		<!-- <option name="canDieFromReachingMaxDamage" value="true"/> -->
+		<option name="isLandTransport" value="true"/>
+		<option name="transportCapacity" value="6"/>
+		<option name="isLandTransportable" value="false"/>
+		<option name="isInfrastructure" value="true"/>
+		<option name="isAAmovement" value="true"/>
+        <option name="destroyedWhenCapturedBy" value="British:Americans"/>
+	  <!-- I have to check the rules to see if it is By or From -->
+	  <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <!-- Hope is that keeping the construction type for Axis early/late war truck matching, they will overlap when considering the piece limit. -->
+      <option name="constructionType" value="axis-truck"/>
+    </attachment>
+    
     <!-- TODO:  FTRs in this game:
     			-Can go on CAP similar to but not identical to Pacific (2001).
     			-Can only land in land territories with an IPC Value >= 1, and "Islands" (Malta, Gibraltar, Sardinia, Italy, Crete, Cyprus)
     			-Do not consume supply.
     			-Implementing these rules may be difficult. -->
-    <attachment name="unitAttachment" attachTo="fighter" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <attachment name="unitAttachment" attachTo="UK-fighter" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="4"/>
       <option name="isAir" value="true"/>
       <option name="attack" value="4"/>
@@ -1008,12 +1184,27 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
       <option name="maxConstructionsPerTypePerTerr" value="6"/>
       <option name="maxBuiltPerPlayer" value="6"/>
-      <!-- Note that this also uses "maxBuiltPerPlayer" because it's a PIECE LIMIT and not a STACK LIMIT-->
-      <!-- TODO:  I used the highest value (UK's) as a PLACEHOLDER. -->
-      <!-- TODO:  In reality, each power needs their OWN SEPARETE FTR UNIT:
-                  Germany - 5 FTR Limit
-                  UK      - 6 FTR Limit
-                  Italy&USA 3 FTR Limit -->
+      <option name="constructionType" value="UK-ftr"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="G-fighter" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="5"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="5"/>
+      <option name="maxConstructionsPerTypePerTerr" value="5"/>
+      <option name="maxBuiltPerPlayer" value="5"/>
+      <option name="constructionType" value="G-ftr"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="fighter" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="5"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="3"/>
+      <option name="maxConstructionsPerTypePerTerr" value="3"/>
+      <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="constructionType" value="ftr"/>
     </attachment>
     <!-- BOMBs in this game:
     	-Can only land in land territories with an IPC Value >= 1, and "Islands" (Malta, Gibraltar, Sardinia, Italy, Crete, Cyprus)
@@ -1028,11 +1219,17 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="3"/>
       <option name="maxConstructionsPerTypePerTerr" value="3"/>
       <option name="maxBuiltPerPlayer" value="3"/>
-      <!-- TODO:  I used the highest value (UK's) as a PLACEHOLDER. -->
-      <!-- TODO:  In reality, Italy needs a SEPARETE BOMB UNIT:
-                  USA     - Same limit (3) as UK
-                  Germany - Handled separately already.
-                  Italy   - 2 BOMB Limit -->
+      <option name="constructionType" value="bomber"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="I-bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="6"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="6"/>
+      <option name="defense" value="1"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="constructionType" value="I-bomber"/>
     </attachment>
     <!-- TODO:  In addition to the above properties, a German Bomber has target fire against any land or naval unit when attacking. -->
     <attachment name="unitAttachment" attachTo="G-bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -1044,8 +1241,9 @@
       <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
       <option name="maxConstructionsPerTypePerTerr" value="4"/>
       <option name="maxBuiltPerPlayer" value="4"/>
+      <option name="constructionType" value="G-bomber"/>
     </attachment>
-    <attachment name="unitAttachment" attachTo="destroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <attachment name="unitAttachment" attachTo="UK-destroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="4"/>
       <option name="isSea" value="true"/>
       <option name="attack" value="4"/>
@@ -1057,13 +1255,33 @@
       <option name="unitPlacementOnlyAllowedIn" value="Sea Zone 3:Atlantic Ocean Convoy"/>
   	  <option name="isConstruction" value="true"/>
       <option name="constructionType" value="UK-DD"/>
-      <!-- TODO:  I used the highest value (UK's) as a PLACEHOLDER. -->
-      <!-- TODO:  In reality, each power needs their OWN SEPARETE DD UNIT:
-                  Germany - Cannot build
-                  Italy   - 3 DD Limit, built only in Sea Zone 10
-                  USA     - 2 DD Limit, built only in Casablanca Convoy -->
     </attachment>
-   
+    <attachment name="unitAttachment" attachTo="I-destroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="isDestroyer" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="3"/>
+      <option name="maxConstructionsPerTypePerTerr" value="3"/>
+      <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Sea Zone 10"/>
+  	  <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="I-DD"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="A-destroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="isDestroyer" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Casablanca Convoy"/>
+  	  <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="A-DD"/>
+    </attachment>
     <attachment name="unitAttachment" attachTo="battleship" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="movement" value="4"/>
       <option name="isSea" value="true"/>
@@ -1077,7 +1295,7 @@
   	  <option name="isConstruction" value="true"/>
       <option name="constructionType" value="UK-BB"/>
     </attachment>
-    <attachment name="unitAttachment" attachTo="submarine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+    <attachment name="unitAttachment" attachTo="G-submarine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isSub" value="true"/>
       <option name="movement" value="4"/>
       <option name="isSea" value="true"/>
@@ -1088,12 +1306,37 @@
       <option name="maxBuiltPerPlayer" value="3"/>
       <option name="unitPlacementOnlyAllowedIn" value="Sea Zone 1"/>
   	  <option name="isConstruction" value="true"/>
+  	  <!-- TODO:  Currently, all the naval units are "constructions" in order to limit where they may be placed.
+  	              However, as I understand it, "constructions" are placed immediately and can attack immediately.
+  	              In the game rules, only German Submarines and Free French units can move/attack immediately.
+  	              Not sure how to fix this for other naval units, which follow normal placement rules. -->
       <option name="constructionType" value="G-Sub"/>
-      <!-- TODO:  I used the highest value (Germany) as a PLACEHOLDER. -->
-      <!-- TODO:  In reality, Italy and UK needs its OWN SEPARETE SUB UNIT:
-                  Italy   - 3 Sub Limit, can only build in Sea Zone 10
-                  UK      - 2 SUB Limit, can only build in Sea Zone 3 and Atlantic Ocean Convoy
-                  USA     - Cannot build-->
+    </attachment>
+    <attachment name="unitAttachment" attachTo="I-submarine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="isSub" value="true"/>
+      <option name="movement" value="4"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="2"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="3"/>
+      <option name="maxConstructionsPerTypePerTerr" value="3"/>
+      <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Sea Zone 10"/>
+  	  <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="I-Sub"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="UK-submarine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="isSub" value="true"/>
+      <option name="movement" value="4"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="2"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Sea Zone 3:Atlantic Ocean Convoy"/>
+  	  <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="UK-Sub"/>
     </attachment>
 	
     <!-- TODO:  TTs are not in this game, but instead are replaced by the intricate "Convoy System".  Implementing this system may be difficult. -->
@@ -1536,7 +1779,7 @@
 	
 		<!-- Desert Territories -->
     <attachment name="territoryEffectAttachment" attachTo="Desert" javaClass="TerritoryEffectAttachment" type="territoryEffect">
-      <option name="unitsNotAllowed" value="infantry:F-infantry:I-infantry:artillery:mech:tank:matilda:sherman:tiger:I-tank:F-tank:UK-antitank:G-antitank:truck:fighter:bomber:G-bomber:supply:5-supply:aaGun:landmine"/>
+      <option name="unitsNotAllowed" value="infantry:F-infantry:I-infantry:artillery:mech:tank:matilda:sherman:tiger:I-tank:F-tank:UK-antitank:G-antitank:truck:UK-truck:US-truck:Axis-truck:Axis-truck-latewar:fighter:UK-fighter:G-fighter:bomber:I-bomber:G-bomber:supply:5-supply:aaGun:UK-aaGun:landmine"/>
     </attachment>
     
 	<!-- Tiger Tanks -->
@@ -1596,8 +1839,15 @@
 		<option name="conditions" value="conditionAttachmentAmericaJoinsSwitch"/>
 		<option name="changeOwnership" value="Tunis:ANY:Germans:true"/>
 		<option name="changeOwnership" value="Kasserine Pass:ANY:Germans:true"/>
-		<option name="changeOwnership" value="Mareth:ANY:Italians:true"/>
+		<option name="frontier" value="G-production-latewar"/>
 		<option name="placement" value="Tunis:supply" count="3"/>
+		<option name="uses" value="1"/>
+		<option name="when" value="before:americansPurchase"/>
+	</attachment>
+	<attachment name="triggerAttachmentItalianReaction" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentAmericaJoinsSwitch"/>
+		<option name="changeOwnership" value="Mareth:ANY:Italians:true"/>
+		<option name="frontier" value="I-production-latewar"/>
 		<option name="uses" value="1"/>
 		<option name="when" value="before:americansPurchase"/>
 	</attachment>
@@ -1741,7 +1991,7 @@
 	<!-- The setup for Tripoli Convoy is missing here due to my mistake -->
       <!-- Germans -->
       <unitPlacement unitType="mech" territory="Tripoli" quantity="1" owner="Germans"/>
-      <unitPlacement unitType="fighter" territory="Tripoli" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="G-fighter" territory="Tripoli" quantity="1" owner="Germans"/>
       <unitPlacement unitType="G-bomber" territory="Tripoli" quantity="1" owner="Germans"/>
       <unitPlacement unitType="G-bomber" territory="Sicily" quantity="1" owner="Germans"/>
       <unitPlacement unitType="mech" territory="El Agheila" quantity="1" owner="Germans"/>
@@ -1753,40 +2003,40 @@
 	  <!-- British -->
       <unitPlacement unitType="infantry" territory="Cairo" quantity="1" owner="British"/>
       <unitPlacement unitType="UK-antitank" territory="Cairo" quantity="1" owner="British"/>
-      <unitPlacement unitType="aaGun" territory="Cairo" quantity="1" owner="British"/>
-      <unitPlacement unitType="fighter" territory="Cairo" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-aaGun" territory="Cairo" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-fighter" territory="Cairo" quantity="1" owner="British"/>
       <unitPlacement unitType="5-supply" territory="Cairo" quantity="1" owner="British"/>
       <unitPlacement unitType="landmine" territory="Cairo" quantity="3" owner="British"/>
       <unitPlacement unitType="UK-scoutcar" territory="Mersa Matruh" quantity="2" owner="British"/>
       <unitPlacement unitType="infantry" territory="Tobruk" quantity="1" owner="British"/>
-      <unitPlacement unitType="aaGun" territory="Tobruk" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-aaGun" territory="Tobruk" quantity="1" owner="British"/>
       <unitPlacement unitType="matilda" territory="Tobruk" quantity="1" owner="British"/>
       <unitPlacement unitType="5-supply" territory="Tobruk" quantity="3" owner="British"/>
       <unitPlacement unitType="supply" territory="Tobruk" quantity="3" owner="British"/>
       <unitPlacement unitType="landmine" territory="Tobruk" quantity="1" owner="British"/>
       <unitPlacement unitType="infantry" territory="Bir Hacheim" quantity="1" owner="British"/>
       <unitPlacement unitType="infantry" territory="Benghazi" quantity="1" owner="British"/>
-      <unitPlacement unitType="truck" territory="Benghazi" quantity="2" owner="British"/>
+      <unitPlacement unitType="UK-truck" territory="Benghazi" quantity="2" owner="British"/>
       <unitPlacement unitType="supply" territory="Benghazi" quantity="3" owner="British"/>
       <unitPlacement unitType="infantry" territory="Mersa Brega" quantity="1" owner="British"/>
       <unitPlacement unitType="artillery" territory="Mersa Brega" quantity="1" owner="British"/>
       <unitPlacement unitType="matilda" territory="Mersa Brega" quantity="1" owner="British"/>
-      <unitPlacement unitType="truck" territory="Mersa Brega" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-truck" territory="Mersa Brega" quantity="1" owner="British"/>
       <unitPlacement unitType="5-supply" territory="Mersa Brega" quantity="1" owner="British"/>
       <unitPlacement unitType="UK-scoutcar" territory="Desert Zone J" quantity="1" owner="British"/>
-      <unitPlacement unitType="fighter" territory="Malta" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-fighter" territory="Malta" quantity="1" owner="British"/>
       <unitPlacement unitType="supply" territory="Malta" quantity="2" owner="British"/>
       <unitPlacement unitType="seamine" territory="Sea Zone 3" quantity="1" owner="British"/>
-      <unitPlacement unitType="submarine" territory="Malta Convoy" quantity="1" owner="British"/>
-      <unitPlacement unitType="destroyer" territory="Sea Zone 31" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-submarine" territory="Malta Convoy" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-destroyer" territory="Sea Zone 31" quantity="1" owner="British"/>
       <unitPlacement unitType="battleship" territory="Sea Zone 31" quantity="1" owner="British"/>
       <!-- Italians -->
       <unitPlacement unitType="I-infantry" territory="Tripoli" quantity="2" owner="Italians"/>
-      <unitPlacement unitType="truck" territory="Tripoli" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="Axis-truck" territory="Tripoli" quantity="1" owner="Italians"/>
       <unitPlacement unitType="supply" territory="Tripoli" quantity="3" owner="Italians"/>
       <unitPlacement unitType="aaGun" territory="Sicily" quantity="1" owner="Italians"/>
       <unitPlacement unitType="fighter" territory="Sicily" quantity="1" owner="Italians"/>
-      <unitPlacement unitType="bomber" territory="Sicily" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="I-bomber" territory="Sicily" quantity="1" owner="Italians"/>
       <unitPlacement unitType="I-infantry" territory="Sirte" quantity="2" owner="Italians"/>
       <unitPlacement unitType="I-infantry" territory="El Agheila" quantity="2" owner="Italians"/>
       <unitPlacement unitType="artillery" territory="El Agheila" quantity="2" owner="Italians"/>
