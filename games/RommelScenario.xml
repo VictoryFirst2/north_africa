@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE game SYSTEM "game.dtd">
 <game>
-  <info name="North Africa - Rommel Scenario" version="0.21"/>
+  <info name="North Africa - Rommel Scenario" version="0.22"/>
   <loader javaClass="games.strategy.triplea.TripleA"/>
   <triplea minimumVersion="1.6.1"/>
   <diceSides value="10"/>
@@ -463,7 +463,6 @@
     <unit name="F-tank"/>
     <unit name="UK-antitank"/>
     <unit name="G-antitank"/>
-    <unit name="truck"/>
     <unit name="UK-truck"/>
     <unit name="US-truck"/>
     <unit name="Axis-truck"/>
@@ -549,7 +548,7 @@
 	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
 	  </step>
       <step name="germans2Place" delegate="placeNoAirCheck" player="Germans"/>
-      <step name="germansEndTurnNoPU" delegate="endTurnNoPU" player="Germans"/>
+      <step name="germans2EndTurn" delegate="endTurnNoPU" player="Germans"/>
 	  
 	  <step name="britishEndTurn" delegate="endTurn" player="British"/>
 	  <step name="britishNonCombatMove" delegate="move" player="British" display="Advance Convoys">
@@ -563,7 +562,7 @@
 	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
 	  </step>
       <step name="british2Place" delegate="placeNoAirCheck" player="British"/>
-      <step name="britishEndTurnNoPU" delegate="endTurnNoPU" player="British"/>
+      <step name="british2EndTurn" delegate="endTurnNoPU" player="British"/>
 	  
 	  <step name="italiansEndTurn" delegate="endTurn" player="Italians"/>
 	  <step name="italiansNonCombatMove" delegate="move" player="Italians" display="Advance Convoys">
@@ -577,7 +576,7 @@
 	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
 	  </step>
       <step name="italians2Place" delegate="placeNoAirCheck" player="Italians"/>
-      <step name="italiansEndTurnNoPU" delegate="endTurnNoPU" player="Italians"/>
+      <step name="italians2EndTurn" delegate="endTurnNoPU" player="Italians"/>
 	  
 	  <step name="americansEndTurn" delegate="endTurn" player="Americans"/>
 	  <step name="americansNonCombatMove" delegate="move" player="Americans" display="Advance Convoys">
@@ -591,7 +590,7 @@
 	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
 	  </step>
       <step name="americans2Place" delegate="placeNoAirCheck" player="Americans"/>
-      <step name="americansEndTurnNoPU" delegate="endTurnNoPU" player="Americans"/>
+      <step name="americans2EndTurn" delegate="endTurnNoPU" player="Americans"/>
       <step name="endRoundStep" delegate="endRound"/>
     </sequence>
   </gamePlay>
@@ -651,10 +650,6 @@
     <productionRule name="buyGermanAntiTank">
       <cost resource="PUs" quantity="5"/>
       <result resourceOrUnit="G-antitank" quantity="1"/>
-    </productionRule>
-    <productionRule name="buyTruck">
-      <cost resource="PUs" quantity="2"/>
-      <result resourceOrUnit="truck" quantity="1"/>
     </productionRule>
     <productionRule name="buyUKTruck">
       <cost resource="PUs" quantity="2"/>
@@ -901,6 +896,7 @@
       <option name="defense" value="3"/>
       <option name="artillerySupportable" value="true"/>
 	  <option name="isLandTransportable" value="true"/>
+	  <option name="isConstruction" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="12"/>
       <option name="maxConstructionsPerTypePerTerr" value="12"/>
       <option name="constructionType" value="infantry"/>
@@ -925,6 +921,7 @@
       <option name="defense" value="2"/>
       <option name="artillerySupportable" value="true"/>
 	  <option name="isLandTransportable" value="true"/>
+	  <option name="isConstruction" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="12"/>
       <option name="maxConstructionsPerTypePerTerr" value="12"/>
       <option name="constructionType" value="I-infantry"/>
@@ -936,6 +933,7 @@
       <option name="defense" value="3"/>
       <option name="artillery" value="true"/>
 	  <option name="isLandTransportable" value="true"/>
+	  <option name="isConstruction" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
       <option name="maxConstructionsPerTypePerTerr" value="6"/>
       <option name="constructionType" value="art"/>
@@ -948,6 +946,7 @@
       <option name="receivesAbilityWhenWith" value="canBlitz:tank"/>
 	  <!-- Can they blitz with Tiger Tanks too?-->
 	  <!-- This was never directly stated.  May need to ask Krieghund on the forums. -->
+	  <option name="isConstruction" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
       <option name="maxConstructionsPerTypePerTerr" value="6"/>
       <option name="constructionType" value="mech"/>
@@ -961,6 +960,7 @@
       <option name="movement" value="4"/>
       <option name="attack" value="2"/>
       <option name="defense" value="1"/>
+	  <option name="isConstruction" value="true"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
       <option name="maxConstructionsPerTypePerTerr" value="6"/>
       <option name="constructionType" value="UK-scout"/>
@@ -974,6 +974,7 @@
       <option name="movement" value="3"/>
       <option name="attack" value="2"/>
       <option name="defense" value="2"/>
+	  <option name="isConstruction" value="true"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
       <option name="maxConstructionsPerTypePerTerr" value="4"/>
       <option name="constructionType" value="scout"/>
@@ -985,8 +986,10 @@
       <option name="canBlitz" value="true"/>
       <option name="attack" value="5"/>
       <option name="defense" value="4"/>
+	  <option name="isConstruction" value="true"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="10"/>
       <option name="maxConstructionsPerTypePerTerr" value="10"/>
+	  <option name="constructionType" value="tank"/>
     </attachment>
 	
     <attachment name="unitAttachment" attachTo="tiger" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -994,6 +997,7 @@
       <option name="canBlitz" value="true"/>
       <option name="attack" value="6"/>
       <option name="defense" value="7"/>
+	  <option name="isConstruction" value="true"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
       <option name="maxConstructionsPerTypePerTerr" value="1"/>
       <option name="constructionType" value="tiger"/>
@@ -1003,6 +1007,7 @@
       <option name="movement" value="1"/>
       <option name="attack" value="4"/>
       <option name="defense" value="5"/>
+	  <option name="isConstruction" value="true"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="8"/>
       <option name="maxConstructionsPerTypePerTerr" value="8"/>
       <option name="constructionType" value="UK-tank"/>
@@ -1012,6 +1017,7 @@
       <option name="canBlitz" value="true"/>
       <option name="attack" value="5"/>
       <option name="defense" value="4"/>
+	  <option name="isConstruction" value="true"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="8"/>
       <option name="maxConstructionsPerTypePerTerr" value="8"/>
       <option name="constructionType" value="US-tank"/>
@@ -1021,6 +1027,7 @@
       <option name="canBlitz" value="true"/>
       <option name="attack" value="3"/>
       <option name="defense" value="3"/>
+	  <option name="isConstruction" value="true"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="7"/>
       <option name="maxConstructionsPerTypePerTerr" value="7"/>
       <option name="constructionType" value="I-tank"/>
@@ -1049,6 +1056,7 @@
 	<!-- <option name="canNotMoveDuringCombatMove" value="true"/> -->
 	<!-- Non-German Anti-Tanks do not have AA properties.-->
 	<!-- This is poorly worded in the rulebook but you can see the ability specifically given to the German Ant-Tank on the Player-Aid Cards. -->
+	<option name="isConstruction" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="8"/>
       <option name="maxConstructionsPerTypePerTerr" value="8"/>
       <option name="constructionType" value="UK-antitank"/>
@@ -1063,6 +1071,7 @@
       <option name="maxAAattacks" value="3"/>
 	  <option name="attackAA" value="2"/>
 	  <option name="isLandTransportable" value="true"/>
+	  <option name="isConstruction" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
       <option name="maxConstructionsPerTypePerTerr" value="6"/>
       <option name="constructionType" value="G-antitank"/>
@@ -1075,6 +1084,7 @@
       <option name="movement" value="1"/>
       <option name="maxAAattacks" value="3"/>
 	  <option name="attackAA" value="2"/>
+	  <option name="isConstruction" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
       <option name="maxConstructionsPerTypePerTerr" value="4"/>
       <option name="constructionType" value="AA"/>
@@ -1087,6 +1097,7 @@
       <option name="movement" value="1"/>
       <option name="maxAAattacks" value="3"/>
 	  <option name="attackAA" value="2"/>
+	  <option name="isConstruction" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
       <option name="maxConstructionsPerTypePerTerr" value="4"/>
       <option name="constructionType" value="UK-AA"/>
@@ -1104,8 +1115,7 @@
 		<option name="isLandTransportable" value="false"/>
 		<option name="isInfrastructure" value="true"/>
 		<option name="isAAmovement" value="true"/>
-        <!--option name="destroyedWhenCapturedBy" value="British:Americans"/ This is no longer needed because Axis/Allied trucks are now different units types. -->
-	  <!-- I have to check the rules to see if it is By or From -->
+	  <option name="isConstruction" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
       <option name="maxConstructionsPerTypePerTerr" value="6"/>
       <option name="maxBuiltPerPlayer" value="6"/>
@@ -1124,7 +1134,7 @@
 		<option name="isLandTransportable" value="false"/>
 		<option name="isInfrastructure" value="true"/>
 		<option name="isAAmovement" value="true"/>
-	  <!-- I have to check the rules to see if it is By or From -->
+		<option name="isConstruction" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
       <option name="maxConstructionsPerTypePerTerr" value="2"/>
       <option name="maxBuiltPerPlayer" value="2"/>
@@ -1143,7 +1153,7 @@
 		<option name="isInfrastructure" value="true"/>
 		<option name="isAAmovement" value="true"/>
         <option name="destroyedWhenCapturedBy" value="British:Americans"/>
-	  <!-- I have to check the rules to see if it is By or From -->
+		<option name="isConstruction" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
       <option name="maxConstructionsPerTypePerTerr" value="1"/>
       <option name="maxBuiltPerPlayer" value="1"/>
@@ -1163,11 +1173,12 @@
 		<option name="isInfrastructure" value="true"/>
 		<option name="isAAmovement" value="true"/>
         <option name="destroyedWhenCapturedBy" value="British:Americans"/>
-	  <!-- I have to check the rules to see if it is By or From -->
+		<option name="isConstruction" value="true"/>
 	  <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
       <option name="maxConstructionsPerTypePerTerr" value="2"/>
       <option name="maxBuiltPerPlayer" value="2"/>
       <!-- Hope is that keeping the construction type for Axis early/late war truck matching, they will overlap when considering the piece limit. -->
+			<!-- Not sure if this will work. Perhaps what we could do is add a trigger that converts all axis trucks on the board to truck-latewar. -->
       <option name="constructionType" value="axis-truck"/>
     </attachment>
     
@@ -1181,6 +1192,7 @@
       <option name="isAir" value="true"/>
       <option name="attack" value="4"/>
       <option name="defense" value="5"/>
+	  <option name="isConstruction" value="true"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
       <option name="maxConstructionsPerTypePerTerr" value="6"/>
       <option name="maxBuiltPerPlayer" value="6"/>
@@ -1191,6 +1203,7 @@
       <option name="isAir" value="true"/>
       <option name="attack" value="4"/>
       <option name="defense" value="5"/>
+	  <option name="isConstruction" value="true"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="5"/>
       <option name="maxConstructionsPerTypePerTerr" value="5"/>
       <option name="maxBuiltPerPlayer" value="5"/>
@@ -1201,6 +1214,7 @@
       <option name="isAir" value="true"/>
       <option name="attack" value="4"/>
       <option name="defense" value="5"/>
+	  <option name="isConstruction" value="true"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="3"/>
       <option name="maxConstructionsPerTypePerTerr" value="3"/>
       <option name="maxBuiltPerPlayer" value="3"/>
@@ -1216,6 +1230,7 @@
       <option name="isAir" value="true"/>
       <option name="attack" value="6"/>
       <option name="defense" value="1"/>
+	  <option name="isConstruction" value="true"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="3"/>
       <option name="maxConstructionsPerTypePerTerr" value="3"/>
       <option name="maxBuiltPerPlayer" value="3"/>
@@ -1226,6 +1241,7 @@
       <option name="isAir" value="true"/>
       <option name="attack" value="6"/>
       <option name="defense" value="1"/>
+	  <option name="isConstruction" value="true"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
       <option name="maxConstructionsPerTypePerTerr" value="2"/>
       <option name="maxBuiltPerPlayer" value="2"/>
@@ -1238,6 +1254,7 @@
       <option name="attack" value="5"/>
       <option name="defense" value="2"/>
       <option name="isStrategicBomber" value="true"/>
+	  <option name="isConstruction" value="true"/>
       <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
       <option name="maxConstructionsPerTypePerTerr" value="4"/>
       <option name="maxBuiltPerPlayer" value="4"/>
@@ -1723,25 +1740,25 @@
 	<attachment name="triggerAttachmentRemoveLeftOverMoneyGermans" attachTo="Germans" javaClass="TriggerAttachment" type="player">
 		<option name="conditions" value="conditionAttachmentAlwaysTrue"/>
 		<option name="resource" value="PUs"/>
-		<option name="resourceCount" value="-9999"/>
+		<option name="resourceCount" value="-999"/>
 		<option name="when" value="after:germansPurchase"/>
 	</attachment>
 	<attachment name="triggerAttachmentRemoveLeftOverMoneyBritish" attachTo="British" javaClass="TriggerAttachment" type="player">
 		<option name="conditions" value="conditionAttachmentAlwaysTrue"/>
 		<option name="resource" value="PUs"/>
-		<option name="resourceCount" value="-9999"/>
+		<option name="resourceCount" value="-999"/>
 		<option name="when" value="after:britishPurchase"/>
 	</attachment>
 	<attachment name="triggerAttachmentRemoveLeftOverMoneyItalians" attachTo="Italians" javaClass="TriggerAttachment" type="player">
 		<option name="conditions" value="conditionAttachmentAlwaysTrue"/>
 		<option name="resource" value="PUs"/>
-		<option name="resourceCount" value="-9999"/>
+		<option name="resourceCount" value="-999"/>
 		<option name="when" value="after:italiansPurchase"/>
 	</attachment>
 	<attachment name="triggerAttachmentRemoveLeftOverMoneyAmericans" attachTo="Americans" javaClass="TriggerAttachment" type="player">
 		<option name="conditions" value="conditionAttachmentAlwaysTrue"/>
 		<option name="resource" value="PUs"/>
-		<option name="resourceCount" value="-9999"/>
+		<option name="resourceCount" value="-999"/>
 		<option name="when" value="after:americansPurchase"/>
 	</attachment>
 	
@@ -1779,7 +1796,7 @@
 	
 		<!-- Desert Territories -->
     <attachment name="territoryEffectAttachment" attachTo="Desert" javaClass="TerritoryEffectAttachment" type="territoryEffect">
-      <option name="unitsNotAllowed" value="infantry:F-infantry:I-infantry:artillery:mech:tank:matilda:sherman:tiger:I-tank:F-tank:UK-antitank:G-antitank:truck:UK-truck:US-truck:Axis-truck:Axis-truck-latewar:fighter:UK-fighter:G-fighter:bomber:I-bomber:G-bomber:supply:5-supply:aaGun:UK-aaGun:landmine"/>
+      <option name="unitsNotAllowed" value="infantry:F-infantry:I-infantry:artillery:mech:tank:matilda:sherman:tiger:I-tank:F-tank:UK-antitank:G-antitank:UK-truck:US-truck:Axis-truck:Axis-truck-latewar:fighter:UK-fighter:G-fighter:bomber:I-bomber:G-bomber:supply:5-supply:aaGun:UK-aaGun:landmine"/>
     </attachment>
     
 	<!-- Tiger Tanks -->
