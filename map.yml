@@ -1,0 +1,5 @@
+map_name: north_africa
+games:
+- {game_name: North Africa - Rommel, file_name: RommelScenario.xml}
+- {game_name: North Africa - Torch, file_name: TorchScenario.xml}
+

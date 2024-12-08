@@ -1,0 +1,2826 @@
+<?xml version="1.0"?>
+<!DOCTYPE game SYSTEM "game.dtd">
+<game>
+  <info name="North Africa - Rommel Scenario" version="0.3"/>
+  <loader javaClass="games.strategy.triplea.TripleA"/>
+  <triplea minimumVersion="1.6.1"/>
+  <diceSides value="10"/>
+  <map>
+	<!-- Territory Definitions -->
+	<territory name="A-B"/>
+	<territory name="A-CAS"/>
+	<territory name="A-FEZ"/>
+	<territory name="AGH-BRE"/>
+	<territory name="AGH-SIR"/>
+	<territory name="AGH-SOK"/>
+	<territory name="AGH-ZEL"/>
+	<territory name="ALG-CON"/>
+	<territory name="ALG-KAS"/>
+	<territory name="ALG-LAG"/>
+	<territory name="ALG-ORA"/>
+	<territory name="Albania"/>
+	<territory name="Algiers"/>
+	<territory name="Algiers Convoy UK"/>
+	<territory name="Algiers Convoy US"/>
+	<territory name="Atlantic Ocean" water="true"/>
+	<territory name="Atlantic Ocean Convoy"/>
+	<territory name="B-C"/>
+	<territory name="B-FEZ"/>
+	<territory name="B-LAG"/>
+	<territory name="B-ORA"/>
+	<territory name="BEN-BIR"/>
+	<territory name="BEN-BRE"/>
+	<territory name="BEN-TOB"/>
+	<territory name="BIR-BRE"/>
+	<territory name="BIR-JAL"/>
+	<territory name="BIR-MAT"/>
+	<territory name="BIR-SIW"/>
+	<territory name="BIR-TOB"/>
+	<territory name="BRE-JAL"/>
+	<territory name="BRE-ZEL"/>
+	<territory name="Benghazi"/>
+	<territory name="Benghazi Convoy G"/>
+	<territory name="Benghazi Convoy I"/>
+	<territory name="Bir Hacheim"/>
+	<territory name="C-D"/>
+	<territory name="C-LAG"/>
+	<territory name="C-OUE"/>
+	<territory name="CAI-MAT"/>
+	<territory name="CAS-FEZ"/>
+	<territory name="CON-KASS"/>
+	<territory name="CON-TUN"/>
+	<territory name="Cairo"/>
+	<territory name="Casablanca"/>
+	<territory name="Casablanca Convoy UK"/>
+	<territory name="Casablanca Convoy US"/>
+	<territory name="Constantine"/>
+	<territory name="Crete"/>
+	<territory name="Cyprus"/>
+	<territory name="D-E"/>
+	<territory name="D-MAR"/>
+	<territory name="D-NAL"/>
+	<territory name="D-OUE"/>
+	<territory name="Desert Zone A"/>
+	<territory name="Desert Zone B"/>
+	<territory name="Desert Zone C"/>
+	<territory name="Desert Zone D"/>
+	<territory name="Desert Zone E"/>
+	<territory name="Desert Zone F"/>
+	<territory name="Desert Zone G"/>
+	<territory name="Desert Zone H"/>
+	<territory name="Desert Zone I"/>
+	<territory name="Desert Zone J"/>
+	<territory name="Desert Zone K"/>
+	<territory name="E-F"/>
+	<territory name="E-GHA"/>
+	<territory name="E-NAL"/>
+	<territory name="El Agheila"/>
+	<territory name="El Oued"/>
+	<territory name="F-G"/>
+	<territory name="F-GHA"/>
+	<territory name="FEZ-ORA"/>
+	<territory name="Fez"/>
+	<territory name="G-GHA"/>
+	<territory name="G-H"/>
+	<territory name="G-SOK"/>
+	<territory name="GHA-NAL"/>
+	<territory name="GHA-SOK"/>
+	<territory name="GHA-TRI"/>
+	<territory name="Ghadames"/>
+	<territory name="Gibraltar"/>
+	<territory name="H-I"/>
+	<territory name="H-SOK"/>
+	<territory name="H-ZEL"/>
+	<territory name="I-J"/>
+	<territory name="I-JAL"/>
+	<territory name="I-ZEL"/>
+	<territory name="Indian Ocean" water="true"/>
+	<territory name="Indian Ocean Convoy"/>
+	<territory name="Italy"/>
+	<territory name="J-JAL"/>
+	<territory name="J-K"/>
+	<territory name="J-SIW"/>
+	<territory name="JAL-ZEL"/>
+	<territory name="Jalo"/>
+	<territory name="Jordan"/>
+	<territory name="K-SIW"/>
+	<territory name="KAS-MAR"/>
+	<territory name="KAS-OUE"/>
+	<territory name="KAS-TUN"/>
+	<territory name="Kasserine Pass"/>
+	<territory name="LAG-KAS"/>
+	<territory name="LAG-ORA"/>
+	<territory name="LAG-OUE"/>
+	<territory name="Laghouat"/>
+	<territory name="MAR-NAL"/>
+	<territory name="MAR-OUE"/>
+	<territory name="MAR-TRI"/>
+	<territory name="MAR-TUN"/>
+	<territory name="MAT-SIW"/>
+	<territory name="MAT-TOB"/>
+	<territory name="Malta"/>
+	<territory name="Malta Convoy"/>
+	<territory name="Mareth"/>
+	<territory name="Mersa Brega"/>
+	<territory name="Mersa Matruh"/>
+	<territory name="Missed This" water="true"/>
+	<territory name="NAL-TRI"/>
+	<territory name="Nalut"/>
+	<territory name="Oran"/>
+	<territory name="Oran Convoy UK"/>
+	<territory name="Oran Convoy US"/>
+	<territory name="Palestine"/>
+	<territory name="Portugal"/>
+	<territory name="Qatar Depression"/>
+	<territory name="SIR-SOK"/>
+	<territory name="SIR-TRI"/>
+	<territory name="SOK-TRI"/>
+	<territory name="SOK-ZEL"/>
+	<territory name="Sardinia"/>
+	<territory name="Saudi-Arabia"/>
+	<territory name="Sea Zone 1" water="true"/>
+	<territory name="Sea Zone 2" water="true"/>
+	<territory name="Sea Zone 3" water="true"/>
+	<territory name="Sea Zone 4" water="true"/>
+	<territory name="Sea Zone 5" water="true"/>
+	<territory name="Sea Zone 6" water="true"/>
+	<territory name="Sea Zone 7" water="true"/>
+	<territory name="Sea Zone 8" water="true"/>
+	<territory name="Sea Zone 9" water="true"/>
+	<territory name="Sea Zone 10" water="true"/>
+	<territory name="Sea Zone 11" water="true"/>
+	<territory name="Sea Zone 12" water="true"/>
+	<territory name="Sea Zone 13" water="true"/>
+	<territory name="Sea Zone 14" water="true"/>
+	<territory name="Sea Zone 15" water="true"/>
+	<territory name="Sea Zone 16" water="true"/>
+	<territory name="Sea Zone 17" water="true"/>
+	<territory name="Sea Zone 18" water="true"/>
+	<territory name="Sea Zone 19" water="true"/>
+	<territory name="Sea Zone 20" water="true"/>
+	<territory name="Sea Zone 21" water="true"/>
+	<territory name="Sea Zone 22" water="true"/>
+	<territory name="Sea Zone 23" water="true"/>
+	<territory name="Sea Zone 24" water="true"/>
+	<territory name="Sea Zone 25" water="true"/>
+	<territory name="Sea Zone 26" water="true"/>
+	<territory name="Sea Zone 27" water="true"/>
+	<territory name="Sea Zone 28" water="true"/>
+	<territory name="Sea Zone 29" water="true"/>
+	<territory name="Sea Zone 30" water="true"/>
+	<territory name="Sea Zone 31" water="true"/>
+	<territory name="Sea Zone 32" water="true"/>
+	<territory name="Sicily"/>
+	<territory name="Sinai"/>
+	<territory name="Sirte"/>
+	<territory name="Siwa"/>
+	<territory name="Sokna"/>
+	<territory name="Spain"/>
+	<territory name="Spanish Morocco"/>
+	<territory name="Suez Canal" water="true"/>
+	<territory name="Suez Canal Convoy"/>
+	<territory name="Syria"/>
+	<territory name="Tobruk"/>
+	<territory name="Tripoli"/>
+	<territory name="Tripoli Convoy G"/>
+	<territory name="Tripoli Convoy I"/>
+	<territory name="Tunis"/>
+	<territory name="Tunis Convoy G"/>
+	<territory name="Tunis Convoy I"/>
+	<territory name="Turkey"/>
+	<territory name="Unbound Zone 1"/>
+	<territory name="Unbound Zone 2"/>
+	<territory name="Unknown Sea Zone 1" water="true"/>
+	<territory name="Yugoslavia"/>
+	<territory name="Zella"/>
+
+	<!-- Territory Connections -->
+	<connection t1="A-B" t2="Desert Zone A"/>
+	<connection t1="A-B" t2="Desert Zone B"/>
+	<connection t1="A-CAS" t2="Casablanca"/>
+	<connection t1="A-CAS" t2="Desert Zone A"/>
+	<connection t1="A-FEZ" t2="Desert Zone A"/>
+	<connection t1="A-FEZ" t2="Fez"/>
+	<connection t1="AGH-BRE" t2="El Agheila"/>
+	<connection t1="AGH-BRE" t2="Mersa Brega"/>
+	<connection t1="AGH-SIR" t2="El Agheila"/>
+	<connection t1="AGH-SIR" t2="Sirte"/>
+	<connection t1="AGH-SOK" t2="El Agheila"/>
+	<connection t1="AGH-SOK" t2="Sokna"/>
+	<connection t1="AGH-ZEL" t2="El Agheila"/>
+	<connection t1="AGH-ZEL" t2="Zella"/>
+	<connection t1="ALG-CON" t2="Algiers"/>
+	<connection t1="ALG-CON" t2="Constantine"/>
+	<connection t1="ALG-KAS" t2="Algiers"/>
+	<connection t1="ALG-KAS" t2="Kasserine Pass"/>
+	<connection t1="ALG-LAG" t2="Algiers"/>
+	<connection t1="ALG-LAG" t2="Laghouat"/>
+	<connection t1="ALG-ORA" t2="Algiers"/>
+	<connection t1="ALG-ORA" t2="Oran"/>
+	<connection t1="Albania" t2="Sea Zone 17"/>
+	<connection t1="Albania" t2="Sea Zone 18"/>
+	<connection t1="Albania" t2="Yugoslavia"/>
+	<connection t1="Algiers" t2="Constantine"/>
+	<connection t1="Algiers" t2="Kasserine Pass"/>
+	<connection t1="Algiers" t2="Laghouat"/>
+	<connection t1="Algiers" t2="Oran"/>
+	<connection t1="Algiers" t2="Sea Zone 4"/>
+	<connection t1="Algiers" t2="Sea Zone 6"/>
+	<connection t1="Algiers Convoy UK" t2="Algiers Convoy US"/>
+	<connection t1="Algiers Convoy UK" t2="Sea Zone 6"/>
+	<connection t1="Algiers Convoy US" t2="Sea Zone 6"/>
+	<connection t1="Atlantic Ocean" t2="Atlantic Ocean Convoy"/>
+	<connection t1="Atlantic Ocean" t2="Cairo"/>
+	<connection t1="Atlantic Ocean" t2="Desert Zone K"/>
+	<connection t1="Atlantic Ocean" t2="Indian Ocean"/>
+	<connection t1="Atlantic Ocean" t2="Qatar Depression"/>
+	<connection t1="B-C" t2="Desert Zone B"/>
+	<connection t1="B-C" t2="Desert Zone C"/>
+	<connection t1="B-FEZ" t2="Desert Zone B"/>
+	<connection t1="B-FEZ" t2="Fez"/>
+	<connection t1="B-LAG" t2="Desert Zone B"/>
+	<connection t1="B-LAG" t2="Laghouat"/>
+	<connection t1="B-ORA" t2="Desert Zone B"/>
+	<connection t1="B-ORA" t2="Oran"/>
+	<connection t1="BEN-BIR" t2="Benghazi"/>
+	<connection t1="BEN-BIR" t2="Bir Hacheim"/>
+	<connection t1="BEN-BRE" t2="Benghazi"/>
+	<connection t1="BEN-BRE" t2="Mersa Brega"/>
+	<connection t1="BEN-TOB" t2="Benghazi"/>
+	<connection t1="BEN-TOB" t2="Tobruk"/>
+	<connection t1="BIR-BRE" t2="Bir Hacheim"/>
+	<connection t1="BIR-BRE" t2="Mersa Brega"/>
+	<connection t1="BIR-JAL" t2="Bir Hacheim"/>
+	<connection t1="BIR-JAL" t2="Jalo"/>
+	<connection t1="BIR-MAT" t2="Bir Hacheim"/>
+	<connection t1="BIR-MAT" t2="Mersa Matruh"/>
+	<connection t1="BIR-SIW" t2="Bir Hacheim"/>
+	<connection t1="BIR-SIW" t2="Siwa"/>
+	<connection t1="BIR-TOB" t2="Bir Hacheim"/>
+	<connection t1="BIR-TOB" t2="Tobruk"/>
+	<connection t1="BRE-JAL" t2="Jalo"/>
+	<connection t1="BRE-JAL" t2="Mersa Brega"/>
+	<connection t1="BRE-ZEL" t2="Mersa Brega"/>
+	<connection t1="BRE-ZEL" t2="Zella"/>
+	<connection t1="Benghazi" t2="Bir Hacheim"/>
+	<connection t1="Benghazi" t2="Mersa Brega"/>
+	<connection t1="Benghazi" t2="Sea Zone 22"/>
+	<connection t1="Benghazi" t2="Tobruk"/>
+	<connection t1="Benghazi Convoy G" t2="Benghazi Convoy I"/>
+	<connection t1="Benghazi Convoy G" t2="Sea Zone 15"/>
+	<connection t1="Benghazi Convoy I" t2="Sea Zone 15"/>
+	<connection t1="Bir Hacheim" t2="Jalo"/>
+	<connection t1="Bir Hacheim" t2="Mersa Brega"/>
+	<connection t1="Bir Hacheim" t2="Mersa Matruh"/>
+	<connection t1="Bir Hacheim" t2="Siwa"/>
+	<connection t1="Bir Hacheim" t2="Tobruk"/>
+	<connection t1="C-D" t2="Desert Zone C"/>
+	<connection t1="C-D" t2="Desert Zone D"/>
+	<connection t1="C-LAG" t2="Desert Zone C"/>
+	<connection t1="C-LAG" t2="Laghouat"/>
+	<connection t1="C-OUE" t2="Desert Zone C"/>
+	<connection t1="C-OUE" t2="El Oued"/>
+	<connection t1="CAI-MAT" t2="Cairo"/>
+	<connection t1="CAI-MAT" t2="Mersa Matruh"/>
+	<connection t1="CAS-FEZ" t2="Casablanca"/>
+	<connection t1="CAS-FEZ" t2="Fez"/>
+	<connection t1="CON-KASS" t2="Constantine"/>
+	<connection t1="CON-KASS" t2="Kasserine Pass"/>
+	<connection t1="CON-TUN" t2="Constantine"/>
+	<connection t1="CON-TUN" t2="Tunis"/>
+	<connection t1="Cairo" t2="Mersa Matruh"/>
+	<connection t1="Cairo" t2="Qatar Depression"/>
+	<connection t1="Cairo" t2="Sea Zone 29"/>
+	<connection t1="Cairo" t2="Sea Zone 31"/>
+	<connection t1="Cairo" t2="Suez Canal"/>
+	<connection t1="Casablanca" t2="Desert Zone A"/>
+	<connection t1="Casablanca" t2="Fez"/>
+	<connection t1="Casablanca" t2="Sea Zone 2"/>
+	<connection t1="Casablanca" t2="Sea Zone 3"/>
+	<connection t1="Casablanca" t2="Spanish Morocco"/>
+	<connection t1="Casablanca" t2="Unbound Zone 1"/>
+	<connection t1="Casablanca Convoy UK" t2="Casablanca Convoy US"/>
+	<connection t1="Casablanca Convoy UK" t2="Sea Zone 2"/>
+	<connection t1="Casablanca Convoy US" t2="Sea Zone 2"/>
+	<connection t1="Constantine" t2="Kasserine Pass"/>
+	<connection t1="Constantine" t2="Sea Zone 6"/>
+	<connection t1="Constantine" t2="Sea Zone 8"/>
+	<connection t1="Constantine" t2="Tunis"/>
+	<connection t1="Crete" t2="Sea Zone 25"/>
+	<connection t1="Crete" t2="Sea Zone 26"/>
+	<connection t1="Crete" t2="Sea Zone 28"/>
+	<connection t1="Cyprus" t2="Sea Zone 30"/>
+	<connection t1="Cyprus" t2="Sea Zone 32"/>
+	<connection t1="D-E" t2="Desert Zone D"/>
+	<connection t1="D-E" t2="Desert Zone E"/>
+	<connection t1="D-MAR" t2="Desert Zone D"/>
+	<connection t1="D-MAR" t2="Mareth"/>
+	<connection t1="D-NAL" t2="Desert Zone D"/>
+	<connection t1="D-NAL" t2="Nalut"/>
+	<connection t1="D-OUE" t2="Desert Zone D"/>
+	<connection t1="D-OUE" t2="El Oued"/>
+	<connection t1="Desert Zone A" t2="Desert Zone B"/>
+	<connection t1="Desert Zone A" t2="Fez"/>
+	<connection t1="Desert Zone A" t2="Unbound Zone 1"/>
+	<connection t1="Desert Zone A" t2="Unbound Zone 2"/>
+	<connection t1="Desert Zone B" t2="Desert Zone C"/>
+	<connection t1="Desert Zone B" t2="Fez"/>
+	<connection t1="Desert Zone B" t2="Laghouat"/>
+	<connection t1="Desert Zone B" t2="Oran"/>
+	<connection t1="Desert Zone B" t2="Unbound Zone 2"/>
+	<connection t1="Desert Zone C" t2="Desert Zone D"/>
+	<connection t1="Desert Zone C" t2="El Oued"/>
+	<connection t1="Desert Zone C" t2="Laghouat"/>
+	<connection t1="Desert Zone C" t2="Unbound Zone 2"/>
+	<connection t1="Desert Zone D" t2="Desert Zone E"/>
+	<connection t1="Desert Zone D" t2="El Oued"/>
+	<connection t1="Desert Zone D" t2="Mareth"/>
+	<connection t1="Desert Zone D" t2="Nalut"/>
+	<connection t1="Desert Zone D" t2="Unbound Zone 2"/>
+	<connection t1="Desert Zone E" t2="Desert Zone F"/>
+	<connection t1="Desert Zone E" t2="E-F"/>
+	<connection t1="Desert Zone E" t2="E-GHA"/>
+	<connection t1="Desert Zone E" t2="E-NAL"/>
+	<connection t1="Desert Zone E" t2="Ghadames"/>
+	<connection t1="Desert Zone E" t2="Nalut"/>
+	<connection t1="Desert Zone E" t2="Unbound Zone 2"/>
+	<connection t1="Desert Zone F" t2="Desert Zone G"/>
+	<connection t1="Desert Zone F" t2="E-F"/>
+	<connection t1="Desert Zone F" t2="F-G"/>
+	<connection t1="Desert Zone F" t2="F-GHA"/>
+	<connection t1="Desert Zone F" t2="Ghadames"/>
+	<connection t1="Desert Zone F" t2="Unbound Zone 2"/>
+	<connection t1="Desert Zone G" t2="Desert Zone I"/>
+	<connection t1="Desert Zone G" t2="F-G"/>
+	<connection t1="Desert Zone G" t2="G-GHA"/>
+	<connection t1="Desert Zone G" t2="G-H"/>
+	<connection t1="Desert Zone G" t2="G-SOK"/>
+	<connection t1="Desert Zone G" t2="Ghadames"/>
+	<connection t1="Desert Zone G" t2="H-SOK"/>
+	<connection t1="Desert Zone G" t2="H-ZEL"/>
+	<connection t1="Desert Zone G" t2="Sokna"/>
+	<connection t1="Desert Zone G" t2="Zella"/>
+	<connection t1="Desert Zone H" t2="Desert Zone I"/>
+	<connection t1="Desert Zone H" t2="G-H"/>
+	<connection t1="Desert Zone H" t2="H-I"/>
+	<connection t1="Desert Zone H" t2="H-SOK"/>
+	<connection t1="Desert Zone H" t2="H-ZEL"/>
+	<connection t1="Desert Zone H" t2="Sokna"/>
+	<connection t1="Desert Zone H" t2="Zella"/>
+	<connection t1="Desert Zone I" t2="Desert Zone J"/>
+	<connection t1="Desert Zone I" t2="H-I"/>
+	<connection t1="Desert Zone I" t2="I-J"/>
+	<connection t1="Desert Zone I" t2="I-JAL"/>
+	<connection t1="Desert Zone I" t2="I-ZEL"/>
+	<connection t1="Desert Zone I" t2="Jalo"/>
+	<connection t1="Desert Zone I" t2="Zella"/>
+	<connection t1="Desert Zone J" t2="Desert Zone K"/>
+	<connection t1="Desert Zone J" t2="I-J"/>
+	<connection t1="Desert Zone J" t2="J-JAL"/>
+	<connection t1="Desert Zone J" t2="J-K"/>
+	<connection t1="Desert Zone J" t2="J-SIW"/>
+	<connection t1="Desert Zone J" t2="Jalo"/>
+	<connection t1="Desert Zone J" t2="Siwa"/>
+	<connection t1="Desert Zone K" t2="J-K"/>
+	<connection t1="Desert Zone K" t2="K-SIW"/>
+	<connection t1="Desert Zone K" t2="Qatar Depression"/>
+	<connection t1="Desert Zone K" t2="Siwa"/>
+	<connection t1="E-GHA" t2="Ghadames"/>
+	<connection t1="E-NAL" t2="Nalut"/>
+	<connection t1="El Agheila" t2="Mersa Brega"/>
+	<connection t1="El Agheila" t2="Sea Zone 14"/>
+	<connection t1="El Agheila" t2="Sea Zone 21"/>
+	<connection t1="El Agheila" t2="Sirte"/>
+	<connection t1="El Agheila" t2="Sokna"/>
+	<connection t1="El Agheila" t2="Zella"/>
+	<connection t1="El Oued" t2="KAS-OUE"/>
+	<connection t1="El Oued" t2="Kasserine Pass"/>
+	<connection t1="El Oued" t2="LAG-OUE"/>
+	<connection t1="El Oued" t2="Laghouat"/>
+	<connection t1="El Oued" t2="MAR-OUE"/>
+	<connection t1="El Oued" t2="Mareth"/>
+	<connection t1="F-GHA" t2="Ghadames"/>
+	<connection t1="FEZ-ORA" t2="Fez"/>
+	<connection t1="FEZ-ORA" t2="Oran"/>
+	<connection t1="Fez" t2="Oran"/>
+	<connection t1="Fez" t2="Spanish Morocco"/>
+	<connection t1="G-GHA" t2="Ghadames"/>
+	<connection t1="G-SOK" t2="Sokna"/>
+	<connection t1="GHA-NAL" t2="Ghadames"/>
+	<connection t1="GHA-NAL" t2="Nalut"/>
+	<connection t1="GHA-SOK" t2="Ghadames"/>
+	<connection t1="GHA-SOK" t2="Sokna"/>
+	<connection t1="GHA-TRI" t2="Ghadames"/>
+	<connection t1="GHA-TRI" t2="Tripoli"/>
+	<connection t1="Ghadames" t2="Nalut"/>
+	<connection t1="Ghadames" t2="Sokna"/>
+	<connection t1="Ghadames" t2="Tripoli"/>
+	<connection t1="Gibraltar" t2="Sea Zone 3"/>
+	<connection t1="Gibraltar" t2="Spain"/>
+	<connection t1="H-SOK" t2="Sokna"/>
+	<connection t1="H-ZEL" t2="Zella"/>
+	<connection t1="I-JAL" t2="Jalo"/>
+	<connection t1="I-ZEL" t2="Zella"/>
+	<connection t1="Indian Ocean" t2="Indian Ocean Convoy"/>
+	<connection t1="Indian Ocean" t2="Missed This"/>
+	<connection t1="Indian Ocean" t2="Suez Canal"/>
+	<connection t1="Italy" t2="Sea Zone 10"/>
+	<connection t1="Italy" t2="Sea Zone 11"/>
+	<connection t1="Italy" t2="Sea Zone 16"/>
+	<connection t1="Italy" t2="Sea Zone 17"/>
+	<connection t1="Italy" t2="Sea Zone 18"/>
+	<connection t1="J-JAL" t2="Jalo"/>
+	<connection t1="J-SIW" t2="Siwa"/>
+	<connection t1="JAL-ZEL" t2="Jalo"/>
+	<connection t1="JAL-ZEL" t2="Zella"/>
+	<connection t1="Jalo" t2="Mersa Brega"/>
+	<connection t1="Jalo" t2="Siwa"/>
+	<connection t1="Jalo" t2="Zella"/>
+	<connection t1="Jordan" t2="Missed This"/>
+	<connection t1="Jordan" t2="Palestine"/>
+	<connection t1="Jordan" t2="Saudi-Arabia"/>
+	<connection t1="Jordan" t2="Sinai"/>
+	<connection t1="Jordan" t2="Syria"/>
+	<connection t1="K-SIW" t2="Siwa"/>
+	<connection t1="KAS-MAR" t2="Kasserine Pass"/>
+	<connection t1="KAS-MAR" t2="Mareth"/>
+	<connection t1="KAS-OUE" t2="Kasserine Pass"/>
+	<connection t1="KAS-TUN" t2="Kasserine Pass"/>
+	<connection t1="KAS-TUN" t2="Tunis"/>
+	<connection t1="Kasserine Pass" t2="LAG-KAS"/>
+	<connection t1="Kasserine Pass" t2="Laghouat"/>
+	<connection t1="Kasserine Pass" t2="Mareth"/>
+	<connection t1="Kasserine Pass" t2="Tunis"/>
+	<connection t1="LAG-KAS" t2="Laghouat"/>
+	<connection t1="LAG-ORA" t2="Laghouat"/>
+	<connection t1="LAG-ORA" t2="Oran"/>
+	<connection t1="LAG-OUE" t2="Laghouat"/>
+	<connection t1="Laghouat" t2="Oran"/>
+	<connection t1="MAR-NAL" t2="Mareth"/>
+	<connection t1="MAR-NAL" t2="Nalut"/>
+	<connection t1="MAR-OUE" t2="Mareth"/>
+	<connection t1="MAR-TRI" t2="Mareth"/>
+	<connection t1="MAR-TRI" t2="Tripoli"/>
+	<connection t1="MAR-TUN" t2="Mareth"/>
+	<connection t1="MAR-TUN" t2="Tunis"/>
+	<connection t1="MAT-SIW" t2="Mersa Matruh"/>
+	<connection t1="MAT-SIW" t2="Siwa"/>
+	<connection t1="MAT-TOB" t2="Mersa Matruh"/>
+	<connection t1="MAT-TOB" t2="Tobruk"/>
+	<connection t1="Malta" t2="Sea Zone 12"/>
+	<connection t1="Malta Convoy" t2="Sea Zone 12"/>
+	<connection t1="Mareth" t2="Nalut"/>
+	<connection t1="Mareth" t2="Sea Zone 13"/>
+	<connection t1="Mareth" t2="Tripoli"/>
+	<connection t1="Mareth" t2="Tunis"/>
+	<connection t1="Mersa Brega" t2="Sea Zone 21"/>
+	<connection t1="Mersa Brega" t2="Sea Zone 22"/>
+	<connection t1="Mersa Brega" t2="Zella"/>
+	<connection t1="Mersa Matruh" t2="Qatar Depression"/>
+	<connection t1="Mersa Matruh" t2="Sea Zone 24"/>
+	<connection t1="Mersa Matruh" t2="Sea Zone 29"/>
+	<connection t1="Mersa Matruh" t2="Siwa"/>
+	<connection t1="Mersa Matruh" t2="Tobruk"/>
+	<connection t1="Missed This" t2="Saudi-Arabia"/>
+	<connection t1="Missed This" t2="Sinai"/>
+	<connection t1="Missed This" t2="Suez Canal"/>
+	<connection t1="NAL-TRI" t2="Nalut"/>
+	<connection t1="NAL-TRI" t2="Tripoli"/>
+	<connection t1="Nalut" t2="Tripoli"/>
+	<connection t1="Oran" t2="Sea Zone 3"/>
+	<connection t1="Oran" t2="Sea Zone 4"/>
+	<connection t1="Oran" t2="Spanish Morocco"/>
+	<connection t1="Oran Convoy UK" t2="Oran Convoy US"/>
+	<connection t1="Oran Convoy UK" t2="Sea Zone 4"/>
+	<connection t1="Oran Convoy US" t2="Sea Zone 4"/>
+	<connection t1="Palestine" t2="Sea Zone 32"/>
+	<connection t1="Palestine" t2="Sinai"/>
+	<connection t1="Palestine" t2="Syria"/>
+	<connection t1="Portugal" t2="Sea Zone 1"/>
+	<connection t1="Portugal" t2="Spain"/>
+	<connection t1="Qatar Depression" t2="Siwa"/>
+	<connection t1="SIR-SOK" t2="Sirte"/>
+	<connection t1="SIR-SOK" t2="Sokna"/>
+	<connection t1="SIR-TRI" t2="Sirte"/>
+	<connection t1="SIR-TRI" t2="Tripoli"/>
+	<connection t1="SOK-TRI" t2="Sokna"/>
+	<connection t1="SOK-TRI" t2="Tripoli"/>
+	<connection t1="SOK-ZEL" t2="Sokna"/>
+	<connection t1="SOK-ZEL" t2="Zella"/>
+	<connection t1="Sardinia" t2="Sea Zone 9"/>
+	<connection t1="Sea Zone 1" t2="Sea Zone 2"/>
+	<connection t1="Sea Zone 1" t2="Sea Zone 3"/>
+	<connection t1="Sea Zone 1" t2="Spain"/>
+	<connection t1="Sea Zone 2" t2="Sea Zone 3"/>
+	<connection t1="Sea Zone 3" t2="Sea Zone 4"/>
+	<connection t1="Sea Zone 3" t2="Spain"/>
+	<connection t1="Sea Zone 3" t2="Spanish Morocco"/>
+	<connection t1="Sea Zone 4" t2="Sea Zone 5"/>
+	<connection t1="Sea Zone 4" t2="Sea Zone 6"/>
+	<connection t1="Sea Zone 4" t2="Spain"/>
+	<connection t1="Sea Zone 5" t2="Sea Zone 6"/>
+	<connection t1="Sea Zone 5" t2="Sea Zone 7"/>
+	<connection t1="Sea Zone 5" t2="Spain"/>
+	<connection t1="Sea Zone 6" t2="Sea Zone 7"/>
+	<connection t1="Sea Zone 6" t2="Sea Zone 8"/>
+	<connection t1="Sea Zone 7" t2="Sea Zone 8"/>
+	<connection t1="Sea Zone 7" t2="Sea Zone 9"/>
+	<connection t1="Sea Zone 8" t2="Sea Zone 9"/>
+	<connection t1="Sea Zone 8" t2="Sea Zone 11"/>
+	<connection t1="Sea Zone 8" t2="Sea Zone 12"/>
+	<connection t1="Sea Zone 8" t2="Sicily"/>
+	<connection t1="Sea Zone 8" t2="Tunis"/>
+	<connection t1="Sea Zone 8" t2="Tunis Convoy G"/>
+	<connection t1="Sea Zone 8" t2="Tunis Convoy I"/>
+	<connection t1="Sea Zone 9" t2="Sea Zone 10"/>
+	<connection t1="Sea Zone 9" t2="Sea Zone 11"/>
+	<connection t1="Sea Zone 10" t2="Sea Zone 11"/>
+	<connection t1="Sea Zone 11" t2="Sea Zone 16"/>
+	<connection t1="Sea Zone 11" t2="Sicily"/>
+	<connection t1="Sea Zone 12" t2="Sea Zone 13"/>
+	<connection t1="Sea Zone 12" t2="Sea Zone 15"/>
+	<connection t1="Sea Zone 12" t2="Sea Zone 16"/>
+	<connection t1="Sea Zone 12" t2="Sicily"/>
+	<connection t1="Sea Zone 12" t2="Tunis"/>
+	<connection t1="Sea Zone 13" t2="Sea Zone 14"/>
+	<connection t1="Sea Zone 13" t2="Sea Zone 15"/>
+	<connection t1="Sea Zone 13" t2="Sirte"/>
+	<connection t1="Sea Zone 13" t2="Tripoli"/>
+	<connection t1="Sea Zone 13" t2="Tripoli Convoy G"/>
+	<connection t1="Sea Zone 13" t2="Tripoli Convoy I"/>
+	<connection t1="Sea Zone 13" t2="Tunis"/>
+	<connection t1="Sea Zone 14" t2="Sea Zone 15"/>
+	<connection t1="Sea Zone 14" t2="Sea Zone 21"/>
+	<connection t1="Sea Zone 14" t2="Sirte"/>
+	<connection t1="Sea Zone 15" t2="Sea Zone 16"/>
+	<connection t1="Sea Zone 15" t2="Sea Zone 20"/>
+	<connection t1="Sea Zone 15" t2="Sea Zone 21"/>
+	<connection t1="Sea Zone 16" t2="Sea Zone 17"/>
+	<connection t1="Sea Zone 16" t2="Sea Zone 19"/>
+	<connection t1="Sea Zone 16" t2="Sea Zone 20"/>
+	<connection t1="Sea Zone 16" t2="Sicily"/>
+	<connection t1="Sea Zone 17" t2="Sea Zone 18"/>
+	<connection t1="Sea Zone 17" t2="Sea Zone 19"/>
+	<connection t1="Sea Zone 17" t2="Yugoslavia"/>
+	<connection t1="Sea Zone 19" t2="Sea Zone 20"/>
+	<connection t1="Sea Zone 19" t2="Sea Zone 23"/>
+	<connection t1="Sea Zone 19" t2="Yugoslavia"/>
+	<connection t1="Sea Zone 20" t2="Sea Zone 21"/>
+	<connection t1="Sea Zone 20" t2="Sea Zone 22"/>
+	<connection t1="Sea Zone 20" t2="Sea Zone 23"/>
+	<connection t1="Sea Zone 21" t2="Sea Zone 22"/>
+	<connection t1="Sea Zone 22" t2="Sea Zone 23"/>
+	<connection t1="Sea Zone 22" t2="Sea Zone 24"/>
+	<connection t1="Sea Zone 22" t2="Tobruk"/>
+	<connection t1="Sea Zone 23" t2="Sea Zone 24"/>
+	<connection t1="Sea Zone 23" t2="Sea Zone 25"/>
+	<connection t1="Sea Zone 23" t2="Sea Zone 26"/>
+	<connection t1="Sea Zone 23" t2="Yugoslavia"/>
+	<connection t1="Sea Zone 24" t2="Sea Zone 25"/>
+	<connection t1="Sea Zone 24" t2="Sea Zone 28"/>
+	<connection t1="Sea Zone 24" t2="Sea Zone 29"/>
+	<connection t1="Sea Zone 24" t2="Tobruk"/>
+	<connection t1="Sea Zone 25" t2="Sea Zone 26"/>
+	<connection t1="Sea Zone 25" t2="Sea Zone 28"/>
+	<connection t1="Sea Zone 26" t2="Sea Zone 27"/>
+	<connection t1="Sea Zone 26" t2="Sea Zone 28"/>
+	<connection t1="Sea Zone 26" t2="Turkey"/>
+	<connection t1="Sea Zone 26" t2="Yugoslavia"/>
+	<connection t1="Sea Zone 27" t2="Turkey"/>
+	<connection t1="Sea Zone 27" t2="Yugoslavia"/>
+	<connection t1="Sea Zone 28" t2="Sea Zone 29"/>
+	<connection t1="Sea Zone 28" t2="Sea Zone 30"/>
+	<connection t1="Sea Zone 28" t2="Turkey"/>
+	<connection t1="Sea Zone 29" t2="Sea Zone 30"/>
+	<connection t1="Sea Zone 29" t2="Sea Zone 31"/>
+	<connection t1="Sea Zone 30" t2="Sea Zone 31"/>
+	<connection t1="Sea Zone 30" t2="Sea Zone 32"/>
+	<connection t1="Sea Zone 30" t2="Turkey"/>
+	<connection t1="Sea Zone 31" t2="Sea Zone 32"/>
+	<connection t1="Sea Zone 31" t2="Sinai"/>
+	<connection t1="Sea Zone 31" t2="Suez Canal"/>
+	<connection t1="Sea Zone 32" t2="Sinai"/>
+	<connection t1="Sea Zone 32" t2="Syria"/>
+	<connection t1="Sea Zone 32" t2="Turkey"/>
+	<connection t1="Sinai" t2="Suez Canal"/>
+	<connection t1="Sirte" t2="Sokna"/>
+	<connection t1="Sirte" t2="Tripoli"/>
+	<connection t1="Sokna" t2="Tripoli"/>
+	<connection t1="Sokna" t2="Zella"/>
+	<connection t1="Suez Canal" t2="Suez Canal Convoy"/>
+	<connection t1="Syria" t2="Turkey"/>
+	<connection t1="Tripoli Convoy G" t2="Tripoli Convoy I"/>
+	<connection t1="Tunis Convoy G" t2="Tunis Convoy I"/>
+	<connection t1="Turkey" t2="Unknown Sea Zone 1"/>
+	<connection t1="Turkey" t2="Yugoslavia"/>
+	<connection t1="Unbound Zone 1" t2="Unbound Zone 2"/>
+
+  </map>
+  <resourceList>
+    <resource name="PUs"/>
+  </resourceList>
+  <playerList>
+    <!-- In turn order -->
+    <player name="Germans" optional="false"/>
+    <player name="British" optional="false"/>
+    <player name="Italians" optional="false"/>
+    <player name="Americans" optional="false"/>
+    <!-- Adding Vichy/Free French here in case they are needed -->
+    <player name="Vichy-French" optional="false"/>
+    <!--player name="Free-French" optional="false"/-->
+    <player name="Axis-Units" optional="false"/>
+    <player name="Allied-Units" optional="false"/>
+    <player name="Mines" optional="false"/>
+    <player name="Uncontrolled" optional="true"/>
+	<player name="Desert" optional="true"/>
+    <!-- alliances -->
+    <alliance player="Germans" alliance="Axis"/>
+    <alliance player="Italians" alliance="Axis"/>
+    <alliance player="British" alliance="Allies"/>
+    <alliance player="Americans" alliance="Allies"/>
+    <alliance player="Vichy-French" alliance="Axis"/>
+    <alliance player="Allied-Units" alliance="Allies"/>
+    <alliance player="Axis-Units" alliance="Axis"/>
+    <!-- alliance player="Free-French" alliance="Allies"/-->
+  </playerList>
+  <unitList>
+    <unit name="infantry"/>
+    <unit name="I-infantry"/>
+    <unit name="F-infantry"/>
+    <unit name="artillery"/>
+    <unit name="mech"/>
+    <unit name="UK-scoutcar"/>
+    <unit name="scoutcar"/>
+    <unit name="tank"/>
+    <unit name="matilda"/>
+    <unit name="sherman"/>
+    <unit name="tiger"/>	
+    <unit name="I-tank"/>
+    <unit name="F-tank"/>
+    <unit name="UK-antitank"/>
+    <unit name="G-antitank"/>
+    <unit name="UK-truck"/>
+    <unit name="US-truck"/>
+    <unit name="axis-truck"/>
+    <unit name="axis-truck-latewar"/>
+    <unit name="fighter"/>
+    <unit name="UK-fighter"/>
+    <unit name="G-fighter"/>
+    <unit name="bomber"/>
+    <unit name="I-bomber"/>
+    <unit name="G-bomber"/>
+    <unit name="transport"/> <!-- I think we need transports -->
+    <!--  Re: Transports.  I do not think they are needed because of how the convoy rules work Vs. how Transports work in normal A&A:
+    	  In normal A&A:  Units must be placed in Transports, and have rules restricting their placement (usually 1 INF + 1 of any land unit).
+    	  In A&A: NA:  Units are chosen as casualties in convoy battles in the following way:
+    	               -Attacker chooses one land unit in the convoy zone to die.
+    	               -Defender chooses one land unit in the convoy zone to die.
+    	               
+    	               In my opinion, as this is a cooperative effort between the players, such a thing would need to be done via manual dice rolls and edits rather than in-engine.
+    	               Happy to discuss further over email if there's something I am overlooking. -->
+    <unit name="battleship"/>
+    <unit name="UK-destroyer"/>
+    <unit name="I-destroyer"/>
+    <unit name="US-destroyer"/>
+    <unit name="UK-submarine"/>
+    <unit name="G-submarine"/>
+    <unit name="I-submarine"/>
+    <unit name="factory"/>
+    <unit name="harbor"/>
+    <unit name="1-supply"/>
+    <unit name="5-supply"/>
+    <unit name="landmine"/>
+    <unit name="axis-landmine"/>
+    <unit name="allied-landmine"/>
+    <unit name="seamine"/>
+    <unit name="axis-seamine"/>
+    <unit name="allied-seamine"/>	
+    <unit name="aaGun"/>
+    <unit name="UK-aaGun"/>
+  </unitList>
+ 	<relationshipTypes>
+		<relationshipType name="Allied"/>
+		<relationshipType name="War"/>
+		<relationshipType name="Neutral"/>
+	</relationshipTypes>
+  <territoryEffectList>
+	<territoryEffect name="Desert"/>
+  </territoryEffectList>
+  <gamePlay>
+    <delegate name="initDelegate" javaClass="games.strategy.triplea.delegate.InitializationDelegate" display="Initializing Delegates"/>
+    <delegate name="battle" javaClass="games.strategy.triplea.delegate.BattleDelegate" display="Combat"/>
+    <delegate name="move" javaClass="games.strategy.triplea.delegate.MoveDelegate" display="Combat Move"/>
+    <!-- <delegate name="place" javaClass="games.strategy.triplea.delegate.PlaceDelegate" display="Place Units"/> -->
+    <delegate name="placeNoAirCheck" javaClass="games.strategy.triplea.delegate.NoAirCheckPlaceDelegate" display="Place Units"/>
+    <delegate name="purchase" javaClass="games.strategy.triplea.delegate.PurchaseDelegate" display="Purchase Units"/>
+    <delegate name="purchaseMines" javaClass="games.strategy.triplea.delegate.PurchaseDelegate" display="Purchase Mines"/>
+    <delegate name="endTurn" javaClass="games.strategy.triplea.delegate.EndTurnDelegate" display="Start Turn"/>
+    <delegate name="endTurnNoPU" javaClass="games.strategy.triplea.delegate.NoPUEndTurnDelegate" display="Turn Complete"/>
+    <delegate name="endRound" javaClass="games.strategy.triplea.delegate.EndRoundDelegate" display="Round Complete"/>
+    <delegate name="placeBid" javaClass="games.strategy.triplea.delegate.BidPlaceDelegate" display="Bid Placement"/>
+    <delegate name="bid" javaClass="games.strategy.triplea.delegate.BidPurchaseDelegate" display="Bid Purchase"/>
+    <sequence>
+    <!-- TODO:  The turn Sequence for AA: NA is slightly different from typical A&A:
+    	        *1.  Advance Convoys*
+    	        2.  Purchase
+    	        3.  Combat Move
+    	        4.  Combat
+    	        5.  Noncombat Move
+    	        6.  Place Units
+     -->
+      <step name="gameInitDelegate" delegate="initDelegate" maxRunCount="1"/>
+      <step name="germansBid" delegate="bid" player="Germans" maxRunCount="1"/>
+      <step name="germansBidPlace" delegate="placeBid" player="Germans" maxRunCount="1"/>
+      <step name="britishBid" delegate="bid" player="British" maxRunCount="1"/>
+      <step name="britishBidPlace" delegate="placeBid" player="British" maxRunCount="1"/>
+      <step name="italiansBid" delegate="bid" player="Italians" maxRunCount="1"/>
+      <step name="italiansBidPlace" delegate="placeBid" player="Italians" maxRunCount="1"/>
+      <step name="americansBid" delegate="bid" player="Americans" maxRunCount="1"/>
+      <step name="americansBidPlace" delegate="placeBid" player="Americans" maxRunCount="1"/>
+	  
+	  <step name="germansEndTurn" delegate="endTurn" player="Germans"/>
+	  <step name="germansNonCombatMove" delegate="move" player="Germans" display="Advance Convoys">
+		<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
+      <step name="germansPurchase" delegate="purchase" player="Germans"/>
+      <step name="minesPurchase" delegate="purchase" player="Mines"/>
+	  <step name="germansPlace" delegate="placeNoAirCheck" player="Germans"/>
+      <step name="minesPlace" delegate="placeNoAirCheck" player="Mines" display="Place Mines"/>
+      <step name="germansCombatMove" delegate="move" player="Germans"/>
+      <step name="germansBattle" delegate="battle" player="Germans"/>
+      <step name="germans2NonCombatMove" delegate="move" player="Germans" display="Non Combat Move">
+	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
+      <step name="germans2Place" delegate="placeNoAirCheck" player="Germans"/>
+      <step name="germans2EndTurn" delegate="endTurnNoPU" player="Germans"/>
+      <step name="minesEndTurn" delegate="endTurnNoPU" player="Mines"/>
+	  
+	  <step name="britishEndTurn" delegate="endTurn" player="British"/>
+	  <step name="britishNonCombatMove" delegate="move" player="British" display="Advance Convoys">
+	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
+      <step name="britishPurchase" delegate="purchase" player="British"/>
+      <step name="mines2Purchase" delegate="purchase" player="Mines"/>
+      <step name="mines2Place" delegate="placeNoAirCheck" player="Mines" display="Place Mines"/>
+      <step name="britishCombatMove" delegate="move" player="British"/>
+      <step name="britishBattle" delegate="battle" player="British"/>
+      <step name="british2NonCombatMove" delegate="move" player="British" display="Non Combat Move">
+	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
+      <step name="british2Place" delegate="placeNoAirCheck" player="British"/>
+      <step name="british2EndTurn" delegate="endTurnNoPU" player="British"/>
+      <step name="mines2EndTurn" delegate="endTurnNoPU" player="Mines"/>
+	  
+	  <step name="italiansEndTurn" delegate="endTurn" player="Italians"/>
+	  <step name="italiansNonCombatMove" delegate="move" player="Italians" display="Advance Convoys">
+	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
+
+      <step name="italiansPurchase" delegate="purchase" player="Italians"/>
+      <step name="mines3Purchase" delegate="purchase" player="Mines"/>
+      <step name="mines3Place" delegate="placeNoAirCheck" player="Mines" display="Place Mines"/>
+      <step name="italiansCombatMove" delegate="move" player="Italians"/>
+      <step name="italiansBattle" delegate="battle" player="Italians"/>
+      <step name="italians2NonCombatMove" delegate="move" player="Italians" display="Non Combat Move">
+	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
+      <step name="italians2Place" delegate="placeNoAirCheck" player="Italians"/>
+      <step name="italians2EndTurn" delegate="endTurnNoPU" player="Italians"/>
+      <step name="mines3EndTurn" delegate="endTurnNoPU" player="Mines"/>
+	  
+	  <step name="americansEndTurn" delegate="endTurn" player="Americans"/>
+	  <step name="americansNonCombatMove" delegate="move" player="Americans" display="Advance Convoys">
+	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
+      <step name="americansPurchase" delegate="purchase" player="Americans"/>
+      <step name="mines4Purchase" delegate="purchase" player="Mines"/>
+      <step name="mines4Place" delegate="placeNoAirCheck" player="Mines" display="Place Mines"/>
+      <step name="americansPlace" delegate="placeNoAirCheck" player="Americans" display="Place Mines"/>
+      <step name="americansCombatMove" delegate="move" player="Americans"/>
+      <step name="americansBattle" delegate="battle" player="Americans"/>
+      <step name="americans2NonCombatMove" delegate="move" player="Americans" display="Non Combat Move">
+	  	<stepProperty name="removeAirThatCanNotLand" value="false"/>
+	  </step>
+      <step name="americans2Place" delegate="placeNoAirCheck" player="Americans"/>
+      <step name="americans2EndTurn" delegate="endTurnNoPU" player="Americans"/>
+      <step name="mines4EndTurn" delegate="endTurnNoPU" player="Mines"/>
+      <step name="endRoundStep" delegate="endRound"/>
+    </sequence>
+  </gamePlay>
+  <production>
+    <productionRule name="buyInfantry">
+      <cost resource="PUs" quantity="3"/>
+      <result resourceOrUnit="infantry" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyFrenchInfantry">
+      <cost resource="PUs" quantity="3"/>
+      <result resourceOrUnit="F-infantry" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyItalianInfantry">
+      <cost resource="PUs" quantity="2"/>
+      <result resourceOrUnit="I-infantry" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyArtillery">
+      <cost resource="PUs" quantity="4"/>
+      <result resourceOrUnit="artillery" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyTank">
+      <cost resource="PUs" quantity="6"/>
+      <result resourceOrUnit="tank" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyTigerTank">
+      <cost resource="PUs" quantity="9"/>
+      <result resourceOrUnit="tiger" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUKtank">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="matilda" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyItalianTank">
+      <cost resource="PUs" quantity="4"/>
+      <result resourceOrUnit="I-tank" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyFrenchTank">
+      <cost resource="PUs" quantity="4"/>
+      <result resourceOrUnit="F-tank" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyMech">
+      <cost resource="PUs" quantity="4"/>
+      <result resourceOrUnit="mech" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUKscoutcar">
+      <cost resource="PUs" quantity="4"/>
+      <result resourceOrUnit="UK-scoutcar" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyScoutcar">
+      <cost resource="PUs" quantity="4"/>
+      <result resourceOrUnit="scoutcar" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUKAntiTank">
+      <cost resource="PUs" quantity="4"/>
+      <result resourceOrUnit="UK-antitank" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGermanAntiTank">
+      <cost resource="PUs" quantity="5"/>
+      <result resourceOrUnit="G-antitank" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUKTruck">
+      <cost resource="PUs" quantity="2"/>
+      <result resourceOrUnit="UK-truck" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUSTruck">
+      <cost resource="PUs" quantity="2"/>
+      <result resourceOrUnit="US-truck" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyAxisTruck">
+      <cost resource="PUs" quantity="2"/>
+      <result resourceOrUnit="axis-truck" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyAxisTruckLateWar">
+      <cost resource="PUs" quantity="2"/>
+      <result resourceOrUnit="axis-truck-latewar" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyFighter">
+      <cost resource="PUs" quantity="10"/>
+      <result resourceOrUnit="fighter" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUKFighter">
+      <cost resource="PUs" quantity="10"/>
+      <result resourceOrUnit="fighter" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGFighter">
+      <cost resource="PUs" quantity="10"/>
+      <result resourceOrUnit="fighter" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyBomber">
+      <cost resource="PUs" quantity="10"/>
+      <result resourceOrUnit="bomber" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyItalianBomber">
+      <cost resource="PUs" quantity="10"/>
+      <result resourceOrUnit="I-bomber" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGermanBomber">
+      <cost resource="PUs" quantity="10"/>
+      <result resourceOrUnit="G-bomber" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyBritishDestroyer">
+      <cost resource="PUs" quantity="8"/>
+      <result resourceOrUnit="UK-destroyer" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyItalianDestroyer">
+      <cost resource="PUs" quantity="8"/>
+      <result resourceOrUnit="I-destroyer" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyAmericanDestroyer">
+      <cost resource="PUs" quantity="8"/>
+      <result resourceOrUnit="US-destroyer" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyBattleship">
+      <cost resource="PUs" quantity="13"/>
+      <result resourceOrUnit="battleship" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyBritishSubmarine">
+      <cost resource="PUs" quantity="6"/>
+      <result resourceOrUnit="UK-submarine" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyItalianSubmarine">
+      <cost resource="PUs" quantity="6"/>
+      <result resourceOrUnit="I-submarine" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyGermanSubmarine">
+      <cost resource="PUs" quantity="6"/>
+      <result resourceOrUnit="G-submarine" quantity="1"/>
+    </productionRule>
+    <productionRule name="buySupply">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="1-supply" quantity="1"/>
+    </productionRule>
+    <productionRule name="buy5Supply">
+      <cost resource="PUs" quantity="3"/>
+      <result resourceOrUnit="5-supply" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyAxisLandmine">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="axis-landmine" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyAlliedLandmine">
+      <cost resource="PUs" quantity="1"/>
+      <result resourceOrUnit="allied-landmine" quantity="1"/>
+    </productionRule>
+	<productionRule name="buySeamine">
+      <cost resource="PUs" quantity="2"/>
+      <result resourceOrUnit="seamine" quantity="1"/>
+    </productionRule>
+    <!-- <productionRule name="buyAlliesSeamine">
+      <cost resource="PUs" quantity="2"/>
+      <result resourceOrUnit="allied-seamine" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyAxisSeamine">
+      <cost resource="PUs" quantity="2"/>
+      <result resourceOrUnit="axis-seamine" quantity="1"/>
+    </productionRule> -->
+    <productionRule name="buyAAGun">
+      <cost resource="PUs" quantity="3"/>
+      <result resourceOrUnit="aaGun" quantity="1"/>
+    </productionRule>
+    <productionRule name="buyUK-aaGun">
+      <cost resource="PUs" quantity="3"/>
+      <result resourceOrUnit="UK-aaGun" quantity="1"/>
+    </productionRule>
+    <productionFrontier name="Mines-production">
+      <!-- <frontierRules name="buyAxisSeamine"/> -->
+      <!-- <frontierRules name="buyAlliesSeamine"/> -->
+      <frontierRules name="buyAxisLandmine"/>
+      <frontierRules name="buyAlliedLandmine"/>
+    </productionFrontier>
+    <productionFrontier name="B-production">
+      <frontierRules name="buyInfantry"/>
+      <frontierRules name="buyArtillery"/>
+      <frontierRules name="buyUKAntiTank"/>
+      <frontierRules name="buyUK-aaGun"/>
+      <frontierRules name="buyUKscoutcar"/>
+      <frontierRules name="buyUKtank"/>
+      <frontierRules name="buyUKTruck"/>
+      <frontierRules name="buyUKFighter"/>
+      <frontierRules name="buyBomber"/>
+      <frontierRules name="buyBattleship"/>
+      <frontierRules name="buyBritishDestroyer"/>
+      <frontierRules name="buyBritishSubmarine"/>
+      <frontierRules name="buySupply"/>
+      <frontierRules name="buy5Supply"/>
+      <!-- <frontierRules name="buyLandmine"/> -->
+      <frontierRules name="buySeamine"/>
+    </productionFrontier>
+    <productionFrontier name="I-production">
+      <frontierRules name="buyItalianInfantry"/>
+      <frontierRules name="buyArtillery"/>
+      <frontierRules name="buyAAGun"/>
+      <frontierRules name="buyScoutcar"/>
+      <frontierRules name="buyItalianTank"/>
+      <frontierRules name="buyAxisTruck"/>
+      <frontierRules name="buyFighter"/>
+      <frontierRules name="buyItalianBomber"/>
+      <frontierRules name="buyItalianDestroyer"/>
+      <frontierRules name="buyItalianSubmarine"/>
+      <frontierRules name="buySupply"/>
+      <frontierRules name="buy5Supply"/>
+      <!-- <frontierRules name="buyLandmine"/> -->
+      <frontierRules name="buySeamine"/>
+    </productionFrontier>
+    <productionFrontier name="I-production-latewar">
+      <frontierRules name="buyItalianInfantry"/>
+      <frontierRules name="buyArtillery"/>
+      <frontierRules name="buyAAGun"/>
+      <frontierRules name="buyScoutcar"/>
+      <frontierRules name="buyItalianTank"/>
+      <frontierRules name="buyAxisTruckLateWar"/>
+      <frontierRules name="buyFighter"/>
+      <frontierRules name="buyItalianBomber"/>
+      <frontierRules name="buyItalianDestroyer"/>
+      <frontierRules name="buyItalianSubmarine"/>
+      <frontierRules name="buySupply"/>
+      <frontierRules name="buy5Supply"/>
+      <!-- <frontierRules name="buyLandmine"/> -->
+      <frontierRules name="buySeamine"/>
+    </productionFrontier>
+    <productionFrontier name="A-production_NoAir">
+      <frontierRules name="buyInfantry"/>
+      <frontierRules name="buyFrenchInfantry"/>
+      <frontierRules name="buyArtillery"/>
+      <frontierRules name="buyAAGun"/>
+      <frontierRules name="buyTank"/>
+      <frontierRules name="buyFrenchTank"/>
+      <frontierRules name="buyUSTruck"/>
+      <frontierRules name="buyAmericanDestroyer"/>
+      <frontierRules name="buySupply"/>
+      <frontierRules name="buy5Supply"/>
+      <!-- <frontierRules name="buyLandmine"/> -->
+      <frontierRules name="buySeamine"/>
+    </productionFrontier>
+    <productionFrontier name="A-production">
+      <frontierRules name="buyInfantry"/>
+      <frontierRules name="buyFrenchInfantry"/>
+      <frontierRules name="buyArtillery"/>
+      <frontierRules name="buyAAGun"/>
+      <frontierRules name="buyTank"/>
+      <frontierRules name="buyFrenchTank"/>
+      <frontierRules name="buyUSTruck"/>
+      <frontierRules name="buyFighter"/>
+      <frontierRules name="buyBomber"/>
+      <frontierRules name="buyAmericanDestroyer"/>
+      <frontierRules name="buySupply"/>
+      <frontierRules name="buy5Supply"/>
+      <!-- <frontierRules name="buyLandmine"/> -->
+      <frontierRules name="buySeamine"/>
+    </productionFrontier>
+    <productionFrontier name="G-production">
+      <frontierRules name="buyInfantry"/>
+      <frontierRules name="buyMech"/>
+      <frontierRules name="buyArtillery"/>
+      <frontierRules name="buyGermanAntiTank"/>
+      <frontierRules name="buyScoutcar"/>
+      <frontierRules name="buyTank"/>
+      <frontierRules name="buyAxisTruck"/>
+      <frontierRules name="buyGFighter"/>
+      <frontierRules name="buyGermanBomber"/>
+      <frontierRules name="buyGermanSubmarine"/>
+      <frontierRules name="buySupply"/>
+      <frontierRules name="buy5Supply"/>
+      <!-- <frontierRules name="buyLandmine"/> -->
+      <frontierRules name="buySeamine"/>
+    </productionFrontier>
+    <productionFrontier name="G-production-latewar">
+      <frontierRules name="buyInfantry"/>
+      <frontierRules name="buyMech"/>
+      <frontierRules name="buyArtillery"/>
+      <frontierRules name="buyGermanAntiTank"/>
+      <frontierRules name="buyScoutcar"/>
+      <frontierRules name="buyTank"/>
+      <frontierRules name="buyAxisTruckLateWar"/>
+      <frontierRules name="buyGFighter"/>
+      <frontierRules name="buyGermanBomber"/>
+      <frontierRules name="buyGermanSubmarine"/>
+      <frontierRules name="buySupply"/>
+      <frontierRules name="buy5Supply"/>
+      <!-- <frontierRules name="buyLandmine"/> -->
+      <frontierRules name="buySeamine"/>
+    </productionFrontier>
+    <productionFrontier name="G-production_tiger">
+      <frontierRules name="buyInfantry"/>
+      <frontierRules name="buyMech"/>
+      <frontierRules name="buyArtillery"/>
+      <frontierRules name="buyGermanAntiTank"/>
+      <frontierRules name="buyScoutcar"/>
+      <frontierRules name="buyTank"/>
+      <frontierRules name="buyTigerTank"/>
+      <frontierRules name="buyAxisTruckLateWar"/>
+      <frontierRules name="buyGFighter"/>
+      <frontierRules name="buyGermanBomber"/>
+      <frontierRules name="buyGermanSubmarine"/>
+      <frontierRules name="buySupply"/>
+      <frontierRules name="buy5Supply"/>
+      <!-- <frontierRules name="buyLandmine"/> -->
+      <frontierRules name="buySeamine"/>
+    </productionFrontier>
+    <!-- You can use the Production Frontiers to give each playable country their own set of unique buy-lists.
+         This is normally used for the tech in older editions to give cheaper buys, but here can be used to
+         account for the asynchronous unit lists available to each country.
+         (This is being re-added for readibility/future reference)  -->
+    <playerProduction player="British" frontier="B-production"/>
+    <playerProduction player="Italians" frontier="I-production"/>
+    <playerProduction player="Americans" frontier="A-production_NoAir"/>
+    <playerProduction player="Germans" frontier="G-production"/>
+    <playerProduction player="Mines" frontier="Mines-production"/>
+  </production>
+<technology>
+  <technologies>
+	<techname name="mechanizedInfantry"/>
+  </technologies>
+    <playerTech player="Germans">
+		<category name="mechanizedInfantry">
+			<tech name="mechanizedInfantry"/> 
+		</category>
+	</playerTech>
+	<playerTech player="British">
+		<category name="mechanizedInfantry">
+			<tech name="mechanizedInfantry"/> 
+		</category>
+	</playerTech>
+	<playerTech player="Italians">
+		<category name="mechanizedInfantry">
+			<tech name="mechanizedInfantry"/> 
+		</category>
+	</playerTech>
+	<playerTech player="Americans">
+		<category name="mechanizedInfantry">
+			<tech name="mechanizedInfantry"/> 
+		</category>
+	</playerTech>
+</technology>
+  <attachmentList>
+	<attachment name="relationshipTypeAttachment" attachTo="War" javaClass="RelationshipTypeAttachment" type="relationship">
+		<option name="archeType" value="war"/>
+	</attachment>
+	<attachment name="relationshipTypeAttachment" attachTo="Allied" javaClass="RelationshipTypeAttachment" type="relationship">
+		<option name="archeType" value="allied"/>
+	</attachment>
+	<attachment name="relationshipTypeAttachment" attachTo="Neutral" javaClass="RelationshipTypeAttachment" type="relationship">
+		<option name="archeType" value="neutral"/>
+	</attachment>
+	<attachment name="techAttachment" attachTo="Germans" javaClass="TechAttachment" type="player">
+		<option name="mechanizedInfantry" value="true"/>
+	</attachment>
+	<attachment name="techAttachment" attachTo="British" javaClass="TechAttachment" type="player">
+		<option name="mechanizedInfantry" value="true"/>
+	</attachment>
+	<attachment name="techAttachment" attachTo="Italians" javaClass="TechAttachment" type="player">
+		<option name="mechanizedInfantry" value="true"/>
+	</attachment>
+	<attachment name="techAttachment" attachTo="Americans" javaClass="TechAttachment" type="player">
+		<option name="mechanizedInfantry" value="true"/>
+	</attachment>
+    <attachment name="unitAttachment" attachTo="infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="transportCost" value="1"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="3"/>
+      <option name="artillerySupportable" value="true"/>
+	  <option name="isLandTransportable" value="true"/>
+	  <option name="isConstruction" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="12"/>
+      <option name="maxConstructionsPerTypePerTerr" value="12"/>
+      <option name="constructionType" value="infantry"/>	
+    </attachment>
+    <attachment name="unitAttachment" attachTo="F-infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="transportCost" value="1"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="3"/>
+      <option name="artillerySupportable" value="true"/>
+	  <option name="isLandTransportable" value="true"/>
+	  <option name="unitPlacementOnlyAllowedIn" value="Oran"/>
+  	  <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="F-infantry"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="I-infantry" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="transportCost" value="1"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="2"/>
+      <option name="artillerySupportable" value="true"/>
+	  <option name="isLandTransportable" value="true"/>
+	  <option name="isConstruction" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="12"/>
+      <option name="maxConstructionsPerTypePerTerr" value="12"/>
+      <option name="constructionType" value="I-infantry"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="artillery" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="transportCost" value="1"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="artillery" value="true"/>
+	  <option name="isLandTransportable" value="true"/>
+	  <option name="isConstruction" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
+      <option name="constructionType" value="art"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="mech" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="3"/>
+      <option name="artillerySupportable" value="true"/>
+      <option name="receivesAbilityWhenWith" value="canBlitz:tank"/>
+	  <!-- Can they blitz with Tiger Tanks too?-->
+	  <!-- This was never directly stated.  May need to ask Krieghund on the forums. -->
+	  <option name="isConstruction" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
+      <option name="constructionType" value="mech"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="UK-scoutcar" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <!-- TODO:  scoutcars:
+      				-Destroy 1 enemy 1-supply instantly during the first round of combat (but bringing 2+ bombers to one battle only results in 1 destroyed 1-supply).
+      				-Target fire Vs. Planes
+      				-Must retreat after 1 round of combat
+      				-Do not consume 1-supply -->
+      <option name="movement" value="4"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="1"/>
+	  <option name="isConstruction" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
+      <option name="constructionType" value="UK-scout"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="scoutcar" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <!-- TODO:  scoutcars:
+      				-Destroy enemy 1-supply instantly
+      				-Target fire Vs. Planes
+      				-Must retreat after 1 round of combat
+      				-Do not consume 1-supply -->
+      <option name="movement" value="3"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="2"/>
+	  <option name="isConstruction" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
+      <option name="maxConstructionsPerTypePerTerr" value="4"/>
+      <option name="constructionType" value="scout"/>
+    </attachment>
+    <!-- TODO:  Tanks, Mech, scoutcar Cars and Trucks all have "Coast Road Move", which may be a nusiance to implement properly.
+                See if there is a GW36 Module in TripleA and see how they handled railroads (or a similar mechanic). -->
+    <attachment name="unitAttachment" attachTo="tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="5"/>
+      <option name="defense" value="4"/>
+	  <option name="isConstruction" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="10"/>
+      <option name="maxConstructionsPerTypePerTerr" value="10"/>
+	  <option name="constructionType" value="tank"/>
+    </attachment>
+	
+    <attachment name="unitAttachment" attachTo="tiger" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="6"/>
+      <option name="defense" value="7"/>
+	  <option name="isConstruction" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+      <option name="maxConstructionsPerTypePerTerr" value="1"/>
+      <option name="constructionType" value="tiger"/>
+    </attachment>
+	
+    <attachment name="unitAttachment" attachTo="matilda" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="5"/>
+	  <option name="isConstruction" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="8"/>
+      <option name="maxConstructionsPerTypePerTerr" value="8"/>
+      <option name="constructionType" value="UK-tank"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="sherman" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="5"/>
+      <option name="defense" value="4"/>
+	  <option name="isConstruction" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="8"/>
+      <option name="maxConstructionsPerTypePerTerr" value="8"/>
+      <option name="constructionType" value="US-tank"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="I-tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="2"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+	  <option name="isConstruction" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="7"/>
+      <option name="maxConstructionsPerTypePerTerr" value="7"/>
+      <option name="constructionType" value="I-tank"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="F-tank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="canBlitz" value="true"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="3"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
+      <option name="maxConstructionsPerTypePerTerr" value="4"/>
+      <option name="constructionType" value="F-tank"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Oran"/>
+  	  <option name="isConstruction" value="true"/>
+    </attachment>
+    <!-- TODO:  AntiTanks Prioritize Tanks ("tank") if they get hits in combat *DURING THE FIRST ROUND ONLY* -->
+    <attachment name="unitAttachment" attachTo="UK-antitank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="transportCost" value="1"/>
+      <option name="attack" value="2"/>
+      <option name="defense" value="3"/>
+	  <option name="isLandTransportable" value="true"/>
+      <!--option name="isAAforCombatOnly" value="true"/-->
+      <!--option name="maxAAattacks" value="3"/-->
+	  <!--option name="attackAA" value="2"/-->
+	<!-- <option name="canNotMoveDuringCombatMove" value="true"/> -->
+	<!-- Non-German Anti-Tanks do not have AA properties.-->
+	<!-- This is poorly worded in the rulebook but you can see the ability specifically given to the German Ant-Tank on the Player-Aid Cards. -->
+	<option name="isConstruction" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="8"/>
+      <option name="maxConstructionsPerTypePerTerr" value="8"/>
+      <option name="constructionType" value="UK-antitank"/>
+    </attachment>
+    <!-- Germany AT are also AA -->
+    <attachment name="unitAttachment" attachTo="G-antitank" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="1"/>
+      <option name="transportCost" value="1"/>
+      <option name="attack" value="3"/>
+      <option name="defense" value="5"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="maxAAattacks" value="3"/>
+	  <option name="attackAA" value="2"/>
+	  <option name="isLandTransportable" value="true"/>
+	  <option name="isConstruction" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
+      <option name="constructionType" value="G-antitank"/>
+    </attachment>
+	<!-- AA guns work like G40 -->
+    <attachment name="unitAttachment" attachTo="aaGun" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="transportCost" value="1"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="canNotMoveDuringCombatMove" value="true"/>
+      <option name="movement" value="1"/>
+      <option name="maxAAattacks" value="3"/>
+	  <option name="attackAA" value="2"/>
+	  <option name="isConstruction" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
+      <option name="maxConstructionsPerTypePerTerr" value="4"/>
+      <option name="constructionType" value="AA"/>
+      <!-- option name="destroyedWhenCapturedFrom" value="Russians:Germans:British:Japanese:Americans"/-->
+    </attachment>
+    <attachment name="unitAttachment" attachTo="UK-aaGun" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="transportCost" value="1"/>
+      <option name="isAAforCombatOnly" value="true"/>
+      <option name="canNotMoveDuringCombatMove" value="true"/>
+      <option name="movement" value="1"/>
+      <option name="maxAAattacks" value="3"/>
+	  <option name="attackAA" value="2"/>
+	  <option name="isConstruction" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
+      <option name="maxConstructionsPerTypePerTerr" value="4"/>
+      <option name="constructionType" value="UK-AA"/>
+      <!-- option name="destroyedWhenCapturedFrom" value="Russians:Germans:British:Japanese:Americans"/-->
+    </attachment>
+    <attachment name="unitAttachment" attachTo="UK-truck" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+		<option name="movement" value="2"/>
+		<option name="attack" value="0"/>
+		<option name="defense" value="0"/>
+		<!-- <option name="canBeDamaged" value="true"/> -->
+		<!-- <option name="maxDamage" value="1"/> -->
+		<!-- <option name="canDieFromReachingMaxDamage" value="true"/> -->
+		<option name="isLandTransport" value="true"/>
+		<option name="transportCapacity" value="6"/>
+		<option name="isLandTransportable" value="false"/>
+		<option name="isInfrastructure" value="true"/>
+		<option name="isAAmovement" value="true"/>
+	  <option name="isConstruction" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
+      <option name="maxBuiltPerPlayer" value="6"/>
+      <!-- Note that air/naval/truck units also uses "maxBuiltPerPlayer" because it's a PIECE LIMIT and not a STACK LIMIT-->
+      <option name="constructionType" value="UK-truck"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="US-truck" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+		<option name="movement" value="2"/>
+		<option name="attack" value="0"/>
+		<option name="defense" value="0"/>
+		<!-- <option name="canBeDamaged" value="true"/> -->
+		<!-- <option name="maxDamage" value="1"/> -->
+		<!-- <option name="canDieFromReachingMaxDamage" value="true"/> -->
+		<option name="isLandTransport" value="true"/>
+		<option name="transportCapacity" value="6"/>
+		<option name="isLandTransportable" value="false"/>
+		<option name="isInfrastructure" value="true"/>
+		<option name="isAAmovement" value="true"/>
+		<option name="isConstruction" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="constructionType" value="US-truck"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="axis-truck" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+		<option name="movement" value="2"/>
+		<option name="attack" value="0"/>
+		<option name="defense" value="0"/>
+		<!-- <option name="canBeDamaged" value="true"/> -->
+		<!-- <option name="maxDamage" value="1"/> -->
+		<!-- <option name="canDieFromReachingMaxDamage" value="true"/> -->
+		<option name="isLandTransport" value="true"/>
+		<option name="transportCapacity" value="6"/>
+		<option name="isLandTransportable" value="false"/>
+		<option name="isInfrastructure" value="true"/>
+		<option name="isAAmovement" value="true"/>
+        <option name="destroyedWhenCapturedBy" value="British:Americans"/>
+		<option name="isConstruction" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+      <option name="maxConstructionsPerTypePerTerr" value="1"/>
+      <option name="maxBuiltPerPlayer" value="1"/>
+      <option name="constructionType" value="axis-truck"/>
+    </attachment>
+    <!-- From turn 7 onwards, Germany/Italy are allowed a second truck each. -->
+    <attachment name="unitAttachment" attachTo="axis-truck-latewar" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+		<option name="movement" value="2"/>
+		<option name="attack" value="0"/>
+		<option name="defense" value="0"/>
+		<!-- <option name="canBeDamaged" value="true"/> -->
+		<!-- <option name="maxDamage" value="1"/> -->
+		<!-- <option name="canDieFromReachingMaxDamage" value="true"/> -->
+		<option name="isLandTransport" value="true"/>
+		<option name="transportCapacity" value="6"/>
+		<option name="isLandTransportable" value="false"/>
+		<option name="isInfrastructure" value="true"/>
+		<option name="isAAmovement" value="true"/>
+        <option name="destroyedWhenCapturedBy" value="British:Americans"/>
+		<option name="isConstruction" value="true"/>
+	  <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <!-- Hope is that keeping the construction type for Axis early/late war truck matching, they will overlap when considering the piece limit. -->
+			<!-- Not sure if this will work. Perhaps what we could do is add a trigger that converts all axis trucks on the board to truck-latewar. -->
+      <option name="constructionType" value="axis-truck"/>
+    </attachment>
+    
+    <!-- TODO:  FTRs in this game:
+    			-Can go on CAP similar to but not identical to Pacific (2001).
+    			-Can only land in land territories with an IPC Value >= 1, and "Islands" (Malta, Gibraltar, Sardinia, Italy, Crete, Cyprus)
+    			-Do not consume 1-supply.
+    			-Implementing these rules may be difficult. -->
+    <attachment name="unitAttachment" attachTo="UK-fighter" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="5"/>
+	  <option name="isConstruction" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="6"/>
+      <option name="maxConstructionsPerTypePerTerr" value="6"/>
+      <option name="maxBuiltPerPlayer" value="6"/>
+      <option name="constructionType" value="UK-ftr"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="G-fighter" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="5"/>
+	  <option name="isConstruction" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="5"/>
+      <option name="maxConstructionsPerTypePerTerr" value="5"/>
+      <option name="maxBuiltPerPlayer" value="5"/>
+      <option name="constructionType" value="G-ftr"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="fighter" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="5"/>
+	  <option name="isConstruction" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="3"/>
+      <option name="maxConstructionsPerTypePerTerr" value="3"/>
+      <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="constructionType" value="ftr"/>
+    </attachment>
+    <!-- BOMBs in this game:
+    	-Can only land in land territories with an IPC Value >= 1, and "Islands" (Malta, Gibraltar, Sardinia, Italy, Crete, Cyprus)
+    	-Automatically destroy one enemy 1-supply during the first round of combat (but bringing 2+ bombers to one battle only results in 1 destroyed 1-supply).
+    	-Do not consume 1-supply.
+    	-Implementing these rules may be difficult. -->
+    <attachment name="unitAttachment" attachTo="bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="6"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="6"/>
+      <option name="defense" value="1"/>
+	  <option name="isConstruction" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="3"/>
+      <option name="maxConstructionsPerTypePerTerr" value="3"/>
+      <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="constructionType" value="bomber"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="I-bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="6"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="6"/>
+      <option name="defense" value="1"/>
+	  <option name="isConstruction" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="constructionType" value="I-bomber"/>
+    </attachment>
+    <!-- TODO:  In addition to the above properties, a German Bomber has target fire against any land or naval unit when attacking. -->
+    <attachment name="unitAttachment" attachTo="G-bomber" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="isAir" value="true"/>
+      <option name="attack" value="5"/>
+      <option name="defense" value="2"/>
+      <option name="isStrategicBomber" value="true"/>
+	  <option name="isConstruction" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
+      <option name="maxConstructionsPerTypePerTerr" value="4"/>
+      <option name="maxBuiltPerPlayer" value="4"/>
+      <option name="constructionType" value="G-bomber"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="UK-destroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="isDestroyer" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="4"/>
+      <option name="maxConstructionsPerTypePerTerr" value="4"/>
+      <option name="maxBuiltPerPlayer" value="4"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Sea Zone 3:Atlantic Ocean"/>
+  	  <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="UK-DD"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="I-destroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="isDestroyer" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="3"/>
+      <option name="maxConstructionsPerTypePerTerr" value="3"/>
+      <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Sea Zone 10"/>
+  	  <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="I-DD"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="US-destroyer" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="4"/>
+      <option name="isDestroyer" value="true"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Sea Zone 2"/>
+  	  <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="A-DD"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="battleship" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="4"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="6"/>
+      <option name="defense" value="6"/>
+      <option name="hitPoints" value="2"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Sea Zone 3:Atlantic Ocean"/>
+  	  <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="UK-BB"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="G-submarine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="isSub" value="true"/>
+      <option name="movement" value="4"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="2"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="3"/>
+      <option name="maxConstructionsPerTypePerTerr" value="3"/>
+      <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Sea Zone 1"/>
+  	  <option name="isConstruction" value="true"/>
+  	  <!-- TODO:  Currently, all the naval units are "constructions" in order to limit where they may be placed.
+  	              However, as I understand it, "constructions" are placed immediately and can attack immediately.
+  	              In the game rules, only German Submarines and Free French units can move/attack immediately.
+  	              Not sure how to fix this for other naval units, which follow normal placement rules. -->
+      <option name="constructionType" value="G-Sub"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="I-submarine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="isSub" value="true"/>
+      <option name="movement" value="4"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="2"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="3"/>
+      <option name="maxConstructionsPerTypePerTerr" value="3"/>
+      <option name="maxBuiltPerPlayer" value="3"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Sea Zone 10"/>
+  	  <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="I-Sub"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="UK-submarine" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="isSub" value="true"/>
+      <option name="movement" value="4"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="4"/>
+      <option name="defense" value="2"/>
+      <option name="constructionsPerTerrPerTypePerTurn" value="2"/>
+      <option name="maxConstructionsPerTypePerTerr" value="2"/>
+      <option name="maxBuiltPerPlayer" value="2"/>
+      <option name="unitPlacementOnlyAllowedIn" value="Sea Zone 3:Atlantic Ocean"/>
+  	  <option name="isConstruction" value="true"/>
+      <option name="constructionType" value="UK-Sub"/>
+    </attachment>
+	
+    <!-- TODO:  TTs are not in this game, but instead are replaced by the intricate "Convoy System".  Implementing this system may be difficult. -->
+    <attachment name="unitAttachment" attachTo="transport" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="movement" value="99"/>
+      <option name="isSea" value="true"/>
+      <option name="attack" value="0"/>
+      <option name="defense" value="0"/>
+	  <option name="transportCapacity" value="1"/> <!-- Will unfortunately cause problems with the 5-supply -->
+    </attachment>
+    <!-- TODO:  Not sure how to handle unit production here.
+                Was thinking of having the "Convoy Zones" have invisible factories in them but not sure. -->
+    <attachment name="unitAttachment" attachTo="factory" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="isFactory" value="true"/>
+      <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
+    </attachment>
+    <!-- NOTE:  In this game, repairing a BB costs 1 Supply.  May be necessary to note for later. -->
+    <attachment name="unitAttachment" attachTo="harbor" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+      <option name="isInfrastructure" value="true"/>
+      <option name="repairsUnits" value="battleship"/>
+      <option name="movement" value="0"/>
+    </attachment>
+    <!-- TODO:  Need to figure out how to get Supply to work. -->
+    <attachment name="unitAttachment" attachTo="1-supply" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+	  <option name="isAAmovement" value="true"/>
+	  <option name="isInfrastructure" value="true"/>
+	  <option name="transportCost" value="1"/>
+	  <option name="isLandTransportable" value="true"/>
+      <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="5-supply" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
+	  <option name="isAAmovement" value="true"/>
+	  <option name="isInfrastructure" value="true"/>
+	  <option name="transportCost" value="5"/>
+	  <option name="isLandTransportable" value="true"/>
+      <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
+    </attachment>
+	
+
+    <attachment name="unitAttachment" attachTo="landmine" javaClass="UnitAttachment" type="unitType">
+	    <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
+	    <option name="isInfrastructure" value="true"/>
+	    <option name="isConstruction" value="true"/>
+	    <option name="constructionType" value="landmine"/>
+	    <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+	    <option name="maxConstructionsPerTypePerTerr" value="999"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="axis-landmine" javaClass="UnitAttachment" type="unitType">
+	    <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
+	    <option name="isInfrastructure" value="true"/>
+	    <option name="isConstruction" value="true"/>
+	    <option name="constructionType" value="landmine"/>
+	    <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+	    <option name="maxConstructionsPerTypePerTerr" value="999"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="allied-landmine" javaClass="UnitAttachment" type="unitType">
+	    <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
+	    <option name="isInfrastructure" value="true"/>
+	    <option name="isConstruction" value="true"/>
+	    <option name="constructionType" value="landmine"/>
+	    <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+	    <option name="maxConstructionsPerTypePerTerr" value="999"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="seamine" javaClass="UnitAttachment" type="unitType">
+		<option name="isSea" value="true"/>
+		<option name="isInfrastructure" value="true"/>
+		<option name="isConstruction" value="true"/>
+        <option name="constructionType" value="seamine"/>
+	    <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+	    <option name="maxBuiltPerPlayer" value="9"/>
+	    <option name="maxConstructionsPerTypePerTerr" value="999"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="axis-seamine" javaClass="UnitAttachment" type="unitType">
+		<option name="isSea" value="true"/>
+		<option name="isInfrastructure" value="true"/>
+		<option name="isConstruction" value="true"/>
+        <option name="constructionType" value="axis-seamine"/>
+	    <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+	    <option name="maxBuiltPerPlayer" value="9"/>
+	    <option name="maxConstructionsPerTypePerTerr" value="999"/>
+    </attachment>
+    <attachment name="unitAttachment" attachTo="allied-seamine" javaClass="UnitAttachment" type="unitType">
+		<option name="isSea" value="true"/>
+		<option name="isInfrastructure" value="true"/>
+		<option name="isConstruction" value="true"/>
+        <option name="constructionType" value="allied-seamine"/>
+	    <option name="constructionsPerTerrPerTypePerTurn" value="1"/>
+	    <option name="maxBuiltPerPlayer" value="6"/>
+	    <option name="maxConstructionsPerTypePerTerr" value="999"/>
+    </attachment>
+	
+	<attachment name="territoryAttachment" attachTo="A-B" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="capital" value="Mines"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="A-CAS" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="A-FEZ" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="AGH-BRE" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="AGH-SIR" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="AGH-SOK" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="AGH-ZEL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="ALG-CON" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="ALG-KAS" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="ALG-LAG" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="ALG-ORA" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Albania" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	    <option name="isImpassable" value="true"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Algiers" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="2"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Algiers Convoy UK" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Algiers Convoy US" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Atlantic Ocean Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="B-C" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="B-FEZ" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="B-LAG" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="B-ORA" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="BEN-BIR" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="BEN-BRE" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="BEN-TOB" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="BIR-BRE" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="BIR-JAL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="BIR-MAT" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="BIR-SIW" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="BIR-TOB" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="BRE-JAL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="BRE-ZEL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Benghazi" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="4"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Benghazi Convoy G" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Benghazi Convoy I" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Bir Hacheim" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="C-D" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="C-LAG" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="C-OUE" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="CAI-MAT" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="CAS-FEZ" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="CON-KASS" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="CON-TUN" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Cairo" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="15"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Casablanca" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="1"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Casablanca Convoy UK" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Casablanca Convoy US" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Constantine" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Crete" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="capital" value="Germans"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Cyprus" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="capital" value="British"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="D-E" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="D-MAR" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="D-NAL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="D-OUE" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Desert Zone A" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="territoryEffect" value="Desert"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Desert Zone B" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="territoryEffect" value="Desert"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Desert Zone C" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="territoryEffect" value="Desert"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Desert Zone D" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="territoryEffect" value="Desert"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Desert Zone E" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="territoryEffect" value="Desert"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Desert Zone F" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="territoryEffect" value="Desert"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Desert Zone G" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="territoryEffect" value="Desert"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Desert Zone H" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="territoryEffect" value="Desert"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Desert Zone I" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="territoryEffect" value="Desert"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Desert Zone J" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="territoryEffect" value="Desert"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Desert Zone K" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="territoryEffect" value="Desert"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="E-F" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="E-GHA" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="E-NAL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="El Agheila" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="1"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="El Oued" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="F-G" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="F-GHA" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="FEZ-ORA" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Fez" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="G-GHA" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="G-H" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="G-SOK" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="GHA-NAL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="GHA-SOK" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="GHA-TRI" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Ghadames" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Gibraltar" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="H-I" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="H-SOK" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="H-ZEL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="I-J" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="I-JAL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="I-ZEL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Indian Ocean Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Italy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="J-JAL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="J-K" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="J-SIW" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="JAL-ZEL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Jalo" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Jordan" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="isImpassable" value="true"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="K-SIW" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="KAS-MAR" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="KAS-OUE" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="KAS-TUN" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Kasserine Pass" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="2"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="LAG-KAS" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="LAG-ORA" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="LAG-OUE" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Laghouat" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="MAR-NAL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="MAR-OUE" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="MAR-TRI" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="MAR-TUN" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="MAT-SIW" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="MAT-TOB" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Malta" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Malta Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Mareth" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="6"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Mersa Brega" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Mersa Matruh" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Missed This" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="isImpassable" value="true"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="NAL-TRI" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Nalut" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Oran" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="1"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Oran Convoy UK" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Oran Convoy US" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Palestine" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="isImpassable" value="true"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Portugal" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="capital" value="Americans"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Qatar Depression" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	    <option name="isImpassable" value="true"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="SIR-SOK" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="SIR-TRI" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="SOK-TRI" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="SOK-ZEL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Sardinia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Saudi-Arabia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="isImpassable" value="true"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Sicily" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Sinai" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="isImpassable" value="true"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Sirte" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Siwa" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Sokna" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Spain" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="isImpassable" value="true"/>
+		<option name="capital" value="Uncontrolled"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Spanish Morocco" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="isImpassable" value="true"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Suez Canal Convoy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Syria" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="isImpassable" value="true"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Tobruk" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="8"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Tripoli" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="6"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Tripoli Convoy G" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Tripoli Convoy I" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Tunis" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="10"/>
+		<option name="capital" valu="Vichy-French"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Tunis Convoy G" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Tunis Convoy I" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Turkey" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="isImpassable" value="true"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Unbound Zone 1" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="isImpassable" value="true"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Unbound Zone 2" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="isImpassable" value="true"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Yugoslavia" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="isImpassable" value="true"/>
+	</attachment>
+	<attachment name="territoryAttachment" attachTo="Zella" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	
+	<!-- Remove Left-Over Money -->
+	<attachment name="conditionAttachmentAlwaysTrue" attachTo="Italians" javaClass="RulesAttachment" type="player">
+		<option name="directOwnershipTerritories" value="Italy"/>
+	</attachment>
+	<attachment name="triggerAttachmentRemoveLeftOverMoneyGermans" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentAlwaysTrue"/>
+		<option name="resource" value="PUs"/>
+		<option name="resourceCount" value="-999"/>
+		<option name="when" value="after:germansPurchase"/>
+	</attachment>
+	<attachment name="triggerAttachmentRemoveLeftOverMoneyBritish" attachTo="British" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentAlwaysTrue"/>
+		<option name="resource" value="PUs"/>
+		<option name="resourceCount" value="-999"/>
+		<option name="when" value="after:britishPurchase"/>
+	</attachment>
+	<attachment name="triggerAttachmentRemoveLeftOverMoneyItalians" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentAlwaysTrue"/>
+		<option name="resource" value="PUs"/>
+		<option name="resourceCount" value="-999"/>
+		<option name="when" value="after:italiansPurchase"/>
+	</attachment>
+	<attachment name="triggerAttachmentRemoveLeftOverMoneyAmericans" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentAlwaysTrue"/>
+		<option name="resource" value="PUs"/>
+		<option name="resourceCount" value="-999"/>
+		<option name="when" value="after:americansPurchase"/>
+	</attachment>
+	
+	<!-- Movement Restrictions -->
+		<!-- French North Africa -->
+    <attachment name="rulesAttachment" attachTo="Germans" javaClass="RulesAttachment" type="player">
+      <option name="movementRestrictionTerritories" value="Tunis:Mareth:Constantine:Kasserine Pass:El Oued:Algiers:Laghouat:Oran:Fez:Casablanca"/>
+      <option name="movementRestrictionType" value="disallowed"/>
+    </attachment>
+    <attachment name="rulesAttachment" attachTo="Italians" javaClass="RulesAttachment" type="player">
+      <option name="movementRestrictionTerritories" value="Tunis:Mareth:Constantine:Kasserine Pass:El Oued:Algiers:Laghouat:Oran:Fez:Casablanca"/>
+      <option name="movementRestrictionType" value="disallowed"/>
+    </attachment>
+    <attachment name="conditionAttachmentTurn8" attachTo="Germans" javaClass="RulesAttachment" type="player">
+      <option name="rounds" value="8-+"/>
+    </attachment>
+    <attachment name="triggerAttachmentGermansCanEnterFrenchNorthAfrica" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn8"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+      <option name="players" value="Germans"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="rulesAttachment"/>
+      <option name="playerProperty" value="movementRestrictionTerritories" count="-reset-"/> <!-- not sure what this does, hope it works -->
+      <option name="playerProperty" value="movementRestrictionType" count="allowed"/>
+    </attachment>
+    <attachment name="triggerAttachmentItaliansCanEnterFrenchNorthAfrica" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+      <option name="conditions" value="conditionAttachmentTurn8"/>
+      <option name="when" value="before:germansPurchase"/>
+      <option name="uses" value="1"/>
+      <option name="players" value="Italians"/>
+      <option name="playerAttachmentName" value="RulesAttachment" count="rulesAttachment"/>
+      <option name="playerProperty" value="movementRestrictionTerritories" count="-reset-"/> <!-- not sure what this does, hope it works -->
+      <option name="playerProperty" value="movementRestrictionType" count="allowed"/>
+    </attachment>
+	
+		<!-- Desert Territories -->
+    <attachment name="territoryEffectAttachment" attachTo="Desert" javaClass="TerritoryEffectAttachment" type="territoryEffect">
+      <option name="unitsNotAllowed" value="infantry:F-infantry:I-infantry:artillery:mech:tank:matilda:sherman:tiger:I-tank:F-tank:UK-antitank:G-antitank:UK-truck:US-truck:axis-truck:axis-truck-latewar:fighter:UK-fighter:G-fighter:bomber:I-bomber:G-bomber:1-supply:5-supply:aaGun:UK-aaGun"/>
+    </attachment>
+    
+	<!-- Tiger Tanks -->
+	<attachment name="TigerTanks" attachTo="Germans" javaClass="RulesAttachment" type="player">
+		<option name="gameProperty" value="Tiger Tanks"/>
+	</attachment>
+	<attachment name="conditionAttachmentRound8" attachTo="Germans" javaClass="RulesAttachment" type="player">
+		<option name="rounds" value="8-+"/>
+	</attachment>
+	<attachment name="triggerAttachmentTigerTanks" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentRound8:TigerTanks"/>
+		<option name="uses" value="1"/>
+		<option name="when" value="before:germansPurchase"/>
+		<option name="notification" value="TigerTanksAvailable"/>
+		<option name="frontier" value="G-production_tiger"/>
+	</attachment>
+	
+	<!-- UK free tank units -->
+	<attachment name="conditionAttachmentRound6" attachTo="British" javaClass="RulesAttachment" type="player">
+		<option name="rounds" value="6-+"/>
+	</attachment>
+	<attachment name="triggerAttachmentFreeUKtanks" attachTo="British" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentRound6"/>
+		<option name="placement" value="Atlantic Ocean Convoy:sherman" count="2"/>
+		<option name="uses" value="1"/>
+		<option name="when" value="after:british2Place"/>
+	</attachment>
+
+    <!-- US enters the game -->
+	<attachment name="conditionAttachmentRound7" attachTo="Americans" javaClass="RulesAttachment" type="player">
+		<option name="rounds" value="7-+"/>
+	</attachment>
+	<attachment name="conditionAttachmentAmericaJoinsSwitch" attachTo="Americans" javaClass="RulesAttachment" type="player">
+  		<option name="switch" value="false"/>
+	</attachment>
+	<attachment name="triggerAttachmentAmericaJoins" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentRound7"/>
+		<option name="changeOwnership" value="Portugal:ANY:Americans:true"/>
+		<option name="placement" value="Casablanca:infantry" count="5"/>
+		<option name="placement" value="Casablanca:1-supply" count="4"/>
+		<option name="placement" value="Oran:infantry" count="5"/>
+		<option name="placement" value="Oran:1-supply" count="4"/>
+		<option name="placement" value="Algiers:infantry" count="3"/>
+		<option name="placement" value="Algiers:1-supply" count="5"/>
+   		<option name="playerAttachmentName" value="RulesAttachment" count="conditionAttachmentAmericaJoinsSwitch"/>
+  		<option name="playerProperty" value="switch" count="true"/>
+		<option name="when" value="before:americansPurchase"/>
+		<option name="uses" value="1"/>
+	</attachment>
+	<attachment name="triggerAttachmentBritishReaction" attachTo="British" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentAmericaJoinsSwitch"/>
+		<option name="placement" value="Algiers:infantry" count="3"/>
+		<option name="uses" value="1"/>
+		<option name="when" value="before:americansPurchase"/>
+	</attachment>
+	<attachment name="triggerAttachmentAxisReaction" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentAmericaJoinsSwitch"/>
+		<option name="changeOwnership" value="Tunis:ANY:Germans:true"/>
+		<option name="changeOwnership" value="Kasserine Pass:ANY:Germans:true"/>
+		<option name="frontier" value="G-production-latewar"/>
+		<option name="placement" value="Tunis:1-supply" count="3"/>
+		<option name="uses" value="1"/>
+		<option name="when" value="before:americansPurchase"/>
+	</attachment>
+	<attachment name="triggerAttachmentItalianReaction" attachTo="Italians" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentAmericaJoinsSwitch"/>
+		<option name="changeOwnership" value="Mareth:ANY:Italians:true"/>
+		<option name="frontier" value="I-production-latewar"/>
+		<option name="uses" value="1"/>
+		<option name="when" value="before:americansPurchase"/>
+	</attachment>
+	
+	<!-- US can buy air from turn 8 -->
+	<attachment name="triggerAttachmentUSACanBuyAir" attachTo="Americans" javaClass="TriggerAttachment" type="player">
+		<option name="conditions" value="conditionAttachmentRound8"/>
+		<option name="uses" value="1"/>
+		<option name="when" value="before:AmericansPurchase"/>
+		<option name="notification" value="USACanBuyAir"/>
+		<option name="frontier" value="A-production"/>
+	</attachment>
+	
+	<!-- Base income (using national objectives) -->
+	<attachment name="objectiveAttachment_Germans_Base_Income" attachTo="Germans" javaClass="RulesAttachment" type="player">
+		<option name="objectiveValue" value="25"/>
+	</attachment>
+	<attachment name="objectiveAttachment_British_Base_Income" attachTo="British" javaClass="RulesAttachment" type="player">
+		<option name="objectiveValue" value="6"/>
+	</attachment>
+	<attachment name="objectiveAttachment_Italians_Base_Income" attachTo="Italians" javaClass="RulesAttachment" type="player">
+		<option name="objectiveValue" value="10"/>
+	</attachment>
+	<attachment name="objectiveAttachment_Americans_Base_Income" attachTo="Americans" javaClass="RulesAttachment" type="player">
+		<option name="objectiveValue" value="36"/>
+	</attachment>
+	
+	<attachment name="objectiveAttachment_British_Income_From_Malta" attachTo="British" javaClass="RulesAttachment" type="player">
+		<option name="objectiveValue" value="15"/>
+		<option name="directPresenceTerritories" value="Malta"/>
+		<option name="unitPresence" value="1-supply:5-supply" count="1"/> <!-- Not sure if it will work this way -->
+	</attachment>
+	
+	<attachment name="rulesAttachment" attachTo="Germans" javaClass="RulesAttachment" type="player">
+		<option name="players" value="Germans:British:Italians:Americans"/>
+		<!-- <option name="placementAnySeazone" value="true"/> -->
+		<option name="placementAnyTerritory" value="true"/>
+	</attachment>
+	<!-- <attachment name="triggerAttachment" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+		<option name="players" value="Germans:British:Italians:Americans"/>
+		<option name="playerProperty" value="placementAnySeazone" count="true"/>
+	</attachment> -->
+	<!-- <attachment name="playerAttachment" attachTo="British" javaClass="PlayerAttachment" type="player">
+		<option name="playerProperty" value="placementAnySeazone" count="true"/>
+		<option name="playerProperty" value="placementAnyTerritory" count="true"/>
+	</attachment>
+	<attachment name="playerAttachment" attachTo="Italians" javaClass="PlayerAttachment" type="player">
+		<option name="playerProperty" value="placementAnySeazone" count="true"/>
+		<option name="playerProperty" value="placementAnyTerritory" count="true"/>
+	</attachment>
+	<attachment name="playerAttachment" attachTo="Americans" javaClass="PlayerAttachment" type="player">
+		<option name="playerProperty" value="placementAnySeazone" count="true"/>
+		<option name="playerProperty" value="placementAnyTerritory" count="true"/>
+	</attachment> -->
+  </attachmentList>
+  <initialize>	
+    <ownerInitialize>
+	<!-- Germans -->
+      <territoryOwner territory="Crete" owner="Germans"/>
+	  
+	  <territoryOwner territory="Benghazi Convoy G" owner="Germans"/>
+	  <territoryOwner territory="Tripoli Convoy G" owner="Germans"/>
+	  
+	
+	<!-- British -->
+	  <territoryOwner territory="Benghazi" owner="British"/>
+      <territoryOwner territory="Cyprus" owner="British"/>
+	  <territoryOwner territory="Cairo" owner="British"/>
+      <territoryOwner territory="Gibraltar" owner="British"/>
+      <territoryOwner territory="Malta" owner="British"/>
+      <territoryOwner territory="Tobruk" owner="British"/>
+     
+	  <territoryOwner territory="Atlantic Ocean Convoy" owner="British"/>
+	  <territoryOwner territory="Indian Ocean Convoy" owner="British"/>
+	  <territoryOwner territory="Malta Convoy" owner="British"/>
+	  <territoryOwner territory="Suez Canal Convoy" owner="British"/>
+	  
+	<!-- Italians -->
+	  <territoryOwner territory="El Agheila" owner="Italians"/>
+	  <territoryOwner territory="Italy" owner="Italians"/>
+	  <territoryOwner territory="Sardinia" owner="Italians"/>
+      <territoryOwner territory="Sicily" owner="Italians"/>
+      <territoryOwner territory="Tripoli" owner="Italians"/>
+	  
+	  <territoryOwner territory="Benghazi Convoy I" owner="Italians"/>
+	  <territoryOwner territory="Tripoli Convoy I" owner="Italians"/>
+	  
+	<!-- Americans -->
+      <territoryOwner territory="Portugal" owner="Americans"/> <!-- Portugal is the American capital -->
+	  
+	<!-- Vichy-French -->
+	  <territoryOwner territory="Algiers" owner="Vichy-French"/>
+      <territoryOwner territory="Casablanca" owner="Vichy-French"/>
+	  <territoryOwner territory="Kasserine Pass" owner="Vichy-French"/>
+	  <territoryOwner territory="Mareth" owner="Vichy-French"/>
+      <territoryOwner territory="Oran" owner="Vichy-French"/>
+      <territoryOwner territory="Tunis" owner="Vichy-French"/>
+	  
+	<!-- Uncontrolled -->
+		<!-- These are 0 RP territories not controlled by anyone -->
+      <territoryOwner territory="Bir Hacheim" owner="Uncontrolled"/>	  	
+      <territoryOwner territory="Constantine" owner="Uncontrolled"/>	  	
+	  <territoryOwner territory="El Oued" owner="Uncontrolled"/>
+      <territoryOwner territory="Fez" owner="Uncontrolled"/>
+      <territoryOwner territory="Ghadames" owner="Uncontrolled"/>
+      <territoryOwner territory="Jalo" owner="Uncontrolled"/>
+      <territoryOwner territory="Laghouat" owner="Uncontrolled"/>
+      <territoryOwner territory="Mersa Brega" owner="Uncontrolled"/>
+      <territoryOwner territory="Mersa Matruh" owner="Uncontrolled"/>
+      <territoryOwner territory="Nalut" owner="Uncontrolled"/>
+      <territoryOwner territory="Sirte" owner="Uncontrolled"/>
+      <territoryOwner territory="Siwa" owner="Uncontrolled"/>
+      <territoryOwner territory="Sokna" owner="Uncontrolled"/>
+      <territoryOwner territory="Zella" owner="Uncontrolled"/>
+	  
+	  <!-- Setting these to uncontrolled for now -->
+      <territoryOwner territory="Algiers Convoy UK" owner="Uncontrolled"/>
+      <territoryOwner territory="Algiers Convoy US" owner="Uncontrolled"/>
+      <territoryOwner territory="Casablanca Convoy UK" owner="Uncontrolled"/>
+      <territoryOwner territory="Casablanca Convoy US" owner="Uncontrolled"/>
+      <territoryOwner territory="Oran Convoy UK" owner="Uncontrolled"/>
+      <territoryOwner territory="Oran Convoy US" owner="Uncontrolled"/>
+      <territoryOwner territory="Tunis Convoy G" owner="Uncontrolled"/>
+      <territoryOwner territory="Tunis Convoy I" owner="Uncontrolled"/>
+	  
+	  <territoryOwner territory="Unbound Zone 1" owner="Uncontrolled"/>
+	  <territoryOwner territory="Unbound Zone 2" owner="Uncontrolled"/>
+	  
+	 
+	<!-- Desert -->
+		<!-- Controlled by a separate power so that we can make these have a different color -->
+	  <territoryOwner territory="Desert Zone A" owner="Desert"/>
+	  <territoryOwner territory="Desert Zone B" owner="Desert"/>
+	  <territoryOwner territory="Desert Zone C" owner="Desert"/>
+	  <territoryOwner territory="Desert Zone D" owner="Desert"/>
+	  <territoryOwner territory="Desert Zone E" owner="Desert"/>
+	  <territoryOwner territory="Desert Zone F" owner="Desert"/>
+	  <territoryOwner territory="Desert Zone G" owner="Desert"/>
+	  <territoryOwner territory="Desert Zone H" owner="Desert"/>
+	  <territoryOwner territory="Desert Zone I" owner="Desert"/>
+	  <territoryOwner territory="Desert Zone J" owner="Desert"/>
+	  <territoryOwner territory="Desert Zone K" owner="Desert"/>
+	  
+	<!-- Border Territories (Neutral) -->
+	<territoryOwner territory="A-B" owner="Mines"/>
+	<territoryOwner territory="A-CAS" owner="Mines"/>
+	<territoryOwner territory="A-FEZ" owner="Mines"/>
+	<territoryOwner territory="AGH-BRE" owner="Mines"/>
+	<territoryOwner territory="AGH-SIR" owner="Mines"/>
+	<territoryOwner territory="AGH-SOK" owner="Mines"/>
+	<territoryOwner territory="AGH-ZEL" owner="Mines"/>
+	<territoryOwner territory="ALG-CON" owner="Mines"/>
+	<territoryOwner territory="ALG-KAS" owner="Mines"/>
+	<territoryOwner territory="ALG-LAG" owner="Mines"/>
+	<territoryOwner territory="ALG-ORA" owner="Mines"/>
+	<territoryOwner territory="B-C" owner="Mines"/>
+	<territoryOwner territory="B-FEZ" owner="Mines"/>
+	<territoryOwner territory="B-LAG" owner="Mines"/>
+	<territoryOwner territory="B-ORA" owner="Mines"/>
+	<territoryOwner territory="BEN-BIR" owner="Mines"/>
+	<territoryOwner territory="BEN-BRE" owner="Mines"/>
+	<territoryOwner territory="BEN-TOB" owner="Mines"/>
+	<territoryOwner territory="BIR-BRE" owner="Mines"/>
+	<territoryOwner territory="BIR-JAL" owner="Mines"/>
+	<territoryOwner territory="BIR-MAT" owner="Mines"/>
+	<territoryOwner territory="BIR-SIW" owner="Mines"/>
+	<territoryOwner territory="BIR-TOB" owner="Mines"/>
+	<territoryOwner territory="BRE-JAL" owner="Mines"/>
+	<territoryOwner territory="BRE-ZEL" owner="Mines"/>
+	<territoryOwner territory="C-D" owner="Mines"/>
+	<territoryOwner territory="C-LAG" owner="Mines"/>
+	<territoryOwner territory="C-OUE" owner="Mines"/>
+	<territoryOwner territory="CAI-MAT" owner="Mines"/>
+	<territoryOwner territory="CAS-FEZ" owner="Mines"/>
+	<territoryOwner territory="CON-KASS" owner="Mines"/>
+	<territoryOwner territory="CON-TUN" owner="Mines"/>
+	<territoryOwner territory="D-E" owner="Mines"/>
+	<territoryOwner territory="D-MAR" owner="Mines"/>
+	<territoryOwner territory="D-NAL" owner="Mines"/>
+	<territoryOwner territory="D-OUE" owner="Mines"/>
+	<territoryOwner territory="E-F" owner="Mines"/>
+	<territoryOwner territory="E-GHA" owner="Mines"/>
+	<territoryOwner territory="E-NAL" owner="Mines"/>
+	<territoryOwner territory="F-G" owner="Mines"/>
+	<territoryOwner territory="F-GHA" owner="Mines"/>
+	<territoryOwner territory="FEZ-ORA" owner="Mines"/>	
+	<territoryOwner territory="G-GHA" owner="Mines"/>
+	<territoryOwner territory="G-H" owner="Mines"/>
+	<territoryOwner territory="G-SOK" owner="Mines"/>
+	<territoryOwner territory="GHA-NAL" owner="Mines"/>
+	<territoryOwner territory="GHA-SOK" owner="Mines"/>
+	<territoryOwner territory="GHA-TRI" owner="Mines"/>	
+	<territoryOwner territory="H-I" owner="Mines"/>
+	<territoryOwner territory="H-SOK" owner="Mines"/>
+	<territoryOwner territory="H-ZEL" owner="Mines"/>
+	<territoryOwner territory="I-J" owner="Mines"/>
+	<territoryOwner territory="I-JAL" owner="Mines"/>
+	<territoryOwner territory="I-ZEL" owner="Mines"/>
+	<territoryOwner territory="J-JAL" owner="Mines"/>
+	<territoryOwner territory="J-K" owner="Mines"/>
+	<territoryOwner territory="J-SIW" owner="Mines"/>
+	<territoryOwner territory="JAL-ZEL" owner="Mines"/>
+	<territoryOwner territory="K-SIW" owner="Mines"/>
+	<territoryOwner territory="KAS-MAR" owner="Mines"/>
+	<territoryOwner territory="KAS-OUE" owner="Mines"/>
+	<territoryOwner territory="KAS-TUN" owner="Mines"/>
+	<territoryOwner territory="LAG-KAS" owner="Mines"/>
+	<territoryOwner territory="LAG-ORA" owner="Mines"/>
+	<territoryOwner territory="LAG-OUE" owner="Mines"/>
+	<territoryOwner territory="MAR-NAL" owner="Mines"/>
+	<territoryOwner territory="MAR-OUE" owner="Mines"/>
+	<territoryOwner territory="MAR-TRI" owner="Mines"/>
+	<territoryOwner territory="MAR-TUN" owner="Mines"/>
+	<territoryOwner territory="MAT-SIW" owner="Mines"/>
+	<territoryOwner territory="MAT-TOB" owner="Mines"/>
+	<territoryOwner territory="NAL-TRI" owner="Mines"/>
+	<territoryOwner territory="SIR-SOK" owner="Mines"/>
+	<territoryOwner territory="SIR-TRI" owner="Mines"/>
+	<territoryOwner territory="SOK-TRI" owner="Mines"/>
+	<territoryOwner territory="SOK-ZEL" owner="Mines"/>
+    </ownerInitialize>
+    <unitInitialize>
+	<!-- The setup for Tripoli Convoy is missing here due to my mistake -->
+      <!-- Germans -->
+      <unitPlacement unitType="mech" territory="Tripoli" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="G-fighter" territory="Tripoli" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="G-bomber" territory="Tripoli" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="G-bomber" territory="Sicily" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="mech" territory="El Agheila" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="artillery" territory="El Agheila" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="G-antitank" territory="El Agheila" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="tank" territory="El Agheila" quantity="2" owner="Germans"/>
+      <unitPlacement unitType="scoutcar" territory="Zella" quantity="1" owner="Germans"/>
+      <unitPlacement unitType="1-supply" territory="Tunis" quantity="3" owner="Germans"/>
+	  <!-- British -->
+      <unitPlacement unitType="infantry" territory="Cairo" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-antitank" territory="Cairo" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-aaGun" territory="Cairo" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-fighter" territory="Cairo" quantity="1" owner="British"/>
+      <unitPlacement unitType="5-supply" territory="Cairo" quantity="1" owner="British"/>
+      <unitPlacement unitType="landmine" territory="Cairo" quantity="3" owner="British"/>
+      <unitPlacement unitType="UK-scoutcar" territory="Mersa Matruh" quantity="2" owner="British"/>
+      <unitPlacement unitType="infantry" territory="Tobruk" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-aaGun" territory="Tobruk" quantity="1" owner="British"/>
+      <unitPlacement unitType="matilda" territory="Tobruk" quantity="1" owner="British"/>
+      <unitPlacement unitType="5-supply" territory="Tobruk" quantity="3" owner="British"/>
+      <unitPlacement unitType="1-supply" territory="Tobruk" quantity="3" owner="British"/>
+      <unitPlacement unitType="landmine" territory="Tobruk" quantity="1" owner="British"/>
+      <unitPlacement unitType="infantry" territory="Bir Hacheim" quantity="1" owner="British"/>
+      <unitPlacement unitType="infantry" territory="Benghazi" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-truck" territory="Benghazi" quantity="2" owner="British"/>
+      <unitPlacement unitType="1-supply" territory="Benghazi" quantity="3" owner="British"/>
+      <unitPlacement unitType="infantry" territory="Mersa Brega" quantity="1" owner="British"/>
+      <unitPlacement unitType="artillery" territory="Mersa Brega" quantity="1" owner="British"/>
+      <unitPlacement unitType="matilda" territory="Mersa Brega" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-truck" territory="Mersa Brega" quantity="1" owner="British"/>
+      <unitPlacement unitType="5-supply" territory="Mersa Brega" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-scoutcar" territory="Desert Zone J" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-fighter" territory="Malta" quantity="1" owner="British"/>
+      <unitPlacement unitType="1-supply" territory="Malta" quantity="2" owner="British"/>
+      <unitPlacement unitType="allied-seamine" territory="Sea Zone 3" quantity="1" owner="Allied-Units"/>
+      <unitPlacement unitType="UK-submarine" territory="Malta Convoy" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-destroyer" territory="Sea Zone 31" quantity="1" owner="British"/>
+      <unitPlacement unitType="battleship" territory="Sea Zone 31" quantity="1" owner="British"/>
+      <!-- Italians -->
+      <unitPlacement unitType="I-infantry" territory="Tripoli" quantity="2" owner="Italians"/>
+      <unitPlacement unitType="axis-truck" territory="Tripoli" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="1-supply" territory="Tripoli" quantity="3" owner="Italians"/>
+      <unitPlacement unitType="aaGun" territory="Sicily" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="fighter" territory="Sicily" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="I-bomber" territory="Sicily" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="I-infantry" territory="Sirte" quantity="2" owner="Italians"/>
+      <unitPlacement unitType="I-infantry" territory="El Agheila" quantity="2" owner="Italians"/>
+      <unitPlacement unitType="artillery" territory="El Agheila" quantity="2" owner="Italians"/>
+      <unitPlacement unitType="fighter" territory="El Agheila" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="5-supply" territory="El Agheila" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="scoutcar" territory="Zella" quantity="1" owner="Italians"/>
+      <unitPlacement unitType="axis-seamine" territory="Sea Zone 10" quantity="1" owner="Axis-Units"/>
+	  <!-- Vichy French -->
+      <unitPlacement unitType="F-infantry" territory="Casablanca" quantity="2" owner="Vichy-French"/>
+      <unitPlacement unitType="F-infantry" territory="Oran" quantity="2" owner="Vichy-French"/>
+      <unitPlacement unitType="F-tank" territory="Oran" quantity="1" owner="Vichy-French"/>
+      <unitPlacement unitType="F-infantry" territory="Algiers" quantity="2" owner="Vichy-French"/>
+      
+      <!-- Americans -->
+      <!-- America doesn't join the game until turn 7, so they start with nothing. -->
+      <!-- TODO: USA can only deploy to Casablanca Convoy on turn 7. -->
+				  
+				  <!-- USA cannot buy air on turn 7 has been implemented -->
+    </unitInitialize>
+    <resourceInitialize>
+      <!-- Players receive IPC at the start of the turn, so this can be 0 across the board. -->
+      <resourceGiven player="British" resource="PUs" quantity="0"/>
+      <resourceGiven player="Americans" resource="PUs" quantity="0"/>
+      <resourceGiven player="Italians" resource="PUs" quantity="0"/>
+      <resourceGiven player="Germans" resource="PUs" quantity="0"/>
+      <!-- Mines have effectively infinite IPCs -->
+      <resourceGiven player="Mines" resource="PUs" quantity="999"/>
+    </resourceInitialize>
+	<relationshipInitialize>
+		<relationship player1="Germans" player2="British" type="War" roundValue="1"/>
+		<relationship player1="Germans" player2="Italians" type="Allied" roundValue="1"/>
+		<relationship player1="Germans" player2="Americans" type="War" roundValue="1"/>
+		<relationship player1="Germans" player2="Vichy-French" type="Allied" roundValue="1"/>
+		<relationship player1="Germans" player2="Uncontrolled" type="Allied" roundValue="1"/>
+		<relationship player1="Germans" player2="Desert" type="Allied" roundValue="1"/>
+		<relationship player1="Germans" player2="Mines" type="Neutral" roundValue="1"/>
+		<relationship player1="Germans" player2="Axis-Units" type="Allied" roundValue="1"/>
+		<relationship player1="Germans" player2="Allied-Units" type="War" roundValue="1"/>
+		
+		<relationship player1="British" player2="Italians" type="War" roundValue="1"/>
+		<relationship player1="British" player2="Americans" type="Allied" roundValue="1"/>
+		<relationship player1="British" player2="Vichy-French" type="War" roundValue="1"/>
+		<relationship player1="British" player2="Uncontrolled" type="Allied" roundValue="1"/>
+		<relationship player1="British" player2="Desert" type="Allied" roundValue="1"/>
+		<relationship player1="British" player2="Mines" type="Neutral" roundValue="1"/>
+		<relationship player1="British" player2="Axis-Units" type="War" roundValue="1"/>
+		<relationship player1="British" player2="Allied-Units" type="Allied" roundValue="1"/>
+		
+		<relationship player1="Italians" player2="Americans" type="War" roundValue="1"/>
+		<relationship player1="Italians" player2="Vichy-French" type="Allied" roundValue="1"/>
+		<relationship player1="Italians" player2="Uncontrolled" type="Allied" roundValue="1"/>
+		<relationship player1="Italians" player2="Desert" type="Allied" roundValue="1"/>
+		<relationship player1="Italians" player2="Mines" type="Neutral" roundValue="1"/>
+		<relationship player1="Italians" player2="Axis-Units" type="Allied" roundValue="1"/>
+		<relationship player1="Italians" player2="Allied-Units" type="War" roundValue="1"/>
+		
+		<relationship player1="Americans" player2="Vichy-French" type="War" roundValue="1"/>
+		<relationship player1="Americans" player2="Uncontrolled" type="Allied" roundValue="1"/>
+		<relationship player1="Americans" player2="Desert" type="Allied" roundValue="1"/>
+		<relationship player1="Americans" player2="Mines" type="Neutral" roundValue="1"/>
+		<relationship player1="Americans" player2="Axis-Units" type="War" roundValue="1"/>
+		<relationship player1="Americans" player2="Allied-Units" type="Allied" roundValue="1"/>
+		
+		<relationship player1="Vichy-French" player2="Uncontrolled" type="Allied" roundValue="1"/>
+		<relationship player1="Vichy-French" player2="Desert" type="Allied" roundValue="1"/>
+		<relationship player1="Vichy-French" player2="Mines" type="Neutral" roundValue="1"/>
+		<relationship player1="Vichy-French" player2="Axis-Units" type="Allied" roundValue="1"/>
+		<relationship player1="Vichy-French" player2="Allied-Units" type="War" roundValue="1"/>
+		
+		<relationship player1="Uncontrolled" player2="Desert" type="Neutral" roundValue="1"/>
+		<relationship player1="Uncontrolled" player2="Mines" type="Neutral" roundValue="1"/>
+		<relationship player1="Vichy-French" player2="Axis-Units" type="Neutral" roundValue="1"/>
+		<relationship player1="Vichy-French" player2="Allied-Units" type="Neutral" roundValue="1"/>
+		
+		<relationship player1="Desert" player2="Mines" type="Neutral" roundValue="1"/>
+		<relationship player1="Desert" player2="Axis-Units" type="Neutral" roundValue="1"/>
+		<relationship player1="Desert" player2="Allied-Units" type="Neutral" roundValue="1"/>
+		
+		<relationship player1="Mines" player2="Allied-Units" type="Neutral" roundValue="1"/>
+		<relationship player1="Mines" player2="Axis-Units" type="Neutral" roundValue="1"/>
+		
+		<relationship player1="Allied-Units" player2="Axis-Units" type="Neutral" roundValue="1"/>
+	</relationshipInitialize>		
+  </initialize>
+  <!-- General -->
+  <propertyList>
+    <property name="Germans bid" value="0" editable="true">
+      <number min="0" max="1000"/>
+    </property>
+    <property name="British bid" value="36" editable="true"> 
+				<!-- UK Gets 12 bid for each of:
+      				-Suez Canal Convoy
+      				-Indian Ocean Convoy
+      				-Atlantic Ocean Convoy -->
+      <number min="0" max="1000"/>
+    </property>
+    <property name="Italians bid" value="0" editable="true">
+      <number min="0" max="1000"/>
+    </property>
+    <property name="Americans bid" value="0" editable="true">
+      <number min="0" max="1000"/>
+    </property>
+    <property name="Low Luck" value="false" editable="true">
+      <boolean/>
+    </property>
+    <property name="Low Luck for AntiAircraft" value="false" editable="true">
+      <boolean/>
+    </property>
+    <property name="Use Triggers" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="National Objectives" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="Triggered Victory" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="Tech Development" value="true" editable="false">
+      <boolean/>
+    </property>
+<!-- AA -->
+   <property name="Always on AA" value="false" editable="true">
+      <boolean/>
+    </property>
+    <property name="AA Territory Restricted" value="false" editable="false">
+      <boolean/>
+    </property>
+    <property name="Choose AA Casualties" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="Multiple AA Per Territory" value="true" editable="false">
+      <boolean/>
+    </property>
+ <!-- Submarines -->
+    <property name="Submarines Defending May Submerge Or Retreat" value="false" editable="true">
+      <boolean/>
+    </property>
+    <property name="Submersible Subs" value="false" editable="true">
+      <boolean/>
+    </property>
+    <property name="Air Attack Sub Restricted" value="false" editable="false">
+      <boolean/>
+    </property>
+    <property name="Sub Control Sea Zone Restricted" value="false" editable="false">
+      <boolean/>
+    </property>
+<!-- Naval/Air -->
+    <property name="Two hit battleship" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="Units Repair Hits End Turn" value="false" editable="false">
+      <boolean/>
+    </property>
+    <property name="Units Repair Hits Start Turn" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="Two HitPoint Units Require Repair Facilities" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="Allied Air Dependents" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="Attacker Retreat Planes" value="false" editable="true">
+      <boolean/>
+    </property>
+<!-- Placement -->
+    <property name="Unplaced units live when not placed" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="Unlimited Constructions" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="Placement Restricted By Factory" value="false" editable="false">
+      <boolean/>
+    </property>
+    <property name="Place in Any Territory" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="Unit Placement In Enemy Seas" value="false" editable="true">
+      <boolean/>
+    </property>
+<!-- Other -->
+    <property name="Movement By Territory Restricted" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="Selectable Zero Movement Units" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="Units Can Be Destroyed Instead Of Captured" value="true" editable="false">
+      <boolean/>
+    </property>
+    <property name="Neutrals Are Impassable" value="true" editable="true">
+      <boolean/>
+    </property>
+    <property name="maxFactoriesPerTerritory" value="1" editable="false">
+      <number min="1" max="100"/>
+    </property>	
+<!-- Game options -->
+    <property name="Tiger Tanks" value="false" editable="true">
+      <boolean/>
+    </property>
+
+    <property name="mapName" value="north_africa" editable="false">
+      <string/>
+    </property>
+    <property name="notes">
+      <string/>
+      <value><![CDATA[
+        	A North Africa World War II game.  This is the base scenario.
+			<br> Each side has multiple tiers of victory possible to them:
+			<br> Axis:
+			<br> -Instant - Control Cairo or kill all Allied Pieces.
+			<br> -Major   - At the end of Round 13, control Tobruk and Mareth
+			<br> -Minor   - At the end of Round 13, control at least one of Tripoli and Algiers
+			<br>
+			<br> Allies:
+			<br> -Instant - Control Tunis or kill all Axis Pieces.
+			<br> -Major   - At the end of Round 13, control Tobruk and Tripoli
+			<br> -Minor   - At the end of Round 13, control Mareth
+        	]]></value>
+    </property>
+  </propertyList>
+</game>
