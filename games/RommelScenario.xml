@@ -88,6 +88,7 @@
 	<territory name="GHA-TRI"/>
 	<territory name="Ghadames"/>
 	<territory name="Gibraltar"/>
+	<territory name="Greece"/>
 	<territory name="H-I"/>
 	<territory name="H-SOK"/>
 	<territory name="H-ZEL"/>
@@ -1971,6 +1972,10 @@
 	<attachment name="territoryAttachment" attachTo="Gibraltar" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
 		<option name="production" value="0"/>
 	</attachment>
+	<attachment name="territoryAttachment" attachTo="Greece" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+		<option name="isImpassable" value="true"/>
+	</attachment>
 	<attachment name="territoryAttachment" attachTo="H-I" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
 		<option name="production" value="0"/>
 	</attachment>
@@ -1993,6 +1998,7 @@
 		<option name="production" value="0"/>
 	</attachment>
 	<attachment name="territoryAttachment" attachTo="Italy" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="capital" value="Italians"/>
 		<option name="production" value="0"/>
 	</attachment>
 	<attachment name="territoryAttachment" attachTo="J-JAL" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
@@ -2591,7 +2597,7 @@
       <unitPlacement unitType="UK-fighter" territory="Malta" quantity="1" owner="British"/>
       <unitPlacement unitType="1-supply" territory="Malta" quantity="2" owner="British"/>
       <unitPlacement unitType="allied-seamine" territory="Sea Zone 3" quantity="1" owner="Allied-Units"/>
-      <unitPlacement unitType="UK-submarine" territory="Malta Convoy" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-submarine" territory="Sea Zone 12" quantity="1" owner="British"/>
       <unitPlacement unitType="UK-destroyer" territory="Sea Zone 31" quantity="1" owner="British"/>
       <unitPlacement unitType="battleship" territory="Sea Zone 31" quantity="1" owner="British"/>
       <!-- Italians -->
