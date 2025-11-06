@@ -194,6 +194,8 @@
 	<territory name="Unknown Sea Zone 1" water="true"/>
 	<territory name="Yugoslavia"/>
 	<territory name="Zella"/>
+	
+	<territory name="GSB"/>
 
 	<!-- Territory Connections -->
 	<connection t1="A-B" t2="Desert Zone A"/>
@@ -231,7 +233,6 @@
 	<connection t1="Algiers Convoy UK" t2="Sea Zone 6"/>
 	<connection t1="Algiers Convoy US" t2="Sea Zone 6"/>
 	<connection t1="Atlantic Ocean" t2="Atlantic Ocean Convoy"/>
-	<connection t1="Atlantic Ocean" t2="Cairo"/>
 	<connection t1="Atlantic Ocean" t2="Desert Zone K"/>
 	<connection t1="Atlantic Ocean" t2="Indian Ocean"/>
 	<connection t1="Atlantic Ocean" t2="Qatar Depression"/>
@@ -615,6 +616,51 @@
 	<connection t1="Turkey" t2="Unknown Sea Zone 1"/>
 	<connection t1="Turkey" t2="Yugoslavia"/>
 	<connection t1="Unbound Zone 1" t2="Unbound Zone 2"/>
+	
+	<!-- Strange connections -->
+	<connection t1="Tripoli Convoy G" t2="Tunis"/>
+	<connection t1="Tripoli Convoy G" t2="Mareth"/>
+	<connection t1="Tripoli Convoy G" t2="Tripoli"/>
+	<connection t1="Tripoli Convoy G" t2="Sirte"/>
+	<connection t1="Tripoli Convoy G" t2="Malta Convoy"/>
+	<connection t1="Tripoli Convoy G" t2="Benghazi Convoy G"/>
+	<connection t1="Tripoli Convoy G" t2="Benghazi Convoy I"/>
+	<connection t1="Tripoli Convoy G" t2="Sea Zone 12"/>
+	<connection t1="Tripoli Convoy G" t2="Sea Zone 14"/>
+	<connection t1="Tripoli Convoy G" t2="Sea Zone 15"/>
+	<connection t1="Tripoli Convoy I" t2="Tunis"/>
+	<connection t1="Tripoli Convoy I" t2="Mareth"/>
+	<connection t1="Tripoli Convoy I" t2="Tripoli"/>
+	<connection t1="Tripoli Convoy I" t2="Sirte"/>
+	<connection t1="Tripoli Convoy I" t2="Malta Convoy"/>
+	<connection t1="Tripoli Convoy I" t2="Sea Zone 12"/>
+	<connection t1="Tripoli Convoy I" t2="Sea Zone 14"/>
+	<connection t1="Tripoli Convoy I" t2="Sea Zone 15"/>
+	<connection t1="Benghazi Convoy G" t2="Malta Convoy"/>
+	<connection t1="Benghazi Convoy G" t2="Sea Zone 12"/>
+	<connection t1="Benghazi Convoy G" t2="Sea Zone 13"/>
+	<connection t1="Benghazi Convoy G" t2="Sea Zone 14"/>
+	<connection t1="Benghazi Convoy G" t2="Sea Zone 15"/>
+	<connection t1="Benghazi Convoy G" t2="Sea Zone 16"/>
+	<connection t1="Benghazi Convoy G" t2="Sea Zone 20"/>
+	<connection t1="Benghazi Convoy G" t2="Sea Zone 21"/>
+	<connection t1="Benghazi Convoy I" t2="Malta Convoy"/>
+	<connection t1="Benghazi Convoy I" t2="Sea Zone 12"/>
+	<connection t1="Benghazi Convoy I" t2="Sea Zone 13"/>
+	<connection t1="Benghazi Convoy I" t2="Sea Zone 14"/>
+	<connection t1="Benghazi Convoy I" t2="Sea Zone 15"/>
+	<connection t1="Benghazi Convoy I" t2="Sea Zone 16"/>
+	<connection t1="Benghazi Convoy I" t2="Sea Zone 20"/>
+	<connection t1="Benghazi Convoy I" t2="Sea Zone 21"/>
+	<connection t1="Atlantic Ocean Convoy" t2="Indian Ocean Convoy"/>
+	<connection t1="Atlantic Ocean Convoy" t2="Indian Ocean"/>
+	<connection t1="Indian Ocean Convoy" t2="Suez Canal Convoy"/>
+	<connection t1="Indian Ocean Convoy" t2="Suez Canal"/>
+	<connection t1="Suez Canal Convoy" t2="Cairo"/>
+	<connection t1="Suez Canal Convoy" t2="Sea Zone 31"/>
+	
+	<connection t1="GSB" t2="Sea Zone 1"/>
+	
 
   </map>
   <resourceList>
@@ -1641,6 +1687,7 @@
     <attachment name="unitAttachment" attachTo="factory" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
       <option name="isFactory" value="true"/>
       <option name="destroyedWhenCapturedFrom" value="Germans:British:Italians:Americans"/>
+	    <option name="canProduceXUnits" value="10"/>
     </attachment>
     <!-- NOTE:  In this game, repairing a BB costs 1 Supply.  May be necessary to note for later. -->
     <attachment name="unitAttachment" attachTo="harbor" javaClass="games.strategy.triplea.attachments.UnitAttachment" type="unitType">
@@ -2204,6 +2251,28 @@
 		<option name="production" value="0"/>
 	</attachment>
 	
+	<attachment name="territoryAttachment" attachTo="GSB" javaClass="games.strategy.triplea.attachments.TerritoryAttachment" type="territory">
+		<option name="production" value="0"/>
+	</attachment>
+	
+	<!-- Canals -->
+	<attachment name="canalAttachmentMessina" attachTo="Sea Zone 11" javaClass="CanalAttachment" type="territory">
+	<option name="canalName" value="Strait of Messina"/>
+	<option name="landTerritories" value="Sicily:Italy"/>
+	</attachment>  
+	<attachment name="canalAttachmentMessina" attachTo="Sea Zone 16" javaClass="CanalAttachment" type="territory">
+	<option name="canalName" value="Strait of Messina"/>
+	<option name="landTerritories" value="Sicily:Italy"/>
+	</attachment>  
+	<attachment name="canalAttachmentSuez" attachTo="Sea Zone 31" javaClass="CanalAttachment" type="territory">
+	<option name="canalName" value="Suez Canal"/>
+	<option name="landTerritories" value="Suez Canal Convoy"/>
+	</attachment>  
+	<attachment name="canalAttachmentSuez" attachTo="Suez Canal" javaClass="CanalAttachment" type="territory">
+	<option name="canalName" value="Suez Canal"/>
+	<option name="landTerritories" value="Suez Canal Convoy"/>
+	</attachment>  
+	
 	<!-- Remove Left-Over Money -->
 	<attachment name="conditionAttachmentAlwaysTrue" attachTo="Italians" javaClass="RulesAttachment" type="player">
 		<option name="directOwnershipTerritories" value="Italy"/>
@@ -2369,16 +2438,20 @@
 		<option name="unitPresence" value="1-supply:5-supply" count="1"/> <!-- Not sure if it will work this way -->
 	</attachment>
 	
-	<attachment name="rulesAttachment" attachTo="Germans" javaClass="RulesAttachment" type="player">
+	<!-- <attachment name="rulesAttachment" attachTo="Germans" javaClass="RulesAttachment" type="player">
 		<option name="players" value="Germans:British:Italians:Americans"/>
-		<!-- <option name="placementAnySeazone" value="true"/> -->
+		<option name="placementAnySeaZone" value="false"/>
 		<option name="placementAnyTerritory" value="true"/>
 	</attachment>
-	<!-- <attachment name="triggerAttachment" attachTo="Germans" javaClass="TriggerAttachment" type="player">
+	<attachment name="rulesAttachment" attachTo="British" javaClass="RulesAttachment" type="player">
+		<option name="placementAnySeaZone" value="true"/>
+		<option name="placementAnyTerritory" value="true"/>
+	</attachment> 
+	<attachment name="triggerAttachment" attachTo="Germans" javaClass="TriggerAttachment" type="player">
 		<option name="players" value="Germans:British:Italians:Americans"/>
 		<option name="playerProperty" value="placementAnySeazone" count="true"/>
-	</attachment> -->
-	<!-- <attachment name="playerAttachment" attachTo="British" javaClass="PlayerAttachment" type="player">
+	</attachment>
+	<attachment name="playerAttachment" attachTo="British" javaClass="PlayerAttachment" type="player">
 		<option name="playerProperty" value="placementAnySeazone" count="true"/>
 		<option name="playerProperty" value="placementAnyTerritory" count="true"/>
 	</attachment>
@@ -2399,6 +2472,9 @@
 	  <territoryOwner territory="Benghazi Convoy G" owner="Germans"/>
 	  <territoryOwner territory="Tripoli Convoy G" owner="Germans"/>
 	  
+	  <territoryOwner territory="GSB" owner="Germans"/>
+	  
+	  
 	
 	<!-- British -->
 	  <territoryOwner territory="Benghazi" owner="British"/>
@@ -2413,6 +2489,10 @@
 	  <territoryOwner territory="Malta Convoy" owner="British"/>
 	  <territoryOwner territory="Suez Canal Convoy" owner="British"/>
 	  
+      <territoryOwner territory="Casablanca Convoy UK" owner="British"/>
+      <territoryOwner territory="Oran Convoy UK" owner="British"/>
+      <territoryOwner territory="Algiers Convoy UK" owner="British"/>	
+	  
 	<!-- Italians -->
 	  <territoryOwner territory="El Agheila" owner="Italians"/>
 	  <territoryOwner territory="Italy" owner="Italians"/>
@@ -2425,6 +2505,9 @@
 	  
 	<!-- Americans -->
       <territoryOwner territory="Portugal" owner="Americans"/> <!-- Portugal is the American capital -->
+      <territoryOwner territory="Casablanca Convoy US" owner="Americans"/>
+      <territoryOwner territory="Oran Convoy US" owner="Americans"/>
+      <territoryOwner territory="Algiers Convoy US" owner="Americans"/>
 	  
 	<!-- Vichy-French -->
 	  <territoryOwner territory="Algiers" owner="Vichy-French"/>
@@ -2597,7 +2680,7 @@
       <unitPlacement unitType="UK-fighter" territory="Malta" quantity="1" owner="British"/>
       <unitPlacement unitType="1-supply" territory="Malta" quantity="2" owner="British"/>
       <unitPlacement unitType="allied-seamine" territory="Sea Zone 3" quantity="1" owner="Allied-Units"/>
-      <unitPlacement unitType="UK-submarine" territory="Sea Zone 12" quantity="1" owner="British"/>
+      <unitPlacement unitType="UK-submarine" territory="Sea Zone 12" quantity="1" owner="British"/> 
       <unitPlacement unitType="UK-destroyer" territory="Sea Zone 31" quantity="1" owner="British"/>
       <unitPlacement unitType="battleship" territory="Sea Zone 31" quantity="1" owner="British"/>
       <!-- Italians -->
@@ -2619,9 +2702,17 @@
       <unitPlacement unitType="F-infantry" territory="Oran" quantity="2" owner="Vichy-French"/>
       <unitPlacement unitType="F-tank" territory="Oran" quantity="1" owner="Vichy-French"/>
       <unitPlacement unitType="F-infantry" territory="Algiers" quantity="2" owner="Vichy-French"/>
+	  
+	  <!-- Invisible Factories -->
+	  <unitPlacement unitType="factory" territory="GSB" quantity="1" owner="Germans"/>
+	  <unitPlacement unitType="factory" territory="Atlantic Ocean Convoy" quantity="1" owner="British"/>
+	  <unitPlacement unitType="factory" territory="Gibraltar" quantity="1" owner="British"/>
+	  <unitPlacement unitType="factory" territory="Italy" quantity="1" owner="Italians"/>
+	  <unitPlacement unitType="factory" territory="Casablanca Convoy US" quantity="1" owner="Americans"/>
+		
       
       <!-- Americans -->
-      <!-- America doesn't join the game until turn 7, so they start with nothing. -->
+      America doesn't join the game until turn 7, so they start with nothing.
       <!-- TODO: USA can only deploy to Casablanca Convoy on turn 7. -->
 				  
 				  <!-- USA cannot buy air on turn 7 has been implemented -->
@@ -2776,16 +2867,19 @@
     <property name="Unplaced units live when not placed" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Unlimited Constructions" value="true" editable="false">
+    <property name="Unlimited Constructions" value="false" editable="false">
       <boolean/>
     </property>
-    <property name="Placement Restricted By Factory" value="false" editable="false">
+    <property name="Placement Restricted By Factory" value="true" editable="false">
       <boolean/>
     </property>
-    <property name="Place in Any Territory" value="true" editable="false">
+    <property name="Unit Placement Restrictions" value="true" editable="true">
       <boolean/>
     </property>
-    <property name="Unit Placement In Enemy Seas" value="false" editable="true">
+    <property name="Place in Any Territory" value="false" editable="false">
+      <boolean/>
+    </property>
+    <property name="Unit Placement In Enemy Seas" value="true" editable="true">
       <boolean/>
     </property>
 <!-- Other -->
